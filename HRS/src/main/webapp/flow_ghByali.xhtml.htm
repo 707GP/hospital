@@ -1,0 +1,314 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />  
+<meta name="description" content="支付宝预约挂号流程详解" />
+<meta name="keywords" content="支付宝预约挂号流程详解，挂号，广州挂号，网上挂号，12320挂号，自助终端挂号" />
+<meta name="robots" content="all" />
+<title>支付宝预约挂号流程详解_广州市统一预约挂号平台</title>
+<link rel="stylesheet" type="text/css" href="base.css-t=201305281140250.css" tppabs="http://www.guahao.gov.cn/css/common/base.css?t=201305281140250" />
+<link rel="stylesheet" type="text/css" href="common.css-t=201411240822230.css" tppabs="http://www.guahao.gov.cn/css/common/common.css?t=201411240822230" />
+<link rel="stylesheet" type="text/css" href="mod.css-t=201608171104400.css" tppabs="http://www.guahao.gov.cn/css/mod.css?t=201608171104400" />
+</head>
+<body>
+  <div class="wrap">
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="headerBg clearfix">
+    <div class="header">
+        <p class="header-topTxt mb10">
+            
+            <a href="login.xhtml.htm" tppabs="http://www.guahao.gov.cn/login.xhtml">登录</a>&nbsp;|&nbsp;<a href="login.xhtml-goto=-usrinfo.xhtml.htm#orderList" tppabs="http://www.guahao.gov.cn/usrinfo.xhtml#orderList">我的订单</a>&nbsp;|&nbsp;<a href="register.xhtml.htm" tppabs="http://www.guahao.gov.cn/register.xhtml">注册</a>&nbsp;|&nbsp;<a href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml">预约指南</a>&nbsp;|&nbsp;<span>投诉电话：020-12320</span>
+            
+            
+        </p>
+        <p class="header-logo"><span class="hotPhone">预约热线：<b class="hotPhone-no">020-12320</b></span></p>
+        <form action="quit_login.xhtml.htm" tppabs="http://www.guahao.gov.cn/quit_login.xhtml"  method="post" name="quitLogin"></form>
+    </div>
+</div>
+<div style="width:960px;margin:0 auto;display:none;" id="noticBlock" >
+<div style="float:left;border:1px solid #FECB66;width:938px;padding:10px;background-color:#FEFEE4;color:#FE0000;">
+	<p>尊敬的用户：</p>
+	<p style="text-indent:2em;" id="comNoticeCnt"></p>
+</div>
+</div>
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="sso-client.js-t=201303150508060" tppabs="http://www.guahao.gov.cn/js/urm/sso-client.js?t=201303150508060" type="text/javascript"></script>
+<script type="text/javascript">
+function loginOut(){
+    sso_logout();
+    noLoginCookie();//取消自动登陆
+    $("form[name=quitLogin]").submit();
+}
+$(function(){
+	$.ajax({
+    url: "/notice.xhtml?r="+Math.random(),
+    type: 'post',
+    dataType: 'json',
+    data: '',
+    success: function(data) {
+      if(data.GWA.MSG_CD == 'PTS00000'){
+      	if(data.NOT_STS == "0"){
+      		$("#noticBlock").hide();
+      	}else if(data.NOT_STS == "1"){
+      		$("#noticBlock").show();
+      		$("#comNoticeCnt").html(data.NOT_RM+"&nbsp;&nbsp;---广州市卫生和计划生育委员会");
+      	}
+      }
+    }
+  });	
+});
+</script>
+
+
+
+
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="menuBar mb15 clearfix">
+    <div class="menu menuL"></div>
+    <div class="menuX menu_nav">
+        <ul class="top">
+            <li><a class="on" id="01" href="index.xhtml.htm" tppabs="http://www.guahao.gov.cn/index.xhtml" item="#index" title="首页">首&nbsp;页</a></li>
+            <li><a id="02" href="hospitallist.xhtml.htm" tppabs="http://www.guahao.gov.cn/hospitallist.xhtml" item="#reserve">挂号服务</a></li>
+            <li><a id="03" href="login.xhtml-goto=-usrinfo.xhtml.htm" tppabs="http://www.guahao.gov.cn/usrinfo.xhtml" item="#regmng">预约管理</a></li>
+            <li><a id="06" href="login.xhtml-goto=-payment_mng.xhtml.htm" tppabs="http://www.guahao.gov.cn/payment_mng.xhtml">缴费管理</a></li>
+            <li><a id="04" href="flow_ghbyweb.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml" item="#help">预约指南</a></li>
+            <li><a id="05" href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml" item="#notice">通知及反馈</a></li>
+            <li><a id="07" href="download_client.xhtml.htm" tppabs="http://www.guahao.gov.cn/download_client.xhtml" item="#download">客户端下载</a></li>
+        </ul>
+        <div style="clear:both;display:block;"></div>
+        <ul id="reserve" class="bot" style="display:none;padding-left:84px;">
+            <li><a id="0201" title="预约挂号" href="hospitallist.xhtml.htm" tppabs="http://www.guahao.gov.cn/hospitallist.xhtml"><span>预约挂号</span></a></li>
+            <li><a id="0202" title="当天挂号" href="javascript:if(confirm('http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow  \n\n该文件无法用 Teleport Ultra 下载, 因为 服务器报告发生错误, 阻止了下载。  \n\n你想在服务器上打开它?'))window.location='http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow'" tppabs="http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow"><span>当天挂号</span></a></li>
+        </ul>
+        <ul id="help" class="bot" style="display:none;padding-left:150px;">
+            <li><a id="0402" title="预约挂号须知" href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml"><span>预约挂号须知</span></a></li>
+            <li><a id="0401" title="预约挂号指南" href="flow_ghbyweb.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml"><span>预约挂号指南</span></a></li>
+            <li><a id="0403" title="常见疾病对应科室" href="comdis.xhtml.htm" tppabs="http://www.guahao.gov.cn/comdis.xhtml"><span>常见疾病对应科室</span></a></li>
+            <li><a id="0404" title="常见问题" href="questions1.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions1.xhtml"><span>常见问题</span></a></li>
+        </ul>
+        
+        
+            <ul id="notice" class="bot" style="display:none;padding-left:490px;">
+        
+            
+            <li><a id="0501" title="停诊通知" href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml"><span>停诊通知</span></a></li>
+            
+        </ul>
+        <!-- <div style="clear:both;display:block;"></div> -->
+    </div>
+    <div class="menu menuR"></div>
+</div>
+    
+    <div class="bd">
+      <!---->
+      <div class="page-wrap">
+        <div class="pageLeft">
+          <div class="helpMenu">
+        		<ul>
+        			<li style="width:100%;">
+        				<b class="icon"></b>
+        				<a style="font-size:14px;font-weight:bold;"href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml">预约须知</a>
+        			</li>
+        		</ul>	
+        	</div>
+          <div class="helpMenu">
+            <p><b class="icon fold"></b><a href="#">预约挂号指南</a></p>
+            <ul>
+              <li><b class="icon"></b><a href="flow_ghbyweb.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml">网站预约指引</a></li>
+              <li><b class="icon"></b><a href="flow_ghBywechat.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghBywechat.xhtml">微信预约指引</a></li>
+              <li class="on"><b class="icon arrow_blue"></b><a href="flow_ghByali.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghByali.xhtml">支付宝预约指引</a></li>
+              <li><b class="icon"></b><a href="flow_ghbytel.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghbytel.xhtml">12320预约指引</a></li>
+              <li><b class="icon"></b><a href="flow_ghByphoneapp.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghByphoneapp.xhtml">手机APP预约指引</a></li>
+              <li><b class="icon"></b><a href="flow_ghbyclient.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghbyclient.xhtml">自助终端预约指引</a></li>
+            </ul>
+          </div>
+          <div class="helpMenu">
+            <p><b class="icon fold"></b><a href="comdis.xhtml.htm" tppabs="http://www.guahao.gov.cn/comdis.xhtml">常见疾病对应科室</a></p>
+            <ul style="display:none;">
+              <li><b class="icon"></b><a href="comdis.xhtml.htm" tppabs="http://www.guahao.gov.cn/comdis.xhtml">常见疾病对应科室</a></li>
+            </ul>
+          </div>
+          <div class="helpMenu">
+            <p><b class="icon fold"></b><a href="#">常见问题</a></p>
+            <ul style="display:none;">
+              <li><b class="icon"></b><a href="questions1.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions1.xhtml">注册与登录</a></li>
+              <li><b class="icon"></b><a href="questions2.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions2.xhtml">预约</a></li>
+              <li><b class="icon"></b><a href="questions3.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions3.xhtml">取号</a></li>
+              <li><b class="icon"></b><a href="questions4.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions4.xhtml">支付</a></li>
+              <li><b class="icon"></b><a href="questions5.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions5.xhtml">修改密码与手机号</a></li>
+              <li><b class="icon"></b><a href="questions6.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions6.xhtml">退号退费</a></li>
+              <li><b class="icon"></b><a href="questions7.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions7.xhtml">订单管理查询</a></li>
+              <li><b class="icon"></b><a href="questions8.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions8.xhtml">停诊</a></li>
+              <li><b class="icon"></b><a href="questions9.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions9.xhtml">黑名单、爽约申诉</a></li>
+            </ul>
+          </div>
+          <div class="helpMenu">
+            <p><b class="icon fold"></b><a href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml">通知公告</a></p>
+            <ul style="display:none;">
+              <li><b class="icon"></b><a href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml">停诊通知</a></li>
+              <li><b class="icon"></b><a href="#">网站通知</a></li>
+            </ul>
+          </div>
+        </div>
+        <!---->
+        <div class="pageRight">
+          <div class="helpContent">
+            <h3 class="content-hd mb20"><b>支付宝预约挂号流程</b></h3>
+            <div class="diseases">
+              <a name="map1"></a><p class="fb mb10">一、广州健康通支付宝服务窗目前已接入的广州市公立医院共34家，其它医院陆续开通接入中。</p>
+              <a name="map2"></a><p class="fb mb10">二、支付宝预约流程</p>
+              <p>支付宝APP服务窗  →  点击广州健康通服务号  →  点击挂号  →  选择医院  →  选择科室  →  选择医生  →  选择预约时间  →  选择号源时间段  →  提交订单  →  订单支付  →  预约完成。<br/><span style="color:red;font-size: 12px;">*后付费的订单需到医院现场缴费</span></p>
+              <p class="fb mb10">三、支付宝APP预约挂号为一键登录，进入广州健康通支付宝服务号后无需二次注册登录。</p>
+              <p class="fb mb10">四、挂号类型：为本人预约、为子女预约</p>
+              <a name="map3"></a><p class="fb mb10">五、通过支付宝预约的订单，需要留意支付宝消息，系统不发手机短信。</p>
+              <a name="map4"></a><p class="fb mb10">六、支付宝订单支付模式：预付费、后付费</p>
+              <p>1)预付费订单，用户下订单后需要在30分钟内完成支付，超时未支付的订单系统则自动取消。</p>
+              <p>2)后付费订单，成功下订单后需在预约就诊当天，在预约时间前提前30分钟到医院指定窗口或院内自助终端缴费取号。</p>
+              <a name="map5"></a><p class="fb mb10">七、支付工具</p>
+              <p>预约平台订单支持跨支付渠道支付功能，目前支持的支付方式有：网银支付、微信支付、支付宝支付 三种支付方式。其中微信支付/支付宝支付，目前仅支持已开通微信支付商户/支付宝商户的医院，如果您所选择的医院未开通微信支付商户或支付宝商户，则该医院订单不支持微信支付/支付宝进行付款。</p>
+            	<a name="map6"></a><p class="fb mb10">八、取号</p>
+            	<p>1)预付费订单，在预约就诊当天，在预约时间前提前30分钟凭身份证（成人/儿童）、微信预约成功消息到医院指定窗口或院内自助终端取号。<br/>（如预约9：00-10：00号源，则需要在8：30取号）</p>
+            	<p>2)后付费订单，在预约就诊当天，在预约时间前提前30分钟凭身份证（成人/儿童）、微信预约成功消息到医院指定窗口或院内自助终端缴费取号。<br/>（如预约10：00-11：00号源，则需要在9：30取号）</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="clearfix"></div>
+  <div class="bg_gray">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+    <div class="line_bt"></div>
+    <div class="footer-content">
+        <div class="footer-logo"><span></span></div>
+        <span class="ml10">地址：广州市东风西路182号</span>
+        <span class="ml10">技术支持：广州市卫生信息中心</span>
+        <span class="ml10">广州市卫生和计划生育委员会版权所有</span><br>
+        <span class="ml10">粤ICP备12059770号</span>
+        <span class="ml10"><a target="_blank" href="javascript:if(confirm('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394'" tppabs="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394"><img style="vertical-align:middle" src="beian.png" tppabs="http://www.guahao.gov.cn/images/common/beian.png"/>&nbsp;粤公网安备&nbsp;44010402000394号</a></span>&nbsp;
+        <script src="stat.php-id=4589427&web_id=4589427&show=pic1" tppabs="http://s25.cnzz.com/stat.php?id=4589427&web_id=4589427&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+  </div>
+<script type="text/javascript" src="jquery.js-t=201201101201560" tppabs="http://www.guahao.gov.cn/js/common/jquery.js?t=201201101201560" ></script>
+<script type="text/javascript" src="base.js-t=201405220620040" tppabs="http://www.guahao.gov.cn/js/common/base.js?t=201405220620040" ></script>
+
+<script type="text/javascript">
+$(document).ready(function(){navInit();});
+/*
+* highOnclick(pId,curId)
+* curId 二级菜单当前ID名称
+*/
+var curStr="";
+if(curStr!="" && curStr!="null"){
+highOnclick(curStr);
+}
+</script>
+<script type="text/javascript">
+$(".helpMenu ul li").hover(function(){
+  $(this).addClass("hover");
+  $(this).find("b").addClass("arrow_gray");
+},function(){
+  $(this).removeClass("hover");
+  $(this).find("b").removeClass("arrow_gray");
+});
+$(".helpMenu p").toggle(function(){
+  $(".helpMenu p").each(function(i){$(this).next().hide();$(this).find("b").removeClass("unfold").addClass("fold");});
+  $(this).next().show();
+  $(this).find("b").removeClass("fold").addClass("unfold");
+  // $(this).next().find("li").eq(0).addClass("on").find("b").addClass("arrow_blue");
+},function(){
+  $(this).next().hide();
+  $(this).find("b").removeClass("unfold").addClass("fold");
+});
+
+$(function() {
+  $(".helpContent dt").toggle(
+    function(){
+      $(this).next().show();
+    },
+    function(){
+      $(this).next().hide();
+    }
+    );
+});
+</script>
+</body>
+</html>

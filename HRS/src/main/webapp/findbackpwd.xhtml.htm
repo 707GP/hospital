@@ -1,0 +1,248 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />  
+
+<meta name="description" content="广州市统一预约挂号网_广州市卫生局主办，免费提供广州市多家公立医院的网上挂号、12320电话挂号、院内自助终端挂号服务，为您解决挂号难题。" />
+<meta name="keywords" content="预约挂号，广州挂号，网上挂号，12320挂号，挂号，自助终端挂号" />
+<meta name="robots" content="all" />
+<title>广州市统一预约挂号平台_网上挂号 12320挂号 自助终端挂号</title>
+
+<link rel="stylesheet" type="text/css" href="base.css-t=201305281140250.css" tppabs="http://www.guahao.gov.cn/css/common/base.css?t=201305281140250" />
+<link rel="stylesheet" type="text/css" href="common.css-t=201411240822230.css" tppabs="http://www.guahao.gov.cn/css/common/common.css?t=201411240822230" />
+<link rel="stylesheet" type="text/css" href="mod.css-t=201608171104400.css" tppabs="http://www.guahao.gov.cn/css/mod.css?t=201608171104400" />
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.20.custom.css-t=201303250411280.css" tppabs="http://www.guahao.gov.cn/js/common/jquery.ui.dialog_js/css/ui-lightness/jquery-ui-1.8.20.custom.css?t=201303250411280" />
+
+
+</head>
+<body>
+  <div class="bg_gray">
+    <div class="headerBg clearfix">
+      <div class="header2">
+        <p class="header-topTxt mb10">
+          <a href="index.xhtml.htm" tppabs="http://www.guahao.gov.cn/index.xhtml">首页</a>&nbsp;|&nbsp;<a href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml">预约指南</a>&nbsp;|&nbsp;<span>投诉电话：020-12320</span>
+        </p>
+        
+<p class="clearfix"><span class="logoTxt">重置密码</span><span class="hotPhone">预约热线：<b class="hotPhone-no">12320</b></span></p>
+
+      </div>
+    </div>
+    <div class="header-line mb15"></div>
+    
+<div class="bd brdD7 clearfix">
+  <form action="" method="post" name="pwdForm">
+    <div class="register-form" id="resetPwd">
+      <h3 class="content-hd"><b>密码重置信息</b></h3>
+      <ul class="form-content">
+        <li class="pb20"><label class="form-label-l">重置方式：</label>
+          <!-- <span class="btn inputLgBg fl"> -->
+            <select name="FIND_WAY" onchange="changeMess(this.value)" id="findWay" > 
+              <option value="1">用户名+手机号</option>
+              <option value="3">证件号+手机号</option>
+            </select>
+          <!-- </span> -->
+        </li>
+        <li class="pb20">
+          <label class="form-label-l" id="usrActLabel">用户名：</label>
+          <label class="form-label-l" id="idNoLabel" style="display:none;">
+            <b class="c_orange">*</b>
+            <select name="CER_TYP" id="cerTyp">
+              <option value="01">身份证号</option>
+              <option value="02">港澳通行证</option>
+              <option value="03">台湾通行证</option>
+            </select>
+          </label>
+          <span class="btn inputLgBg fl"><input type="text" class="inputTxt" id="login_name" name="CER_OR_ACT" maxlength="20" onfocus="this.parentNode.className='btn inputLgBg_on fl'" onblur="this.parentNode.className='btn inputLgBg fl'"/></span>&nbsp;*<span id="u_info" class="c_gray9">为注册时填写的用户名</span><span id="login_nameInfoDiv" class="show_rule"></span>
+        </li>
+        <li class="pb20">
+          <label class="form-label-l">手机号：</label>
+          <span class="btn inputLgBg fl"><input type="text" class="inputTxt" id="phoneOrmail" name="PHONE_OR_MAIL" maxlength="11" onfocus="this.parentNode.className='btn inputLgBg_on fl'" onblur="this.parentNode.className='btn inputLgBg fl'"/></span>&nbsp;*<span class="c_gray9" id="phone_info">为注册时填写的手机号码</span> <span id="phoneOrmailInfoDiv" class="show_rule"></span>
+        </li>
+        <li class="pb20"><label class="form-label-l">验证码：</label><span class="btn input_msg6 fl"><input type="text" class="inputTxt" id="verCdMsg" name="PHONE_SIGN"  maxlength="6" onfocus="this.parentNode.className='btn input_msg6_on fl'" onblur="this.parentNode.className='btn input_msg6 fl'"/></span>&nbsp;&nbsp;<input type="button" class="btn btn04" id="sendMsgF" onclick="sendMsg()" value="获取验证码"/><span id="verCdMsgInfoDiv" class="show_rule"></span></li>
+        <li class="mb20 dashedLine"></li>
+        <li class="pb20"><label class="form-label-l">新密码：</label><span class="btn inputLgBg fl"><input type="password" class=" inputTxt" id="pwd" onfocus="this.parentNode.className='btn inputLgBg_on fl'" onblur="this.parentNode.className='btn inputLgBg fl'"/></span><span id="pwdInfoDiv" class="show_rule"></span></li>
+        <li class="pb20"><label class="form-label-l">确认密码：</label><span class="btn inputLgBg fl"><input type="password" class=" inputTxt" id="rePwd" onfocus="this.parentNode.className='btn inputLgBg_on fl'" onblur="this.parentNode.className='btn inputLgBg fl'"/></span><span id="rePwdInfoDiv" class="show_rule"></span></li>
+        <li><label class="form-label-l">&nbsp;</label><input type="button" value='确  定' onclick="submitPwdForm();" class="btn btn_login fl"/></li>
+        </ul>
+        <input type="hidden" name="NEW_PWD" id="NEW_PWD_MD5">
+        <input type="hidden" name="RE_NEW_PWD" id="RE_NEW_PWD_MD5">
+    </div>
+  </form>
+</div>
+
+    <div class="clearfix"></div>
+  </div>
+
+<div class="bg_gray">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+    <div class="line_bt"></div>
+    <div class="footer-content">
+        <div class="footer-logo"><span></span></div>
+        <span class="ml10">地址：广州市东风西路182号</span>
+        <span class="ml10">技术支持：广州市卫生信息中心</span>
+        <span class="ml10">广州市卫生和计划生育委员会版权所有</span><br>
+        <span class="ml10">粤ICP备12059770号</span>
+        <span class="ml10"><a target="_blank" href="javascript:if(confirm('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394'" tppabs="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394"><img style="vertical-align:middle" src="beian.png" tppabs="http://www.guahao.gov.cn/images/common/beian.png"/>&nbsp;粤公网安备&nbsp;44010402000394号</a></span>&nbsp;
+        <script src="stat.php-id=4589427&web_id=4589427&show=pic1" tppabs="http://s25.cnzz.com/stat.php?id=4589427&web_id=4589427&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="jquery.js-t=201201101201560" tppabs="http://www.guahao.gov.cn/js/common/jquery.js?t=201201101201560" ></script>
+<script type="text/javascript" src="jquery-ui-1.8.20.custom.min.js-t=201208070830560" tppabs="http://www.guahao.gov.cn/js/common/jquery.ui.dialog_js/js/jquery-ui-1.8.20.custom.min.js?t=201208070830560"></script>
+<script type="text/javascript" src="base.js-t=201405220620040" tppabs="http://www.guahao.gov.cn/js/common/base.js?t=201405220620040" ></script>
+
+<script type="text/javascript">
+$(document).ready(function(){navInit();});
+/*
+* highOnclick(pId,curId)
+* curId 二级菜单当前ID名称
+*/
+var curStr="";
+if(curStr!="" && curStr!="null"){
+highOnclick(curStr);
+}
+function loginOut(){
+  $("form[name=quitLogin]").submit();
+}
+</script>
+<script type="text/javascript" src="formValidator.js-t=201608170420060" tppabs="http://www.guahao.gov.cn/js/urm/formValidator.js?t=201608170420060" charset="UTF-8"></script>
+
+<script type="text/javascript" src="md5.js-t=201310091125570" tppabs="http://www.guahao.gov.cn/js/common/md5.js?t=201310091125570"></script>	
+<script type="text/javascript">
+//回车事件提交
+document.onkeydown = function(){
+  var evt=document.all?window.event:arguments[0];
+  if(evt.keyCode==13){
+  $('form[name=pwdForm]').each(function() {
+    submitPwdForm();
+  });
+  }
+}
+function submitPwdForm () {
+  if(!chk_submit_pwd()){
+    return false;
+  }
+  $("#NEW_PWD_MD5").val(hex_md5($("#pwd").val()));
+  $("#RE_NEW_PWD_MD5").val(hex_md5($("#rePwd").val()));
+  var param = $("form[name='pwdForm']").serialize();
+  var burl="/findbackpwded.xhtml?r="+Math.random();
+  $.ajax({
+    url: burl,
+    dataType:"json",
+    data:param,
+    type: 'POST',
+    success: function(data){  
+      $("#stepB .sloading").hide();
+      if(data.GWA.MSG_CD == "PTS00000"){
+        alert('密码重置成功,请使用新密码进行登录！');
+        window.location="login.xhtml.htm"/*tpa=http://www.guahao.gov.cn/login.xhtml*/;
+      }else{
+        alert(data.GWA.MSG_DAT);
+      }
+    }
+  });
+  
+}
+/*发送验证码*/
+function sendMsg(){
+  var findWay=$("#findWay option:selected").val();
+  if(findWay == 1){
+    if(!chk_usrAct("login_name") || !chk_mblNo("phoneOrmail")){
+      return false;
+    }
+  }
+  if(findWay == 3){
+    if(!chk_cerNo("login_name") || !chk_mblNo("phoneOrmail")){
+      return false;
+    }
+  }
+  var name=$("#login_name").val();
+  var phoneOrmail=$("#phoneOrmail").val();
+  var cerTyp = $("#cerTyp").val();
+  $.ajax({
+    type: "POST",
+    url:"/ajx_chkpwd.xhtml?PHONE_OR_MAIL="+phoneOrmail+"&CER_OR_ACT="+name+"&FIND_WAY="+findWay+"&CER_TYP="+cerTyp+"&r="+Math.random(),
+    data: "",
+    dataType: "json",
+    success: function(data){
+      if(data.GWA.MSG_CD == "PTS00000"){
+        showTipInfo("verCdMsg",'验证码已发送至您的手机，请查看。');
+        $("#verCdMsgInfoDiv").attr("class","show_rule");
+        ddpack.sendMSCD('sendMsgF','60');
+      }else{
+        showTipInfo("verCdMsg",data.GWA.MSG_DAT);
+      }
+    }
+  });
+}
+</script>
+
+</body>
+</html>
+

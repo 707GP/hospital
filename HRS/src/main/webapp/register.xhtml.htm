@@ -1,0 +1,627 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />  
+
+<meta name="description" content="广州市统一预约挂号网_广州市卫生局主办，免费提供广州市多家公立医院的网上挂号、12320电话挂号、院内自助终端挂号服务，为您解决挂号难题。" />
+<meta name="keywords" content="新用户注册_预约挂号，预约挂号，广州挂号，12320挂号，网上挂号，挂号"/>
+<title>新用户注册_广州市统一预约挂号平台</title>
+
+<link rel="stylesheet" type="text/css" href="base.css-t=201305281140250.css" tppabs="http://www.guahao.gov.cn/css/common/base.css?t=201305281140250" />
+<link rel="stylesheet" type="text/css" href="common.css-t=201411240822230.css" tppabs="http://www.guahao.gov.cn/css/common/common.css?t=201411240822230" />
+<link rel="stylesheet" type="text/css" href="mod.css-t=201608171104400.css" tppabs="http://www.guahao.gov.cn/css/mod.css?t=201608171104400" />
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.20.custom.css-t=201303250411280.css" tppabs="http://www.guahao.gov.cn/js/common/jquery.ui.dialog_js/css/ui-lightness/jquery-ui-1.8.20.custom.css?t=201303250411280" />
+
+
+</head>
+<body>
+  <div class="bg_gray">
+    <div class="headerBg clearfix">
+      <div class="header2">
+        <p class="header-topTxt mb10">
+          <a href="index.xhtml.htm" tppabs="http://www.guahao.gov.cn/index.xhtml">首页</a>&nbsp;|&nbsp;<a href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml">预约指南</a>&nbsp;|&nbsp;<span>投诉电话：020-12320</span>
+        </p>
+        
+<p class="clearfix"><span class="logoTxt">注册</span><span class="hotPhone">预约热线：<b class="hotPhone-no">12320</b></span></p>
+
+      </div>
+    </div>
+    <div class="header-line mb15"></div>
+    
+<div class="bd brdD7 clearfix">
+<form action="" method="post" name="registerForm">
+  <div class="register-form">
+    <h3 class="content-hd"><b>注册信息</b><label class="c_orange">(*为必填项)</label></h3>
+    <ul class="form-content">
+      <li class="pb10">
+        <label class="form-label-l"><b class="c_orange">*</b>用户名：</label>
+        <span class="btn inputLgBg fl"><input type="text" class="inputTxt" id="usrAct" name="USR_ACT" note="用户名须以字母开头，以字母，数字和下划线组成，长度为6到18位之间！"  maxlength="18" onfocus="showNoteInfo(this);this.parentNode.className='btn inputLgBg_on fl';" onblur="this.parentNode.className='btn inputLgBg fl';"/></span>&nbsp;
+        <span id="usrActInfoDiv" class="show_rule"></span>
+      </li>
+      <li class="pb10">
+        <label class="form-label-l"><b class="c_orange">*</b>登录密码：</label>
+        <span class="btn inputLgBg fl"><input type="password" class=" inputTxt" id="pwd" onfocus="this.parentNode.className='btn inputLgBg_on fl'" onblur="this.parentNode.className='btn inputLgBg fl'" onkeyup="checkPwd(this.value);"/></span>
+        <span class="Monitoring"><em class="Strength0" id="pwlevel">密码强弱</em></span><span id="pwdInfoDiv" class="show_rule"></span>
+      </li>
+      <li class="pb10">
+        <label class="form-label-l"><b class="c_orange">*</b>确认密码：</label>
+        <span class="btn inputLgBg fl"><input type="password" class=" inputTxt" id="rePwd" onfocus="this.parentNode.className='btn inputLgBg_on fl'" onblur="this.parentNode.className='btn inputLgBg fl'"/></span>&nbsp;
+        <span id="rePwdInfoDiv" class="show_rule"></span>
+      </li>
+      <li class="pb10">
+        <label class="form-label-l"><b class="c_orange">*</b>真实姓名：</label>
+        <span class="btn inputLgBg fl"><input type="text" class="inputTxt" id="usrNm" name="USR_NM" maxlength="20" onfocus="this.parentNode.className='btn inputLgBg_on fl'" onblur="this.parentNode.className='btn inputLgBg fl'"/></span>&nbsp;
+        <span id="usrNmInfoDiv" class="show_rule"></span>
+      </li>
+      <li>
+        <label class="form-label-l">
+          <b class="c_orange">*</b>
+          <select name="CER_TYP" id="cerTyp" onchange="selectCerTyp();">
+            <option value="01">身份证号</option>
+            <option value="02">港澳通行证</option>
+            <option value="03">台湾通行证</option>
+          </select>
+        </label>
+        <span class="btn inputLgBg fl"><input type="text" class="inputTxt" id="cerNo" name="CER_NO"  maxlength="18" onfocus="this.parentNode.className='btn inputLgBg_on fl';" onblur="this.parentNode.className='btn inputLgBg fl'" onkeyup="javascript:value=value.toUpperCase();"/></span>&nbsp;
+        <span id="cerNoInfoDiv" class="show_rule"></span>
+      </li>
+      <li>
+        <label class="form-label-l"></label>
+        <span class="fl c_orange">请真实填写必填项，就诊需凭真实姓名，身份证或者港澳台证及手机号取号</span>
+      </li>
+      <li class="pb10">
+        <label class="form-label-l">&nbsp;</label>
+        <span class="fl c_orange">温馨提示：本系统仅限华侨医院、妇女儿童医疗中心支持港澳台用户使用通行证预约挂号，其他院区不支持</span>
+      </li>      
+      <li class="autoHLi pb10"><div class="dashedLine"></div></li>
+      <li class="pb10 infNoIdCard" style="display:none;" >
+        <label class="form-label-l"><b class="c_orange">*</b>性别：</label>
+        <input type="radio" name="USR_SEX" value="M" id="rM" checked="true"/><label for="rM">男</label>&nbsp;&nbsp;
+        <input type="radio" name="USR_SEX" value="F" id="rF"/><label for="rF">女</label>
+      </li>
+      <li class="pb10 infNoIdCard" style="display:none;" >
+        <label class="form-label-l"><b class="c_orange">*</b>出生日期：</label>
+        <span class="btn input_msg6 fl"><input type="text" onblur="this.parentNode.className='btn input_msg6 fl'" onfocus="this.parentNode.className='btn input_msg6_on fl'" maxlength="10" name="BIRTH_DT" id="birthDt" class="inputTxt" readonly></span>
+        <span class="show_rule" id="birthDtInfoDiv"></span>
+      </li>
+      <li class="autoHLi pb10 bindJkkSmkCard">
+        <label class="form-label-l">&nbsp;</label>
+        <span class="bind" id="bindJkk"><b class="icon fold"></b>绑定健康卡</span>&nbsp;&nbsp;
+        <span class="bind" id="bindSmk"><b class="icon fold"></b>绑定市民卡</span>
+      </li>
+      <li id="bindJkkInput" style="display:none;" class="pb10 bindCard">
+        <label class="form-label-l">健康卡号：</label>
+        <span class="btn inputLgBg fl"><input type="text" class="inputTxt" id="usrJkk" name="USR_JKK"  maxlength="16" onfocus="this.parentNode.className='btn inputLgBg_on fl'" onblur="this.parentNode.className='btn inputLgBg fl'"/></span>&nbsp;
+        <span id="usrJkkInfoDiv" class="show_rule"></span>
+      </li>
+      <li id="bindSmkInput" style="display:none;" class="pb10 bindCard">
+        <label class="form-label-l">市民卡号：</label>
+        <span class="btn inputLgBg fl"><input type="text" class="inputTxt" id="smkNo" name="SMK_NO"  maxlength="20" onfocus="this.parentNode.className='btn inputLgBg_on fl'" onblur="this.parentNode.className='btn inputLgBg fl'"/></span>
+        <span class="fl c_gray9">*请输入市民卡号或社会保障号码</span>&nbsp;
+        <span id="smkNoInfoDiv" class="show_rule"></span>
+      </li>
+      <li id="twmInput" style="display:none;" class="pb10 bindCard">
+        <label class="form-label-l">条纹码：</label>
+        <span class="btn inputLgBg fl"><input type="text" class="inputTxt" id="twmNo" name="TWM_NO"  maxlength="20" onfocus="this.parentNode.className='btn inputLgBg_on fl'" onblur="this.parentNode.className='btn inputLgBg fl'"/></span>&nbsp;
+        <span class="fl c_gray9">*绑定市民卡号须同时输入市民卡号对应的条纹码</span>&nbsp;
+        <span id="twmNoInfoDiv" class="show_rule"></span>
+      </li>
+      <li class="pb10">
+        <label class="form-label-l"><b class="c_orange">*</b>现居地：</label>
+        <span class="fl">
+          <select class="prov" id="provinceDiv" onchange="loadCity()"></select> 
+          <select style="display:none" id="cityDiv" onchange="loadCounty()"></select>
+          <select style="display:none" id="countyDiv" onchange="loadTown()"></select>
+          <select style="display:none" id="townDiv" onchange="fillTownName()"></select>
+        </span>
+      </li>
+      <li class="pb10">
+        <label class="form-label-l"><b class="c_orange">*</b>详细地址：</label>
+        <span class="fl" id="autoAddr"></span><span class="btn inputLgBg fl"><input id="usrAdd" class=" inputTxt" type="text" maxlength="100" onfocus="this.parentNode.className='btn inputLgBg_on fl'" onblur="checkaddrComplete();"></span>
+        <span id="usrAddInfoDiv" class="show_rule"></span>
+        <input type="hidden" name="USR_ADD" id="usrAddHid">
+      </li>
+      <li class="autoHLi pb10"><div class="dashedLine"></div></li>
+      <li class="pb10">
+				<label class="form-label-l"><b class="c_orange">*</b>图形验证码：</label>
+				<span class="btn input_msg4 fl"><input class="inputTxt" maxlength="4" type="text" id="VER_CD" name="VER_CD" onfocus="this.parentNode.className='btn input_msg4_on fl'" onblur="this.parentNode.className='btn input_msg4 fl'"></span><img class="ver_img ml10" id="divCode" src="codeImage.jsp.jpg" tppabs="http://www.guahao.gov.cn/pmodule/include/codeImage.jsp" width="70" height="30"><a href="javascript:;" onclick="updateCode();return false" class="aStyle">换一张</a>
+      	<span class="show_err" id="verCdInfoDiv"></span>
+      </li>
+      <li class="pb10">
+        <label class="form-label-l"><b class="c_orange">*</b>手机号：</label>
+        <span class="btn inputLgBg fl"><input type="text" class="inputTxt" id="mblNo" name="MBL_NO" maxlength="13" onfocus="this.parentNode.className='btn inputLgBg_on fl'" onblur="this.parentNode.className='btn inputLgBg fl'" /></span>&nbsp;
+        <span id="mblNoInfoDiv" class="show_rule"></span></li>
+      <li class="pb10">
+        <label class="form-label-l"><b class="c_orange">*</b>验证码：</label>
+        <span class="btn input_msg6 fl"><input type="text" onblur="this.parentNode.className='btn input_msg6 fl'" onfocus="this.parentNode.className='btn input_msg6_on fl'" maxlength="6" name="VER_CD_MSG" id="verCdMsg" class="inputTxt"></span>&nbsp;&nbsp;&nbsp;<input type="button" value="获取验证码" id="sendMSCD_reg" class="btn btn04">
+        <span class="show_rule" id="verCdMsgInfoDiv"></span>
+      </li>
+      
+      <li class="mb20">
+        <label class="form-label-l">&nbsp;</label>
+        <div class="agree"><input type="checkbox" onclick="chkAgree()" checked="checked" id="agreeChk"><label for="agreeChk">我已阅读并同意遵守</label><a onclick="qryAgreemnet();" href="javascript:void(0);" class="checkA">《预约挂号协议》</a><span id="agreeChkInfoDiv">&nbsp;</span></div>
+      </li>
+      <li><label class="form-label-l">&nbsp;</label><input type="button" value='注  册' onclick="submitRegForm();" class="btn btn_login fl"/></li>
+    </ul>
+  </div>
+  <input type="hidden" name="USR_NO" id="usrNo" value="">
+  <input type="hidden" name="PWD" id="PWD_MD5">
+  <input type="hidden" name="RE_PWD" id="RE_PWD_MD5">
+  <input type="hidden" name="USR_ADD_ID" id="USR_ADD_ID"><!--用户选择的地址的编码-->
+  <input type="hidden" name="USR_ADD_DTL" id="USR_ADD_DTL"><!--用户选择的地址全称-->
+  <input type="hidden" name="ADD_ID" id="ADD_ID" value=""><!--地址id-->
+  <input type="hidden" name="ADD_CODE" id="ADD_CODE" value="ZG"><!--地址编码-->
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="tipsContent mt10" id="resAgreement" style="display:none;">
+    <div style="background-color: #FFFFFF;border: 2px solid #D7D7D7;display: block; height: 290px;overflow-y: scroll;width: 634px;padding:10px;">
+        <p>为保证您成功预约挂号，请您认真阅读以下服务须知：</p>
+        <p><span class="fb">第一条 预约挂号途径：</span>广州市预约诊疗系统提供12320电话预约、网络预约、医院自助挂号机预约三种预约挂号方式。</p>
+        <p>预约电话：12320（广东省用户）/020-12320（非广东省用户）</p>
+        <p>网络预约网址：http://guahao.gzmed.gov.cn</p>
+        <p><span class="fb">第二条 服务时间：</span>电话预约、网络预约提供全年全天候的预约挂号服务，医院自助挂号机预约与医院门诊服务时间同步。</p>
+        <p><span class="fb">第三条 预约挂号范围：</span>医院可预约的专家号或普通号，以网站和自助挂号机公示为准。</p>
+        <p><span class="fb">第四条    实名预约：</span>预约挂号采取实名制。预约时，必须提供患者的姓名、身份证号、手机号；同时患者使用市民卡或实名登记的健康卡能获得更快捷的预约服务。对于未满14岁的儿童，需提供监护人的姓名、身份证号。</p>
+        <p><span class="fb">第五条 预约凭证：</span>一、电话预约。患者拨打12320后，报身份证号或实名健康卡号后进行预约；二、网络预约。患者可凭身份证、市民卡、实名健康卡或医保卡在预约诊疗网站注册后（实名健康卡可直接登录），使用网络预约；三、自助挂号机。患者可凭身份证、市民卡、实名健康卡或医保卡在挂号机上进行自助预约。</p>
+        <p><span class="fb">第六条 预收费及支付：</span>通过网络预约和自助挂号机预约时，需预缴挂号费和诊金（全额支付，不享受政策减免），患者可使用具有银联标志的银行卡进行支付。部分医院的自助挂号机支持羊城通支付，具体以医院公示信息为准。[不享受政策减免]。12320电话预约不预缴挂号费和诊金，预约患者到医院取号时再进行缴纳。</p>
+        <p><span class="fb">第七条 预约生效：</span>通过网络或自助挂号机预约的患者提交预约订单后，系统会提示进行挂号费和诊金的支付，请在30分钟内完成支付，支付成功后预约生效；如果在30分钟内没有完成支付，系统自动收回号源，则本次预约无效。12320电话预约不受此规则限制。</p>
+        <p><span class="fb">第八条 就诊取号：</span>就诊当天，预约患者需持预约时提供的有效证件，提前半小时到医院指定窗口或自助挂号机上取号就诊。未预缴挂号费和诊金的预约患者，需完成缴费后取号就诊，窗口和自助挂号机均可缴费。超过取号时间或提供的证件和预约时不符则不能取号。如果需要挂号收费票据，请到门诊挂号窗口索取。</p>
+        <p><span class="fb">第九条 退号规定：</span>因故不能按时就诊的患者，请在就诊日前一天的24时以前申请取消预约。通过电话预约的患者请致电12320取消预约；通过网络预约、自助挂号机预约的患者请登录广州市预约诊疗网站取消预约；各渠道预约患者均可到医院窗口取消预约。
+        <p><span class="fb">第十条 医生停诊告知：</span>电话预约的患者，由12320以人工方式告知患者停诊信息；网络预约和自助挂号机预约的患者由以短信形式通知到预约患者,或由医院以人工告知预约患者。所有停诊信息都在广州市预约诊疗网站发布。</p>
+        <p><span class="fb">第十一条  退费处理：</span>对于已预缴挂号费的患者，成功申请取消预约或医生停诊导致预约失效，预约系统会将已收取的费用退至患者的预约时的支付账户，并以短信方式通知患者。在自助挂号机使用羊城通付费的患者，须持有预约时的有效身份证件到医院窗口办理退费。
+        <p><span class="fb">第十二条  预约限制：</span>为防止恶意占用号源，系统对预约次数进行限制管理，具体规则如下：</p>
+        <ul>
+            <li>(1) 预约每天不能超过2次；</li>
+            <li>(2) 预约每月不能超过6次；</li>
+            <li>(3) 3个月爽约次数累计不能超过3次；</li>
+            <li>(4) 每天申请取消预约不能超过2次。</li>
+        </ul>
+    </div>
+    <div class='btn_box' style='height: 26px;text-align:center;margin:15px 0px;'>
+        <input type="button" class="btn btn03" onclick="closeUiDialog('resAgreement');" value="确定">
+    </div>
+</div>
+
+    <div class="clearfix"></div>
+  </div>
+
+<div class="bg_gray">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+    <div class="line_bt"></div>
+    <div class="footer-content">
+        <div class="footer-logo"><span></span></div>
+        <span class="ml10">地址：广州市东风西路182号</span>
+        <span class="ml10">技术支持：广州市卫生信息中心</span>
+        <span class="ml10">广州市卫生和计划生育委员会版权所有</span><br>
+        <span class="ml10">粤ICP备12059770号</span>
+        <span class="ml10"><a target="_blank" href="javascript:if(confirm('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394'" tppabs="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394"><img style="vertical-align:middle" src="beian.png" tppabs="http://www.guahao.gov.cn/images/common/beian.png"/>&nbsp;粤公网安备&nbsp;44010402000394号</a></span>&nbsp;
+        <script src="stat.php-id=4589427&web_id=4589427&show=pic1" tppabs="http://s25.cnzz.com/stat.php?id=4589427&web_id=4589427&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="jquery.js-t=201201101201560" tppabs="http://www.guahao.gov.cn/js/common/jquery.js?t=201201101201560" ></script>
+<script type="text/javascript" src="jquery-ui-1.8.20.custom.min.js-t=201208070830560" tppabs="http://www.guahao.gov.cn/js/common/jquery.ui.dialog_js/js/jquery-ui-1.8.20.custom.min.js?t=201208070830560"></script>
+<script type="text/javascript" src="base.js-t=201405220620040" tppabs="http://www.guahao.gov.cn/js/common/base.js?t=201405220620040" ></script>
+
+<script type="text/javascript">
+$(document).ready(function(){navInit();});
+/*
+* highOnclick(pId,curId)
+* curId 二级菜单当前ID名称
+*/
+var curStr="";
+if(curStr!="" && curStr!="null"){
+highOnclick(curStr);
+}
+function loginOut(){
+  $("form[name=quitLogin]").submit();
+}
+</script>
+<script type="text/javascript" src="formValidator.js-t=201608170420060" tppabs="http://www.guahao.gov.cn/js/urm/formValidator.js?t=201608170420060" charset="UTF-8"></script>
+
+<!--<script type="text/javascript" src="/js/common/cityselect/jquery.cityselect.js?t=201305240510020" charset="UTF-8"></script>-->
+<script type="text/javascript" src="md5.js-t=201310091125570" tppabs="http://www.guahao.gov.cn/js/common/md5.js?t=201310091125570"></script>	
+<script type="text/javascript" src="lhgcalendar.min.js-t=201312020356070" tppabs="http://www.guahao.gov.cn/js/common/lhgcalendar/lhgcalendar.min.js?t=201312020356070" ></script>
+<script type="text/javascript">
+//地址编码拼接
+var privince_code_id="",city_code_id="",county_code_id="",town_code_id="",total_code_id="";
+function selectCerTyp(){
+  $("#cerNo").val("");
+  if($("#cerTyp").val()=="01"){
+    $(".bindJkkSmkCard").show();
+    $(".infNoIdCard").hide().find("input").val("");
+  }else{
+    $(".bindJkkSmkCard").hide();
+    $(".bindCard").hide();
+    $(".bindJkkSmkCard").find("b").removeClass("unfold").addClass("fold");
+    $(".infNoIdCard").show();
+  }
+}
+
+$(function(){
+  var _date = new Date();
+  var date = _date.getFullYear()+"-"+formDate(_date.getMonth()+1)+"-"+formDate(_date.getDate());
+  //$('#birthDt').val(date);
+  $('#birthDt').calendar({maxDate:'%y-%M-%d'});
+});
+function formDate(date){
+  if(date>0&date<10){date="0"+date;}
+  return date;
+}
+/*地址查询*/
+$(function(){
+/*$("#city").citySelect({
+    prov:"广东", 
+    city:"广州",
+    nodata:"none"
+  });*/
+  unitLoadCity();
+}); 
+//回车事件提交
+document.onkeydown = function(){
+  var evt=document.all?window.event:arguments[0];
+  if(evt.keyCode==13){
+  $('form[name=registerForm]').each(function() {
+    submitRegForm();
+  });
+  }
+}
+function submitRegForm() {
+  if(chk_submit_reg()){
+  	fullCode();//地址拼接
+    $("#usrAddHid").val($("#autoAddr").text()+$("#usrAdd").val());
+    $("#USR_ADD_DTL").val($("#usrAdd").val());
+    $("#PWD_MD5").val(hex_md5($("#pwd").val()));
+  	$("#RE_PWD_MD5").val(hex_md5($("#rePwd").val()));
+    var param=$("form[name=registerForm]").serialize();
+    $.ajax({
+      url: "/registered.xhtml?r="+Math.random(),
+      type: 'post',
+      dataType: 'json',
+      data: param,
+      contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+      success: function(data) {
+        if(data.GWA.MSG_CD == 'PTS00000'){
+          alert("注册成功！");
+          window.location.href="login.xhtml.htm"/*tpa=http://www.guahao.gov.cn/login.xhtml*/;//登录后跳到首页
+        }else{
+          alert(data.GWA.MSG_DAT);
+        }
+      }
+    });
+  }
+}
+/*刷新验证码*/
+function updateCode(){
+  var verify=document.getElementById('divCode');
+  var radom=Math.random();
+  verify.setAttribute('src','/pmodule/include/codeImage.jsp?'+radom);
+}
+/*预约挂号协议*/
+function qryAgreemnet(){
+    $("#resAgreement").attr("display","block");
+    $("#resAgreement").dialog('open');
+}
+$("#resAgreement").dialog({
+    autoOpen:false,
+    width:690,
+    height:440,
+    modal:true,
+    draggable:true,
+    resizable:false,
+    title:'预约挂号须知'
+});
+
+$("#sendMSCD_reg").click(function(){
+	if(!checkaddrComplete()){return false;}
+  var MBL_NO = $("#mblNo").val();
+  var CER_NO = $("#cerNo").val();
+  var CER_TYP = $("#cerTyp").val();
+  var VER_CD = $("#VER_CD").val();
+  if(!chk_cerNo("cerNo") || !chk_mblNo("mblNo")){
+    return false;
+  }
+  if($("#VER_CD").length != "0"){
+    var verCd = $.trim($("#VER_CD").val()).replace(/\s/g, '');
+    var _cdreg = /^\d{4}$/;
+    if(verCd == "" || verCd == null || !_cdreg.test(verCd)){
+      $("#verCdInfoDiv").show().html("请输入4位数字的图形验证码！");
+      return false;
+    }
+  }
+  $.ajax({
+    type: "POST",
+    url:"/sendMsg.xhtml?MBL_NO="+MBL_NO+"&CER_NO="+CER_NO+"&CER_TYP="+CER_TYP+"&VER_CD="+VER_CD+"&BUS_TYP=1&r="+Math.random(),
+    data: "",
+    dataType: "json",
+    success: function(data){
+      if(data.GWA.MSG_CD == "PTS00000"){
+        showTipInfo("verCdMsg",'验证码已发送至您的手机，请查看。','show_rule');
+        ddpack.sendMSCD('sendMSCD_reg','60');
+      }else{
+        showTipInfo("verCdMsg",data.GWA.MSG_DAT);
+      }
+    }
+  });
+});
+
+$(".bind").toggle(
+  function () {
+    $(this).find("http://www.guahao.gov.cn/b.icon").removeClass("fold").addClass("unfold");
+    $("#"+$(this).attr("id")+"Input").show();
+    if($(this).attr("id") == 'bindSmk'){
+      $("#twmInput").show();
+    }
+  },
+  function () {
+    $(this).find("http://www.guahao.gov.cn/b.icon").removeClass("unfold").addClass("fold");
+    $("#"+$(this).attr("id")+"Input").hide();
+    $("#"+$(this).attr("id")+"Input").find("input").val("");
+    if($(this).attr("id") == 'bindSmk'){
+      $("#twmInput").hide();
+      $("#twmInput").find("input").val("");
+    }
+  }
+);
+/**地址优化**/
+function unitLoadCity(){//初始省级加载
+		var ohtml = "<option value='0'>请选择</option>";
+		var ADD_CODE = $("#ADD_CODE").val();
+		$.ajax({
+    type: "POST",
+    url:"/add_input.xhtml?ADD_CODE="+ADD_CODE+"&r="+Math.random(),
+    data: "",
+    dataType: "json",
+    success: function(data){
+      if(data.GWA.MSG_CD == "PTS00000"){
+      	var cityHtml = ohtml;
+        if(data.REC){
+        	for(var key in data.REC)
+        		 	cityHtml += "<option value='"+data.REC[key].ADD_CODE+"'>"+data.REC[key].ADD_NAME+"</option>";
+        }
+        $("#provinceDiv").html(cityHtml);
+      }
+    }	
+		});
+}
+function loadCity(){
+		var ohtml = "<option value='0'>请选择</option>";
+		var cityEl = $("#provinceDiv option:selected");
+		var provinceId = cityEl.val();
+		var provinceName = cityEl.text();
+		var ADD_CODE = provinceId;
+		privince_code_id = provinceId;
+		city_code_id="",county_code_id="",town_code_id="",total_code_id="";
+		$("#autoAddr").html(provinceName);
+		if(provinceId>0){
+				$.ajax({
+		    type: "POST",
+		    url:"/add_input.xhtml?ADD_CODE="+ADD_CODE+"&r="+Math.random(),
+		    data: "",
+		    dataType: "json",
+		    success: function(data){
+		      if(data.GWA.MSG_CD == "PTS00000"){
+		      	var cityHtml = ohtml;
+		        if(data.REC){
+		        	for(var key in data.REC)
+		        		 	cityHtml += "<option value='"+data.REC[key].ADD_CODE+"'>"+data.REC[key].ADD_NAME+"</option>";
+		        }
+		        $("#cityDiv").html(cityHtml).show();
+		        $("#countyDiv").hide();
+		        $("#townDiv").hide();
+		      }
+		    },
+		    error : function(XMLHttpResponse) {
+				}
+				});
+		}else{
+			$("#cityDiv").hide();
+			$("#countyDiv").hide();
+		  $("#townDiv").hide();
+		  $("#autoAddr").html("");
+		}
+}
+function loadCounty(){
+		var ohtml = "<option value='0'>请选择</option>";
+		var cityEl = $("#cityDiv option:selected");
+		var cityId = cityEl.val();
+		if(cityId=='0'){$("#countyDiv").empty();$("#townDiv").empty();}
+		var provinceName = $("#provinceDiv option:selected").text();
+		var cityName = cityEl.text();
+		var ADD_CODE = cityId;
+		city_code_id = cityId;
+		county_code_id="",town_code_id="",total_code_id="";
+		$("#autoAddr").html(provinceName + cityName);
+		if(cityId>0){
+			$.ajax({
+	    type: "POST",
+	    url:"/add_input.xhtml?ADD_CODE="+ADD_CODE+"&r="+Math.random(),
+	    data: "",
+	    dataType: "json",
+	    success: function(data){
+	      if(data.GWA.MSG_CD == "PTS00000"){
+	      	var cityHtml = ohtml;
+	        if(data.REC){
+	        	for(var key in data.REC)
+	        		 	cityHtml += "<option value='"+data.REC[key].ADD_CODE+"'>"+data.REC[key].ADD_NAME+"</option>";
+	        }
+	        $("#countyDiv").html(cityHtml).show();
+	        $("#townDiv").hide().empty();
+	      }
+	    },
+	    error : function(XMLHttpResponse){
+			}
+			});
+		}else{
+			$("#countyDiv").hide();
+			$("#townDiv").hide().empty();
+			$("#autoAddr").html(provinceName);
+	}
+}
+function loadTown(){
+		var ohtml = "<option value='0'>请选择</option>";
+		var countyEl = $("#countyDiv option:selected");
+		var countyId = countyEl.val();
+		if(countyId=='0'){$("#townDiv").hide().empty();town_code_id="",total_code_id="";}
+		var provinceName = $("#provinceDiv option:selected").text();
+		var cityName = $("#cityDiv option:selected").text();
+		var countyName = countyEl.text();
+		var ADD_CODE = countyId;
+		county_code_id = countyId;
+		town_code_id="",total_code_id="";
+		$("#ADD_CODE").val(countyId);
+		if(countyId>0){
+				$.ajax({
+		    type: "POST",
+		    url:"/add_input.xhtml?ADD_CODE="+ADD_CODE+"&r="+Math.random(),
+		    data: "",
+		    dataType: "json",
+		    success: function(data){
+		      if(data.GWA.MSG_CD == "PTS00000"){
+		      	var cityHtml = ohtml;
+		        if(data.REC){
+		        	for(var key in data.REC)
+		        		 	cityHtml += "<option value='"+data.REC[key].ADD_CODE+"'>"+data.REC[key].ADD_NAME+"</option>";
+		        }
+		        $("#ADD_CODE").val(countyId);
+		        $("#USR_ADD_ID").val(countyId);
+		        $("#townDiv").html(cityHtml).show();
+						$("#autoAddr").html(provinceName + cityName + countyName);
+		      }else{
+		      	$("#townDiv").hide();
+		      	town_code_id="";	
+		      }
+		    },
+		    error : function(XMLHttpResponse) {
+				}
+				});
+		}else{
+			$("#townDiv").hide();
+			$("#autoAddr").html(provinceName + cityName );
+			town_code_id="";	
+		}
+}
+function fillTownName(){
+		var townEl = $("#townDiv option:selected");
+		var townId = townEl.val();
+		var provinceName = $("#provinceDiv option:selected").text();
+		var cityName     = $("#cityDiv option:selected").text();
+		var countyName   = $("#countyDiv option:selected").text();
+		var townName = townEl.text();
+		$("#ADD_CODE").val(townId);
+		$("#USR_ADD_ID").val(townId);
+		town_code_id="",total_code_id="";
+		if(townId>0){
+			town_code_id = townId;
+			$("#autoAddr").html(provinceName + cityName + countyName + townName);
+		}else{
+			$("#autoAddr").html(provinceName + cityName + countyName);
+		}
+}
+//地址编码拼接
+function fullCode(){
+	if(town_code_id !=""&&town_code_id!='undefined'){
+		total_code_id = privince_code_id +"|"+ city_code_id +"|"+ county_code_id +"|"+town_code_id;
+	}else{
+		total_code_id = privince_code_id +"|"+ city_code_id +"|"+ county_code_id +"|"+county_code_id;
+	}
+	$("#USR_ADD_ID").val(total_code_id);
+}
+//验证地址输入的完整性
+function checkaddrComplete(){
+		var usradd = $("#usrAdd").val();
+		if(privince_code_id==""||city_code_id==""||county_code_id==""||town_code_id==""){
+				$("#usrAddInfoDiv").removeClass("show_rule").addClass("show_err");
+				$("#usrAddInfoDiv").show().html("请选择完整地址");
+      	return false;
+		}else if(usradd==""||usradd==null){
+				$("#usrAddInfoDiv").removeClass("show_rule").addClass("show_err");
+				$("#usrAddInfoDiv").show().html("请填写详细地址");
+      	return false;
+		}
+		return true;
+}
+</script>
+
+</body>
+</html>
+

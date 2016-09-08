@@ -1,0 +1,1950 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+
+<meta name="description" content="医生号源，医生列表，科室的简介，科室内每个医生一个星期内的号源情况" />
+<meta name="keywords" content="医生号源，医生列表，号源，预约挂号，广州挂号，12320挂号，网上挂号，挂号"/>
+<title>医生号源_按疾病预约_广州市统一预约挂号平台</title>
+
+<link rel="stylesheet" type="text/css" href="base.css-t=201305281140250.css" tppabs="http://www.guahao.gov.cn/css/common/base.css?t=201305281140250" />
+<link rel="stylesheet" type="text/css" href="common.css-t=201411240822230.css" tppabs="http://www.guahao.gov.cn/css/common/common.css?t=201411240822230" />
+<link rel="stylesheet" type="text/css" href="mod.css-t=201608171104400.css" tppabs="http://www.guahao.gov.cn/css/mod.css?t=201608171104400" />
+<script type="text/javascript" src="jquery.js-t=201201101201560" tppabs="http://www.guahao.gov.cn/js/common/jquery.js?t=201201101201560" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.20.custom.css-t=201303250411280.css" tppabs="http://www.guahao.gov.cn/js/common/jquery.ui.dialog_js/css/ui-lightness/jquery-ui-1.8.20.custom.css?t=201303250411280" />
+
+</head>
+<body>
+<div class="wrap">
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="headerBg clearfix">
+    <div class="header">
+        <p class="header-topTxt mb10">
+            
+            <a href="login.xhtml.htm" tppabs="http://www.guahao.gov.cn/login.xhtml">登录</a>&nbsp;|&nbsp;<a href="login.xhtml-goto=-usrinfo.xhtml.htm#orderList" tppabs="http://www.guahao.gov.cn/usrinfo.xhtml#orderList">我的订单</a>&nbsp;|&nbsp;<a href="register.xhtml.htm" tppabs="http://www.guahao.gov.cn/register.xhtml">注册</a>&nbsp;|&nbsp;<a href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml">预约指南</a>&nbsp;|&nbsp;<span>投诉电话：020-12320</span>
+            
+            
+        </p>
+        <p class="header-logo"><span class="hotPhone">预约热线：<b class="hotPhone-no">020-12320</b></span></p>
+        <form action="quit_login.xhtml.htm" tppabs="http://www.guahao.gov.cn/quit_login.xhtml"  method="post" name="quitLogin"></form>
+    </div>
+</div>
+<div style="width:960px;margin:0 auto;display:none;" id="noticBlock" >
+<div style="float:left;border:1px solid #FECB66;width:938px;padding:10px;background-color:#FEFEE4;color:#FE0000;">
+	<p>尊敬的用户：</p>
+	<p style="text-indent:2em;" id="comNoticeCnt"></p>
+</div>
+</div>
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="menuBar mb15 clearfix">
+    <div class="menu menuL"></div>
+    <div class="menuX menu_nav">
+        <ul class="top">
+            <li><a class="on" id="01" href="index.xhtml.htm" tppabs="http://www.guahao.gov.cn/index.xhtml" item="#index" title="首页">首&nbsp;页</a></li>
+            <li><a id="02" href="hospitallist.xhtml.htm" tppabs="http://www.guahao.gov.cn/hospitallist.xhtml" item="#reserve">挂号服务</a></li>
+            <li><a id="03" href="login.xhtml-goto=-usrinfo.xhtml.htm" tppabs="http://www.guahao.gov.cn/usrinfo.xhtml" item="#regmng">预约管理</a></li>
+            <li><a id="06" href="login.xhtml-goto=-payment_mng.xhtml.htm" tppabs="http://www.guahao.gov.cn/payment_mng.xhtml">缴费管理</a></li>
+            <li><a id="04" href="flow_ghbyweb.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml" item="#help">预约指南</a></li>
+            <li><a id="05" href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml" item="#notice">通知及反馈</a></li>
+            <li><a id="07" href="download_client.xhtml.htm" tppabs="http://www.guahao.gov.cn/download_client.xhtml" item="#download">客户端下载</a></li>
+        </ul>
+        <div style="clear:both;display:block;"></div>
+        <ul id="reserve" class="bot" style="display:none;padding-left:84px;">
+            <li><a id="0201" title="预约挂号" href="hospitallist.xhtml.htm" tppabs="http://www.guahao.gov.cn/hospitallist.xhtml"><span>预约挂号</span></a></li>
+            <li><a id="0202" title="当天挂号" href="javascript:if(confirm('http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow  \n\n该文件无法用 Teleport Ultra 下载, 因为 服务器报告发生错误, 阻止了下载。  \n\n你想在服务器上打开它?'))window.location='http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow'" tppabs="http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow"><span>当天挂号</span></a></li>
+        </ul>
+        <ul id="help" class="bot" style="display:none;padding-left:150px;">
+            <li><a id="0402" title="预约挂号须知" href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml"><span>预约挂号须知</span></a></li>
+            <li><a id="0401" title="预约挂号指南" href="flow_ghbyweb.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml"><span>预约挂号指南</span></a></li>
+            <li><a id="0403" title="常见疾病对应科室" href="comdis.xhtml.htm" tppabs="http://www.guahao.gov.cn/comdis.xhtml"><span>常见疾病对应科室</span></a></li>
+            <li><a id="0404" title="常见问题" href="questions1.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions1.xhtml"><span>常见问题</span></a></li>
+        </ul>
+        
+        
+            <ul id="notice" class="bot" style="display:none;padding-left:490px;">
+        
+            
+            <li><a id="0501" title="停诊通知" href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml"><span>停诊通知</span></a></li>
+            
+        </ul>
+        <!-- <div style="clear:both;display:block;"></div> -->
+    </div>
+    <div class="menu menuR"></div>
+</div>
+  
+  <div class="bd">
+    <div class="clearfix brdD7">
+        
+      
+      
+<form action="docSrc_bydis.xhtml-DIS_ID=010101&ARE_ID=&HIS_CD=&HIS_LVL=&TIT_NM=&IS_EXP=&KEY_WORD=.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010101&ARE_ID=&HIS_CD=&HIS_LVL=&TIT_NM=&IS_EXP=&KEY_WORD=" method="get" name="searchForm">
+  <div class="selectArea">
+    <ul id="areaList" class="content-tab2 mb10"></ul>
+    <div class="popLayer mb10" style="display:none;"></div>
+    <ul id="isExpList" class="content-tab2 mb10">
+      <li>医生等级：</li><li><a class='key' dat="" href="javascript:;">不限</a></li><li><a class='key' href="javascript:;" dat="0">普通</a></li><li><a class='key' href="javascript:;" dat="1">专家</a></li></ul>
+  </div>
+  <input type="hidden" name="DIS_ID" value="010101">
+  <input type="hidden" name="ARE_ID" value="" id="areId">
+  <input type="hidden" name="HIS_CD" value="" id="hisCd">
+  <input type="hidden" name="HIS_LVL" value="" id="hisLvl">
+  <input type="hidden" name="TIT_NM" value="" id="titNm">
+  <input type="hidden" name="IS_EXP" value="" id="isExp">
+  <input type="hidden" name="KEY_WORD" value="" >
+</form>
+<div class="clearfix"></div>
+<div class="dateBar">
+    <span class="bg_dateBarL"></span><span class="bg_dateBarR"></span><span class="title">专家/专病</span>
+    
+        
+        
+        
+            <ul class="dateBar-dateList page1" style='display:block'>
+                <li class="first"><span>&nbsp;</span></li>
+                
+                    <li><span>09/09<br/>(周五)</span></li>
+                
+                    <li><span>09/10<br/>(周六)</span></li>
+                
+                    <li><span>09/11<br/>(周日)</span></li>
+                
+                    <li><span>09/12<br/>(周一)</span></li>
+                
+                    <li><span>09/13<br/>(周二)</span></li>
+                
+                    <li><span>09/14<br/>(周三)</span></li>
+                
+                    <li><span>09/15<br/>(周四)</span></li>
+                
+            </ul>
+        
+            <ul class="dateBar-dateList page2" style='display:none'>
+                <li class="first"><span>&nbsp;</span></li>
+                
+                    <li><span>09/16<br/>(周五)</span></li>
+                
+                    <li><span>09/17<br/>(周六)</span></li>
+                
+                    <li><span>09/18<br/>(周日)</span></li>
+                
+                    <li><span>09/19<br/>(周一)</span></li>
+                
+                    <li><span>09/20<br/>(周二)</span></li>
+                
+                    <li><span>09/21<br/>(周三)</span></li>
+                
+                    <li><span>09/22<br/>(周四)</span></li>
+                
+            </ul>
+        
+    
+    <a class="icon turn_left2" id="trunLeft" href="javascript:;" style="display:none;"></a>
+    <a class="icon turn_right2" id="trunRight" href="javascript:;"></a>
+</div>
+<div class="docWrap mb20 clearfix" id="doctorList">
+  
+    <div class="doctor">
+      <div class="doctor-info .docInfo-w-h">
+        <a class="A_img" href="doc_detail.xhtml-HIS_CD=1004&DEP_ID=0671&DOC_ID=0697.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1004&DEP_ID=0671&DOC_ID=0697"><img alt="吴振英" src="doctor.jpg" tppabs="http://www.guahao.gov.cn/images/doctor.jpg" height="106"  width="85" /></a>
+        <div class="doctor-info-block">
+          <p><a class="c_orange" href="doc_detail.xhtml-HIS_CD=1004&DEP_ID=0671&DOC_ID=0697.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1004&DEP_ID=0671&DOC_ID=0697">吴振英</a></p>
+          <p>主治医师&nbsp;&nbsp;呼吸科门诊(沿江)</p>
+          <p>广州医科大学附属第一医院</p>
+          <p>简介： </p>
+        </div>
+      </div>
+      <div class="doc-scheduleL-block">
+        <div class="doc-scheduleL">
+          <ul class="left">
+            <li><span>上午</span><span>下午</span><span>晚上</span></li>
+          </ul>
+              
+              
+              
+              <ul class="right page1" style='display:block'>
+              
+                <li>
+                  <span id="06972016-09-091"></span>
+                  <span id="06972016-09-092"></span>
+                  <span id="06972016-09-093"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(true ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0697\",\"吴振英\",\"2016-09-09\",\"1\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0697\",\"吴振英\",\"2016-09-09\",\"1\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#06972016-09-091").html(ddInfo);
+                    </script>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(true ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0697\",\"吴振英\",\"2016-09-09\",\"2\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0697\",\"吴振英\",\"2016-09-09\",\"2\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#06972016-09-092").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="06972016-09-101"></span>
+                  <span id="06972016-09-102"></span>
+                  <span id="06972016-09-103"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(true ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0697\",\"吴振英\",\"2016-09-10\",\"1\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0697\",\"吴振英\",\"2016-09-10\",\"1\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#06972016-09-101").html(ddInfo);
+                    </script>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(true ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0697\",\"吴振英\",\"2016-09-10\",\"2\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0697\",\"吴振英\",\"2016-09-10\",\"2\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#06972016-09-102").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="06972016-09-111"></span>
+                  <span id="06972016-09-112"></span>
+                  <span id="06972016-09-113"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="06972016-09-121"></span>
+                  <span id="06972016-09-122"></span>
+                  <span id="06972016-09-123"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(true ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0697\",\"吴振英\",\"2016-09-12\",\"1\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0697\",\"吴振英\",\"2016-09-12\",\"1\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#06972016-09-121").html(ddInfo);
+                    </script>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(false ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0697\",\"吴振英\",\"2016-09-12\",\"2\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0697\",\"吴振英\",\"2016-09-12\",\"2\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#06972016-09-122").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="06972016-09-131"></span>
+                  <span id="06972016-09-132"></span>
+                  <span id="06972016-09-133"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="06972016-09-141"></span>
+                  <span id="06972016-09-142"></span>
+                  <span id="06972016-09-143"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(false ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0697\",\"吴振英\",\"2016-09-14\",\"1\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0697\",\"吴振英\",\"2016-09-14\",\"1\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#06972016-09-141").html(ddInfo);
+                    </script>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(false ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0697\",\"吴振英\",\"2016-09-14\",\"2\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0697\",\"吴振英\",\"2016-09-14\",\"2\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#06972016-09-142").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="06972016-09-151"></span>
+                  <span id="06972016-09-152"></span>
+                  <span id="06972016-09-153"></span>
+                  
+                </li>
+              
+              </ul>
+            
+              <ul class="right page2" style='display:none'>
+              
+                <li>
+                  <span id="06972016-09-161"></span>
+                  <span id="06972016-09-162"></span>
+                  <span id="06972016-09-163"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="06972016-09-171"></span>
+                  <span id="06972016-09-172"></span>
+                  <span id="06972016-09-173"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="06972016-09-181"></span>
+                  <span id="06972016-09-182"></span>
+                  <span id="06972016-09-183"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="06972016-09-191"></span>
+                  <span id="06972016-09-192"></span>
+                  <span id="06972016-09-193"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="06972016-09-201"></span>
+                  <span id="06972016-09-202"></span>
+                  <span id="06972016-09-203"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="06972016-09-211"></span>
+                  <span id="06972016-09-212"></span>
+                  <span id="06972016-09-213"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="06972016-09-221"></span>
+                  <span id="06972016-09-222"></span>
+                  <span id="06972016-09-223"></span>
+                  
+                </li>
+              
+              </ul>
+            
+          <div class="bg_head"></div><div class="bLine1"></div><div class="bLine2"></div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="doctor">
+      <div class="doctor-info .docInfo-w-h">
+        <a class="A_img" href="doc_detail.xhtml-HIS_CD=1004&DEP_ID=0671&DOC_ID=0707.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1004&DEP_ID=0671&DOC_ID=0707"><img alt="杨劲松" src="doctor.jpg" tppabs="http://www.guahao.gov.cn/images/doctor.jpg" height="106"  width="85" /></a>
+        <div class="doctor-info-block">
+          <p><a class="c_orange" href="doc_detail.xhtml-HIS_CD=1004&DEP_ID=0671&DOC_ID=0707.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1004&DEP_ID=0671&DOC_ID=0707">杨劲松</a></p>
+          <p>主治医师&nbsp;&nbsp;呼吸科门诊(沿江)</p>
+          <p>广州医科大学附属第一医院</p>
+          <p>简介： </p>
+        </div>
+      </div>
+      <div class="doc-scheduleL-block">
+        <div class="doc-scheduleL">
+          <ul class="left">
+            <li><span>上午</span><span>下午</span><span>晚上</span></li>
+          </ul>
+              
+              
+              
+              <ul class="right page1" style='display:block'>
+              
+                <li>
+                  <span id="07072016-09-091"></span>
+                  <span id="07072016-09-092"></span>
+                  <span id="07072016-09-093"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(true ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-09\",\"1\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-09\",\"1\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#07072016-09-091").html(ddInfo);
+                    </script>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(true ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-09\",\"2\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-09\",\"2\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#07072016-09-092").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="07072016-09-101"></span>
+                  <span id="07072016-09-102"></span>
+                  <span id="07072016-09-103"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(true ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-10\",\"1\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-10\",\"1\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#07072016-09-101").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="07072016-09-111"></span>
+                  <span id="07072016-09-112"></span>
+                  <span id="07072016-09-113"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="07072016-09-121"></span>
+                  <span id="07072016-09-122"></span>
+                  <span id="07072016-09-123"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(false ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-12\",\"1\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-12\",\"1\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#07072016-09-121").html(ddInfo);
+                    </script>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(false ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-12\",\"2\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-12\",\"2\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#07072016-09-122").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="07072016-09-131"></span>
+                  <span id="07072016-09-132"></span>
+                  <span id="07072016-09-133"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(false ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-13\",\"1\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-13\",\"1\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#07072016-09-131").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="07072016-09-141"></span>
+                  <span id="07072016-09-142"></span>
+                  <span id="07072016-09-143"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(false ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-14\",\"1\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-14\",\"1\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#07072016-09-141").html(ddInfo);
+                    </script>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(false ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-14\",\"2\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-14\",\"2\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#07072016-09-142").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="07072016-09-151"></span>
+                  <span id="07072016-09-152"></span>
+                  <span id="07072016-09-153"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(true){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(true ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(true){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"0\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-15\",\"1\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(false ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：3.0元</p>' onclick='submitReg(\"0\",\"1004\",\"0671\",\"0707\",\"杨劲松\",\"2016-09-15\",\"1\",\"100\",\"300\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#07072016-09-151").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+              </ul>
+            
+              <ul class="right page2" style='display:none'>
+              
+                <li>
+                  <span id="07072016-09-161"></span>
+                  <span id="07072016-09-162"></span>
+                  <span id="07072016-09-163"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="07072016-09-171"></span>
+                  <span id="07072016-09-172"></span>
+                  <span id="07072016-09-173"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="07072016-09-181"></span>
+                  <span id="07072016-09-182"></span>
+                  <span id="07072016-09-183"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="07072016-09-191"></span>
+                  <span id="07072016-09-192"></span>
+                  <span id="07072016-09-193"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="07072016-09-201"></span>
+                  <span id="07072016-09-202"></span>
+                  <span id="07072016-09-203"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="07072016-09-211"></span>
+                  <span id="07072016-09-212"></span>
+                  <span id="07072016-09-213"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="07072016-09-221"></span>
+                  <span id="07072016-09-222"></span>
+                  <span id="07072016-09-223"></span>
+                  
+                </li>
+              
+              </ul>
+            
+          <div class="bg_head"></div><div class="bLine1"></div><div class="bLine2"></div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="doctor">
+      <div class="doctor-info .docInfo-w-h">
+        <a class="A_img" href="doc_detail.xhtml-HIS_CD=1004&DEP_ID=0549&DOC_ID=001810.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1004&DEP_ID=0549&DOC_ID=001810"><img alt="孙丽红" src="1326770660966.gif" tppabs="http://www.guahao.gov.cn/hospital/photo/docImg/1004/1326770660966.gif" height="106"  width="85" /></a>
+        <div class="doctor-info-block">
+          <p><a class="c_orange" href="doc_detail.xhtml-HIS_CD=1004&DEP_ID=0549&DOC_ID=001810.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1004&DEP_ID=0549&DOC_ID=001810">孙丽红</a></p>
+          <p>主任医师&nbsp;&nbsp;呼研所小儿呼吸专科(沿江)</p>
+          <p>广州医科大学附属第一医院</p>
+          <p>简介： </p>
+        </div>
+      </div>
+      <div class="doc-scheduleL-block">
+        <div class="doc-scheduleL">
+          <ul class="left">
+            <li><span>上午</span><span>下午</span><span>晚上</span></li>
+          </ul>
+              
+              
+              
+              <ul class="right page1" style='display:block'>
+              
+                <li>
+                  <span id="0018102016-09-091"></span>
+                  <span id="0018102016-09-092"></span>
+                  <span id="0018102016-09-093"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(false ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0549\",\"001810\",\"孙丽红\",\"2016-09-09\",\"1\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0549\",\"001810\",\"孙丽红\",\"2016-09-09\",\"1\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#0018102016-09-091").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="0018102016-09-101"></span>
+                  <span id="0018102016-09-102"></span>
+                  <span id="0018102016-09-103"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(true ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0549\",\"001810\",\"孙丽红\",\"2016-09-10\",\"1\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0549\",\"001810\",\"孙丽红\",\"2016-09-10\",\"1\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#0018102016-09-101").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="0018102016-09-111"></span>
+                  <span id="0018102016-09-112"></span>
+                  <span id="0018102016-09-113"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="0018102016-09-121"></span>
+                  <span id="0018102016-09-122"></span>
+                  <span id="0018102016-09-123"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(false ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0549\",\"001810\",\"孙丽红\",\"2016-09-12\",\"1\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0549\",\"001810\",\"孙丽红\",\"2016-09-12\",\"1\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#0018102016-09-121").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="0018102016-09-131"></span>
+                  <span id="0018102016-09-132"></span>
+                  <span id="0018102016-09-133"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="0018102016-09-141"></span>
+                  <span id="0018102016-09-142"></span>
+                  <span id="0018102016-09-143"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(false ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0549\",\"001810\",\"孙丽红\",\"2016-09-14\",\"1\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0549\",\"001810\",\"孙丽红\",\"2016-09-14\",\"1\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#0018102016-09-141").html(ddInfo);
+                    </script>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(true){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(true ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(true){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"0\",\"1004\",\"0549\",\"001810\",\"孙丽红\",\"2016-09-14\",\"2\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(false ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"0\",\"1004\",\"0549\",\"001810\",\"孙丽红\",\"2016-09-14\",\"2\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#0018102016-09-142").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="0018102016-09-151"></span>
+                  <span id="0018102016-09-152"></span>
+                  <span id="0018102016-09-153"></span>
+                  
+                </li>
+              
+              </ul>
+            
+              <ul class="right page2" style='display:none'>
+              
+                <li>
+                  <span id="0018102016-09-161"></span>
+                  <span id="0018102016-09-162"></span>
+                  <span id="0018102016-09-163"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="0018102016-09-171"></span>
+                  <span id="0018102016-09-172"></span>
+                  <span id="0018102016-09-173"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="0018102016-09-181"></span>
+                  <span id="0018102016-09-182"></span>
+                  <span id="0018102016-09-183"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="0018102016-09-191"></span>
+                  <span id="0018102016-09-192"></span>
+                  <span id="0018102016-09-193"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="0018102016-09-201"></span>
+                  <span id="0018102016-09-202"></span>
+                  <span id="0018102016-09-203"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="0018102016-09-211"></span>
+                  <span id="0018102016-09-212"></span>
+                  <span id="0018102016-09-213"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="0018102016-09-221"></span>
+                  <span id="0018102016-09-222"></span>
+                  <span id="0018102016-09-223"></span>
+                  
+                </li>
+              
+              </ul>
+            
+          <div class="bg_head"></div><div class="bLine1"></div><div class="bLine2"></div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="doctor">
+      <div class="doctor-info .docInfo-w-h">
+        <a class="A_img" href="doc_detail.xhtml-HIS_CD=1004&DEP_ID=0671&DOC_ID=0694.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1004&DEP_ID=0671&DOC_ID=0694"><img alt="钟淑卿" src="doctor.jpg" tppabs="http://www.guahao.gov.cn/images/doctor.jpg" height="106"  width="85" /></a>
+        <div class="doctor-info-block">
+          <p><a class="c_orange" href="doc_detail.xhtml-HIS_CD=1004&DEP_ID=0671&DOC_ID=0694.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1004&DEP_ID=0671&DOC_ID=0694">钟淑卿</a></p>
+          <p>主任医师&nbsp;&nbsp;呼吸科门诊(沿江)</p>
+          <p>广州医科大学附属第一医院</p>
+          <p>简介： </p>
+        </div>
+      </div>
+      <div class="doc-scheduleL-block">
+        <div class="doc-scheduleL">
+          <ul class="left">
+            <li><span>上午</span><span>下午</span><span>晚上</span></li>
+          </ul>
+              
+              
+              
+              <ul class="right page1" style='display:block'>
+              
+                <li>
+                  <span id="06942016-09-091"></span>
+                  <span id="06942016-09-092"></span>
+                  <span id="06942016-09-093"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(true ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0694\",\"钟淑卿\",\"2016-09-09\",\"1\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0694\",\"钟淑卿\",\"2016-09-09\",\"1\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#06942016-09-091").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="06942016-09-101"></span>
+                  <span id="06942016-09-102"></span>
+                  <span id="06942016-09-103"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(true ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0694\",\"钟淑卿\",\"2016-09-10\",\"1\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0694\",\"钟淑卿\",\"2016-09-10\",\"1\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#06942016-09-101").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="06942016-09-111"></span>
+                  <span id="06942016-09-112"></span>
+                  <span id="06942016-09-113"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="06942016-09-121"></span>
+                  <span id="06942016-09-122"></span>
+                  <span id="06942016-09-123"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="06942016-09-131"></span>
+                  <span id="06942016-09-132"></span>
+                  <span id="06942016-09-133"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(true ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0694\",\"钟淑卿\",\"2016-09-13\",\"1\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0694\",\"钟淑卿\",\"2016-09-13\",\"1\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#06942016-09-131").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="06942016-09-141"></span>
+                  <span id="06942016-09-142"></span>
+                  <span id="06942016-09-143"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(false ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0694\",\"钟淑卿\",\"2016-09-14\",\"1\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：8.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"0694\",\"钟淑卿\",\"2016-09-14\",\"1\",\"100\",\"800\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#06942016-09-141").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="06942016-09-151"></span>
+                  <span id="06942016-09-152"></span>
+                  <span id="06942016-09-153"></span>
+                  
+                </li>
+              
+              </ul>
+            
+              <ul class="right page2" style='display:none'>
+              
+                <li>
+                  <span id="06942016-09-161"></span>
+                  <span id="06942016-09-162"></span>
+                  <span id="06942016-09-163"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="06942016-09-171"></span>
+                  <span id="06942016-09-172"></span>
+                  <span id="06942016-09-173"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="06942016-09-181"></span>
+                  <span id="06942016-09-182"></span>
+                  <span id="06942016-09-183"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="06942016-09-191"></span>
+                  <span id="06942016-09-192"></span>
+                  <span id="06942016-09-193"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="06942016-09-201"></span>
+                  <span id="06942016-09-202"></span>
+                  <span id="06942016-09-203"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="06942016-09-211"></span>
+                  <span id="06942016-09-212"></span>
+                  <span id="06942016-09-213"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="06942016-09-221"></span>
+                  <span id="06942016-09-222"></span>
+                  <span id="06942016-09-223"></span>
+                  
+                </li>
+              
+              </ul>
+            
+          <div class="bg_head"></div><div class="bLine1"></div><div class="bLine2"></div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="doctor">
+      <div class="doctor-info .docInfo-w-h">
+        <a class="A_img" href="doc_detail.xhtml-HIS_CD=1004&DEP_ID=0671&DOC_ID=001758.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1004&DEP_ID=0671&DOC_ID=001758"><img alt="杨新艳" src="doctor.jpg" tppabs="http://www.guahao.gov.cn/images/doctor.jpg" height="106"  width="85" /></a>
+        <div class="doctor-info-block">
+          <p><a class="c_orange" href="doc_detail.xhtml-HIS_CD=1004&DEP_ID=0671&DOC_ID=001758.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1004&DEP_ID=0671&DOC_ID=001758">杨新艳</a></p>
+          <p>副主任医师&nbsp;&nbsp;呼吸科门诊(沿江)</p>
+          <p>广州医科大学附属第一医院</p>
+          <p>简介： </p>
+        </div>
+      </div>
+      <div class="doc-scheduleL-block">
+        <div class="doc-scheduleL">
+          <ul class="left">
+            <li><span>上午</span><span>下午</span><span>晚上</span></li>
+          </ul>
+              
+              
+              
+              <ul class="right page1" style='display:block'>
+              
+                <li>
+                  <span id="0017582016-09-091"></span>
+                  <span id="0017582016-09-092"></span>
+                  <span id="0017582016-09-093"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="0017582016-09-101"></span>
+                  <span id="0017582016-09-102"></span>
+                  <span id="0017582016-09-103"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="0017582016-09-111"></span>
+                  <span id="0017582016-09-112"></span>
+                  <span id="0017582016-09-113"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="0017582016-09-121"></span>
+                  <span id="0017582016-09-122"></span>
+                  <span id="0017582016-09-123"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(false ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"001758\",\"杨新艳\",\"2016-09-12\",\"1\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"001758\",\"杨新艳\",\"2016-09-12\",\"1\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#0017582016-09-121").html(ddInfo);
+                    </script>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(false ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"001758\",\"杨新艳\",\"2016-09-12\",\"2\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"001758\",\"杨新艳\",\"2016-09-12\",\"2\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#0017582016-09-122").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="0017582016-09-131"></span>
+                  <span id="0017582016-09-132"></span>
+                  <span id="0017582016-09-133"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(false ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"001758\",\"杨新艳\",\"2016-09-13\",\"1\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"001758\",\"杨新艳\",\"2016-09-13\",\"1\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#0017582016-09-131").html(ddInfo);
+                    </script>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(false ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"001758\",\"杨新艳\",\"2016-09-13\",\"2\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"001758\",\"杨新艳\",\"2016-09-13\",\"2\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#0017582016-09-132").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="0017582016-09-141"></span>
+                  <span id="0017582016-09-142"></span>
+                  <span id="0017582016-09-143"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(false){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(false ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(false){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"001758\",\"杨新艳\",\"2016-09-14\",\"2\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(true ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"1\",\"1004\",\"0671\",\"001758\",\"杨新艳\",\"2016-09-14\",\"2\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#0017582016-09-142").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+                <li>
+                  <span id="0017582016-09-151"></span>
+                  <span id="0017582016-09-152"></span>
+                  <span id="0017582016-09-153"></span>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(true){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(true ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(true){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"0\",\"1004\",\"0671\",\"001758\",\"杨新艳\",\"2016-09-15\",\"1\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(false ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"0\",\"1004\",\"0671\",\"001758\",\"杨新艳\",\"2016-09-15\",\"1\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#0017582016-09-151").html(ddInfo);
+                    </script>
+                  
+                    <script type="text/javascript">
+                      var ddInfo="";
+                      if(true){
+                        ddInfo = "<b class='btn btn08' title='该时段医生停诊'>停诊</b>";
+                      }else if(false){
+                        ddInfo = "<a class='btn btn07' title='该时段预约暂未开放'>未开放</a>";
+                      }else if(true ){
+                        ddInfo = "<b class='btn btn07' title='该时段号源已满'>已满</b>";
+                      }else if(true){
+                        ddInfo = "<a href='javascript:;' original-title='<p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"0\",\"1004\",\"0671\",\"001758\",\"杨新艳\",\"2016-09-15\",\"2\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }else if(false ){
+                        ddInfo = "<a href='javascript:void(0)' original-title='<p>此号源有分时</p><p>挂号费：1.0元</p><p>诊疗费：6.0元</p>' onclick='submitReg(\"0\",\"1004\",\"0671\",\"001758\",\"杨新艳\",\"2016-09-15\",\"2\",\"100\",\"600\");return false;' class='btn btn05 reg'>预约</a>";
+                      }
+                      $("#0017582016-09-152").html(ddInfo);
+                    </script>
+                  
+                </li>
+              
+              </ul>
+            
+              <ul class="right page2" style='display:none'>
+              
+                <li>
+                  <span id="0017582016-09-161"></span>
+                  <span id="0017582016-09-162"></span>
+                  <span id="0017582016-09-163"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="0017582016-09-171"></span>
+                  <span id="0017582016-09-172"></span>
+                  <span id="0017582016-09-173"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="0017582016-09-181"></span>
+                  <span id="0017582016-09-182"></span>
+                  <span id="0017582016-09-183"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="0017582016-09-191"></span>
+                  <span id="0017582016-09-192"></span>
+                  <span id="0017582016-09-193"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="0017582016-09-201"></span>
+                  <span id="0017582016-09-202"></span>
+                  <span id="0017582016-09-203"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="0017582016-09-211"></span>
+                  <span id="0017582016-09-212"></span>
+                  <span id="0017582016-09-213"></span>
+                  
+                </li>
+              
+                <li>
+                  <span id="0017582016-09-221"></span>
+                  <span id="0017582016-09-222"></span>
+                  <span id="0017582016-09-223"></span>
+                  
+                </li>
+              
+              </ul>
+            
+          <div class="bg_head"></div><div class="bLine1"></div><div class="bLine2"></div>
+        </div>
+      </div>
+    </div>
+  
+  
+  <div class="pageBar">
+<!-- %@ include file="/common/taglibs.jsp"%-->
+<script type="text/javascript">
+	
+	function prePage2(){
+		var	subForm = "pageTagForm2";
+		var f = document.getElementById(subForm);
+		f.PAG_NO.value=parseInt(f.PAG_NO.value)-1;
+		var loadbox = f.getAttribute("loadbox"); //pagination var
+		var callbackfunc = f.getAttribute("callback"); // callback function
+		var action =  f.getAttribute("action");  //url
+		var imgstyle =  f.getAttribute("imgstyle");  //css or img style		 
+		var req_param = jQuery("#"+subForm).serialize(); //form argments
+		req_param = decodeURIComponent(req_param,true);
+		jQuery("#"+loadbox).html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");	
+		if(callbackfunc!=''&&callbackfunc!=null){				
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*",eval(callbackfunc));
+		} else {
+			if($(".dateBar").length != 0){
+				$(".dateBar").removeClass("dateBar-fixed");
+			}
+			$.get(action+"?"+req_param+"&t="+ new Date().getTime(),function(data){$("#"+loadbox).html(data)});		
+		}	
+	}
+	function nextPage2(){
+		var	subForm = "pageTagForm2";
+		var f = document.getElementById(subForm);
+		f.PAG_NO.value=parseInt(f.PAG_NO.value)+1;
+		var loadbox = f.getAttribute("loadbox");
+		var action =  f.getAttribute("action");
+		var callbackfunc = f.getAttribute("callback");
+		var imgstyle =  f.getAttribute("imgstyle");				
+		var req_param = jQuery("#"+subForm).serialize(); //form argments
+		req_param = decodeURIComponent(req_param,true);
+		jQuery("#"+loadbox).html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");		
+		if(callbackfunc!=''&&callbackfunc!=null){				
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*",eval(callbackfunc));
+		} else {
+			if($(".dateBar").length != 0){
+				$(".dateBar").removeClass("dateBar-fixed");
+			}
+			$.get(action+"?"+req_param+"&t="+ new Date().getTime(),function(data){$("#"+loadbox).html(data)});
+		}
+		
+	}
+	function jumpPage2(obj){
+		var	subForm = "pageTagForm2";
+		var f = document.getElementById(subForm);
+		f.PAG_NO.value=parseInt(obj.getAttribute("pagval"));
+		var loadbox = f.getAttribute("loadbox");
+		var action =  f.getAttribute("action");	
+		var callbackfunc = f.getAttribute("callback");	
+		var imgstyle =  f.getAttribute("imgstyle");					
+		var req_param = jQuery("#"+subForm).serialize(); //form argments
+		req_param = decodeURIComponent(req_param,true);
+		jQuery("#"+loadbox).html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");
+		if(callbackfunc!=''&&callbackfunc!=null){				
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*",eval(callbackfunc));
+		} else {
+			if($(".dateBar").length != 0){
+				$(".dateBar").removeClass("dateBar-fixed");
+			}
+			$.get(action+"?"+req_param+"&t="+ new Date().getTime(),function(data){$("#"+loadbox).html(data)});
+		}
+	}
+	function lastPage2(obj){
+		var	subForm = "pageTagForm2";
+		var f = document.getElementById(subForm);
+		f.PAG_NO.value=parseInt(obj.getAttribute("pagval"));
+		var loadbox = f.getAttribute("loadbox");
+		var action =  f.getAttribute("action");	
+		var callbackfunc = f.getAttribute("callback");	
+		var imgstyle =  f.getAttribute("imgstyle");					
+		var req_param = jQuery("#"+subForm).serialize(); //form argments
+		req_param = decodeURIComponent(req_param,true);
+		jQuery("#"+loadbox).html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");
+		if(callbackfunc!=''&&callbackfunc!=null){				
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*",eval(callbackfunc));
+		} else {
+			if($(".dateBar").length != 0){
+				$(".dateBar").removeClass("dateBar-fixed");
+			}
+			$.get(action+"?"+req_param+"&t="+ new Date().getTime(),function(data){$("#"+loadbox).html(data)});
+		}
+	}
+</script>
+<div class="dg_page pwm_record_page_w">
+	<div class="page_bar mt20 r">
+		
+			
+				<a href="javascript:;" onclick="jumpPage2(this);return false;" pagval="1">首页</a>
+				
+					
+						<a href="javascript:void(0)" class="pb_pre_off" disabled="true">&nbsp;</a>
+					
+					
+				
+				
+					
+						
+						<a href="javascript:void(0)" class="pb_on" onclick="jumpPage2(this);"
+							pagval="1">1</a>
+					
+					
+				
+				
+					
+						
+								
+									<a href="javascript:void(0)" onclick="jumpPage2(this);"
+										pagval="2">2</a>
+								
+									<a href="javascript:void(0)" onclick="jumpPage2(this);"
+										pagval="3">3</a>
+								
+									<a href="javascript:void(0)" onclick="jumpPage2(this);"
+										pagval="4">4</a>
+								
+									<a href="javascript:void(0)" onclick="jumpPage2(this);"
+										pagval="5">5</a>
+								
+								<span class="pb_more">...</span>
+						
+						
+					
+				
+				
+					
+						<a href="javascript:void(0)" class="pb_next" onclick="nextPage2();return false;">下一页&nbsp;&nbsp;&nbsp;</a>
+					
+					
+				
+				<a href="javascript:void(0)" onclick="lastPage2(this);return false;" pagval="45">尾页&nbsp;&nbsp;</a>&nbsp;共45页&nbsp;&nbsp;223条记录	
+			
+            
+		
+	</div>
+</div></div>
+  <form name="pageTagForm2" id="pageTagForm2" action="docSrc_bydis.xhtml-PAG_NO=1&PAG_CNT=45&TOT_REC_NUM=223&DIS_ID=010101&ARE_ID=&HIS_CD=&HIS_LVL=&TIT_NM=&IS_EXP=&KEY_WORD=&channel=CH1.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?PAG_NO=1&PAG_CNT=45&TOT_REC_NUM=223&DIS_ID=010101&ARE_ID=&HIS_CD=&HIS_LVL=&TIT_NM=&IS_EXP=&KEY_WORD=&channel=CH1" method="get" loadbox="doctorList">
+    <input type="hidden" name="PAG_NO" value="1" />
+    <input type="hidden" name="PAG_CNT" value="45" /> 
+    <input type="hidden" name="TOT_REC_NUM" value="223">
+    <input type="hidden" name="DIS_ID" value="010101">
+    <input type="hidden" name="ARE_ID" value="" id="areId">
+    <input type="hidden" name="HIS_CD" value="" id="hisCd">
+    <input type="hidden" name="HIS_LVL" value="" id="hisLvl">
+    <input type="hidden" name="TIT_NM" value="" id="titNm">
+    <input type="hidden" name="IS_EXP" value="" id="isExp">
+    <input type="hidden" name="KEY_WORD" value="" >
+    <input type="hidden" name="channel" value="CH1" >
+  </form>
+  <form action="login.xhtml-goto=-reg_confirm.xhtml-HIS_CD=&DEP_ID=&DOC_ID=&DOC_NM=&REG_DAT=&TM_FLG=&REG_FEE=&TRE_FEE=&STA_TM=&END_TM=.htm" tppabs="http://www.guahao.gov.cn/reg_confirm.xhtml?HIS_CD=&DEP_ID=&DOC_ID=&DOC_NM=&REG_DAT=&TM_FLG=&REG_FEE=&TRE_FEE=&STA_TM=&END_TM=" method="get" name="regForm" >
+    <input type="hidden" value="" id="HIS_CD" name="HIS_CD">
+    <input type="hidden" value="" id="DEP_ID" name="DEP_ID">
+    <input type="hidden" value="" id="DOC_ID" name="DOC_ID">
+    <input type="hidden" value="" id="DOC_NM" name="DOC_NM">
+    <input type="hidden" value="" id="REG_DAT" name="REG_DAT">
+    <input type="hidden" value="" id="TM_FLG" name="TM_FLG">
+    <input type="hidden" value="" id="REG_FEE" name="REG_FEE">
+    <input type="hidden" value="" id="TRE_FEE" name="TRE_FEE">
+    <input type="hidden" value="" id="STA_TIM" name="STA_TM">
+    <input type="hidden" value="" id="END_TIM" name="END_TM">
+    <input type="hidden" value="" id="USR_NO" >
+  </form>
+</div>
+<div class="table-regTime" id="regTime" style="display:none;"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="loginDialog" style="display:none;">
+  <form action="" name="login_form">
+    <div class="loginDialog">
+      <ul class="form-content">
+        <li class="pb30"><label class="form-label" id="loginWay">账号：</label><div class="btn inputLgBg fl"><input type="text" class="inputTxt c_gray9" id="cardNo" maxlength="20" name="CARD_NO" value='用户名/健康卡/证件号/市民卡'/></div></li>
+        <li><label class="form-label">登录密码：</label><div class="btn inputLgBg fl"><input type="password" class="inputTxt" id="PWD"/></div></li>
+        <li style="height:auto;min-height:30px;"><label class="form-label">&nbsp;</label><span style="display: block;" class="c_red errtip" id="errortip" style="display:none">请输入您注册的用户名</span></li>
+        <li><label class="form-label">&nbsp;</label><input type="button" value='登  录' class="btn btn_login fl" onclick="submitLogForm() "/><a href="register.xhtml.htm" tppabs="http://www.guahao.gov.cn/register.xhtml" class="aStyle">立即注册</a>&nbsp;<a href="findbackpwd.xhtml.htm" tppabs="http://www.guahao.gov.cn/findbackpwd.xhtml" class="aStyle">忘记密码？</a></li>
+      </ul>
+      <input type="hidden" name="CARD_TYP" id="cardTyp" value="1">
+    </div>
+    <input type="hidden" id="loginChannel" value="pop">
+    <input type="hidden" name="PWD" id="PWD_MD5">
+  </form>
+</div>
+<script type="text/javascript" src="md5.js-t=201310091125570" tppabs="http://www.guahao.gov.cn/js/common/md5.js?t=201310091125570"></script>
+<script type="text/javascript" src="formValidator.js-t=201608170420060" tppabs="http://www.guahao.gov.cn/js/urm/formValidator.js?t=201608170420060" charset="UTF-8"></script>
+
+
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+
+<div class="bg_gray">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+    <div class="line_bt"></div>
+    <div class="footer-content">
+        <div class="footer-logo"><span></span></div>
+        <span class="ml10">地址：广州市东风西路182号</span>
+        <span class="ml10">技术支持：广州市卫生信息中心</span>
+        <span class="ml10">广州市卫生和计划生育委员会版权所有</span><br>
+        <span class="ml10">粤ICP备12059770号</span>
+        <span class="ml10"><a target="_blank" href="javascript:if(confirm('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394'" tppabs="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394"><img style="vertical-align:middle" src="beian.png" tppabs="http://www.guahao.gov.cn/images/common/beian.png"/>&nbsp;粤公网安备&nbsp;44010402000394号</a></span>&nbsp;
+        <script src="stat.php-id=4589427&web_id=4589427&show=pic1" tppabs="http://s25.cnzz.com/stat.php?id=4589427&web_id=4589427&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="base.js-t=201405220620040" tppabs="http://www.guahao.gov.cn/js/common/base.js?t=201405220620040" ></script>
+
+<script type="text/javascript">
+$(document).ready(function(){navInit();});
+/*
+* highOnclick(pId,curId)
+* curId 二级菜单当前ID名称
+*/
+var curStr="0202";
+if(curStr!="" && curStr!="null"){
+highOnclick(curStr);
+}
+</script>
+
+<script src="sso-client.js-t=201303150508060" tppabs="http://www.guahao.gov.cn/js/urm/sso-client.js?t=201303150508060" type="text/javascript"></script>
+<script type="text/javascript">
+function loginOut(){
+    sso_logout();
+    noLoginCookie();//取消自动登陆
+    $("form[name=quitLogin]").submit();
+}
+$(function(){
+	$.ajax({
+    url: "/notice.xhtml?r="+Math.random(),
+    type: 'post',
+    dataType: 'json',
+    data: '',
+    success: function(data) {
+      if(data.GWA.MSG_CD == 'PTS00000'){
+      	if(data.NOT_STS == "0"){
+      		$("#noticBlock").hide();
+      	}else if(data.NOT_STS == "1"){
+      		$("#noticBlock").show();
+      		$("#comNoticeCnt").html(data.NOT_RM+"&nbsp;&nbsp;---广州市卫生和计划生育委员会");
+      	}
+      }
+    }
+  });	
+});
+</script>
+
+<script type="text/javascript" src="jquery-ui-1.8.20.custom.min.js-t=201208070830560" tppabs="http://www.guahao.gov.cn/js/common/jquery.ui.dialog_js/js/jquery-ui-1.8.20.custom.min.js?t=201208070830560"></script>
+<script type="text/javascript">
+function getHisArea(){
+  $.ajax({
+    url:"/ajxarea.xhtml?r="+Math.random(), 
+    type: 'get',
+    dataType: 'json',
+    async:false,
+    data:"",
+    success: function(data) {
+      var htmlContent="<li><span>所在地区：</span></li><li><a class='key' href='javascript:void(0);' class='on' dat=''>广州市</a></li>";
+      if(data.REC == "" || data.REC == null){
+        return false;
+      }
+      for( var i = 0; i < data.REC.length; i++ ) {
+        htmlContent = htmlContent + "<li><a class='key' href='javascript:void(0);' dat='"+data.REC[i].ARE_ID+"'>"+data.REC[i].HIS_ARE+"</a></li>";
+        if(data.REC[i].ARE_ID == $("#areId").val()){
+          var flag = true;
+        }
+      }
+      $("#areaList").html(htmlContent);
+      $(".selectArea p.areId a").removeClass("on");
+      if($("#areId").val() == ""){
+        $(".selectArea p.areId a[dat="+$('#areId').val()+"]").removeClass("on").addClass("on");
+      }
+      $(this).removeClass("on").addClass("on");
+      if(flag == true){
+        var areaId = $('#areId').val()
+        $(".selectArea p.areId a[dat="+$('#areId').val()+"]").removeClass("on").addClass("on");
+      } 
+    }
+  });
+}
+/*登录对话框*/
+function popLogin(){
+  $("#loginDialog").attr("display","block");
+  $("#loginDialog").dialog('open'); 
+}
+$("#loginDialog").dialog({
+    autoOpen:false,
+    width:550,
+    modal:true,
+    draggable:true,
+    resizable:false,
+    title:'登录'    
+});
+
+function submitReg(IS_TIM_REG,HIS_CD,DEP_ID,DOC_ID,DOC_NM,REG_DAT,TIM_FLG,REG_FEE,TRE_FEE){
+  $("#HIS_CD").val(HIS_CD);
+  $("#DEP_ID").val(DEP_ID);
+  $("#DOC_ID").val(DOC_ID);
+  $("#DOC_NM").val(DOC_NM);
+  $("#REG_DAT").val(REG_DAT);
+  $("#TM_FLG").val(TIM_FLG);
+  $("#REG_FEE").val(REG_FEE);
+  $("#TRE_FEE").val(TRE_FEE);
+  var dat = $("form[name=regForm]").serialize();
+  if(IS_TIM_REG == "1"){
+    $.ajax({
+      url: "/ajx_regtime.xhtml",
+      type: 'get',
+      data: dat,
+      success: function(data) {
+        popRegTime(data);//时段选择
+      }
+    });
+  }else{
+    if($("#USR_NO").val()!=""){
+      document.regForm.submit();
+    }else{
+      popLogin();
+    }
+  }
+}
+/*提示*/
+$(document).ready(function(){
+$(".reg").tipsy({
+    gravity:"w",  /*可选参数“n”,“s”,“e”,“w”*/
+    delayIn:0.1,
+    delayOut:0.1,
+    opacity:0.7,
+    live:true,
+    html:true
+  });
+});
+/*时段选择  ---弹出框*/
+function popRegTime(data){
+  $("#regTime").html(data);
+  $("#regTime").attr("display","block");
+  $("#regTime").dialog('open');
+}
+$("#regTime").dialog({
+    autoOpen:false,
+    width:600,
+    modal:true,
+    draggable:true,
+    resizable:false,
+    title:'时段选择'    
+});
+/*关闭dialog*/
+function closeUiDialog(){
+    $("#regTime").dialog('close');  
+}
+/*fixed dataBar*/
+$(".dateBar").each(function(){
+  var e = $(this).data("offsetTop", $(this).offset().top);
+  e.removeClass("dateBar-fixed");
+  $(window).scroll( function() {
+    var f = e.data("offsetTop");
+    var g = $(document).scrollTop();
+    if(f >= g) {
+      e.removeClass("dateBar-fixed");
+    } else {
+      e.addClass("dateBar-fixed");
+    }
+  } );
+  $(window).trigger("scroll");
+});
+jQuery(document).ready(function() {
+  getHisArea();//加载区域列表信息
+  $(".selectArea ul#areaList a").each(function(){
+    $(this).removeClass("on");
+    var dat = $(this).attr("dat");
+    if(dat == $("#areId").val()){
+      $(this).removeClass("on").addClass("on");
+      // showHospitals(dat,$(".popLayer")); 
+    }
+  });
+  // $(".selectArea ul#hisLvlList a").each(function(){
+  //   $(this).removeClass("on");
+  //   if($(this).attr("dat") == $("#hisLvl").val()){
+  //     $(this).removeClass("on").addClass("on");
+  //   }
+  // });
+  $(".selectArea ul#isExpList a").each(function(){
+    $(this).removeClass("on");
+    if($(this).attr("dat") == $("#isExp").val()){
+      $(this).removeClass("on").addClass("on");
+    }
+  });
+});
+
+/*通过条件选择筛选医生*/
+$("http://www.guahao.gov.cn/.selectArea li a.key").live("click",function(){
+  var item = $(this).parent().parent().attr("id");
+  var dat = $(this).attr("dat");
+  switch(item){
+    case "areaList":
+    $("#areId").val(dat);
+    $("#hisCd").val("");
+    break;
+    case "hisLvl":
+    $("#hisLvl").val(dat);
+    break;
+    case "isExpList":
+    $("#isExp").val(dat);
+    break;
+    default:
+  }
+  $("form[name=searchForm]").submit();
+});
+/*选择医院再筛选医生*/
+$("http://www.guahao.gov.cn/.popLayer a.his").live("click",function(){
+  var areId = $(this).parent().attr("dat");
+  var hisCd = $(this).attr("dat");
+  $("#areId").val(areId);
+  $("#hisCd").val(hisCd);
+  $("form[name=searchForm]").submit();
+});
+
+/*鼠标悬浮于地区时，显示该地区所有的医院*/
+$("#areaList li a").live('mouseenter',
+  function(e){
+    var _this = $(this);
+    var areId = _this.attr("dat");
+    var popLayerObj =$(".popLayer");
+    $(popLayerObj).show();
+    showHospitals(areId,popLayerObj); 
+    $(this).parent().addClass("on");
+}).live('mouseleave',function(){
+    // $(".popLayer").hide();
+    // var areId  = $("#areId").val();
+    // var popLayerObj =$(".popLayer");
+    // showHospitals(areId,popLayerObj); 
+    $(this).parent().removeClass("on");
+});
+/*鼠标悬浮于地区时，显示该地区所有的医院*/
+$(".popLayer").live('mouseenter',
+  function(e){
+}).live('mouseleave',function(){
+    $(".popLayer").hide();
+    // $(this).removeClass("on");
+});
+/*医院列表悬浮框*/
+function showHospitals(areId,popLayerObj){
+  var htmlContent="";
+		var hisNm = "";
+    $.ajax({
+      url: "/ajxhospitals.xhtml?ARE_ID="+areId,
+      type: 'get',
+      dataType: 'json',
+      success: function(data) {
+        if(data.REC == "" || data.REC == null){
+          $(popLayerObj).html("该地区暂未接入医院");
+          return false;
+        }
+        htmlContent="<div id='initHis' dat='"+areId+"'>";
+        if(data.REC.length <9){
+          for( var i = 0; i < data.REC.length; i++ ) {
+          	 if(data.REC[i].HIS_NM&&data.REC[i].HIS_NM.length>11){
+          				hisNm = data.REC[i].HIS_NM.substring("0","11")+"...";
+          		}else{
+          				hisNm = data.REC[i].HIS_NM;
+          		}
+            htmlContent = htmlContent + "<a href='javascript:;' class='his' dat='"+data.REC[i].HIS_CD+"' title='"+data.REC[i].HIS_NM+"'>"+hisNm+"</a>"; 
+          }
+          htmlContent = htmlContent + "</div>";
+        }else{
+          htmlContent="<div id='initHis' dat='"+areId+"'>";
+          for( var i = 0; i < 8; i++ ) {
+          		if(data.REC[i].HIS_NM&&data.REC[i].HIS_NM.length>11){
+          				hisNm = data.REC[i].HIS_NM.substring("0","11")+"...";
+          		}else{
+          				hisNm = data.REC[i].HIS_NM;
+          		}
+            htmlContent = htmlContent + "<a href='javascript:;' class='his' dat='"+data.REC[i].HIS_CD+"' title='"+data.REC[i].HIS_NM+"'>"+hisNm+"</a>";  
+          }
+          htmlContent = htmlContent + "</div>";
+          htmlContent= htmlContent+"<div id='moreHis' style='display:none;' dat='"+areId+"'>";
+          for( var i = 8; i < data.REC.length; i++ ) {
+          		if(data.REC[i].HIS_NM&&data.REC[i].HIS_NM.length>>11){
+          				hisNm = data.REC[i].HIS_NM.substring("0","11")+"...";
+          		}else{
+          				hisNm = data.REC[i].HIS_NM;
+          		}
+            htmlContent = htmlContent + "<a href='javascript:;' class='his' dat='"+data.REC[i].HIS_CD+"' title='"+data.REC[i].HIS_NM+"'>"+hisNm+"</a>"; 
+          }
+          htmlContent = htmlContent + "</div>";
+          htmlContent = htmlContent+"<a id='more' class='more' href='javascript:;'>更多<b>∨</b></a>";
+        }
+        
+        $(popLayerObj).html(htmlContent);
+        }
+    });
+}
+$("#more").live("click",function(){
+  if($("#moreHis").is(":visible")){
+    $("#moreHis").hide();
+    $(this).html("更多<b>∨</b>");
+  }else{
+    $("#moreHis").show();
+    $(this).html("收起<b>∧</b>");
+  }
+});
+
+$("#trunRight").click(function(){
+  $("ul.page1").hide();
+  $("ul.page2").show();
+  $("#trunRight").hide();
+  $("#trunLeft").show();
+});
+$("#trunLeft").click(function(){
+  $("ul.page2").hide();
+  $("ul.page1").show();
+  $("#trunLeft").hide();
+  $("#trunRight").show();
+});
+</script>
+
+</body>
+</html>
+

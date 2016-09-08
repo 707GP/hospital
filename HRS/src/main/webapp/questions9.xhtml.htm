@@ -1,0 +1,312 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />  
+<meta name="description" content="预约限制相关的常见问题解答" />
+<meta name="keywords" content="预约限制，预约挂号，广州挂号，网上挂号，12320挂号，挂号，自助终端挂号" />
+<meta name="robots" content="all" />
+<title>黑名单、爽约_广州市统一预约挂号平台</title>
+<link rel="stylesheet" type="text/css" href="base.css-t=201305281140250.css" tppabs="http://www.guahao.gov.cn/css/common/base.css?t=201305281140250" />
+<link rel="stylesheet" type="text/css" href="common.css-t=201411240822230.css" tppabs="http://www.guahao.gov.cn/css/common/common.css?t=201411240822230" />
+<link rel="stylesheet" type="text/css" href="mod.css-t=201608171104400.css" tppabs="http://www.guahao.gov.cn/css/mod.css?t=201608171104400" />
+</head>
+<body>
+  <div class="wrap">
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="headerBg clearfix">
+    <div class="header">
+        <p class="header-topTxt mb10">
+            
+            <a href="login.xhtml.htm" tppabs="http://www.guahao.gov.cn/login.xhtml">登录</a>&nbsp;|&nbsp;<a href="login.xhtml-goto=-usrinfo.xhtml.htm#orderList" tppabs="http://www.guahao.gov.cn/usrinfo.xhtml#orderList">我的订单</a>&nbsp;|&nbsp;<a href="register.xhtml.htm" tppabs="http://www.guahao.gov.cn/register.xhtml">注册</a>&nbsp;|&nbsp;<a href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml">预约指南</a>&nbsp;|&nbsp;<span>投诉电话：020-12320</span>
+            
+            
+        </p>
+        <p class="header-logo"><span class="hotPhone">预约热线：<b class="hotPhone-no">020-12320</b></span></p>
+        <form action="quit_login.xhtml.htm" tppabs="http://www.guahao.gov.cn/quit_login.xhtml"  method="post" name="quitLogin"></form>
+    </div>
+</div>
+<div style="width:960px;margin:0 auto;display:none;" id="noticBlock" >
+<div style="float:left;border:1px solid #FECB66;width:938px;padding:10px;background-color:#FEFEE4;color:#FE0000;">
+	<p>尊敬的用户：</p>
+	<p style="text-indent:2em;" id="comNoticeCnt"></p>
+</div>
+</div>
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="sso-client.js-t=201303150508060" tppabs="http://www.guahao.gov.cn/js/urm/sso-client.js?t=201303150508060" type="text/javascript"></script>
+<script type="text/javascript">
+function loginOut(){
+    sso_logout();
+    noLoginCookie();//取消自动登陆
+    $("form[name=quitLogin]").submit();
+}
+$(function(){
+	$.ajax({
+    url: "/notice.xhtml?r="+Math.random(),
+    type: 'post',
+    dataType: 'json',
+    data: '',
+    success: function(data) {
+      if(data.GWA.MSG_CD == 'PTS00000'){
+      	if(data.NOT_STS == "0"){
+      		$("#noticBlock").hide();
+      	}else if(data.NOT_STS == "1"){
+      		$("#noticBlock").show();
+      		$("#comNoticeCnt").html(data.NOT_RM+"&nbsp;&nbsp;---广州市卫生和计划生育委员会");
+      	}
+      }
+    }
+  });	
+});
+</script>
+
+
+
+
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="menuBar mb15 clearfix">
+    <div class="menu menuL"></div>
+    <div class="menuX menu_nav">
+        <ul class="top">
+            <li><a class="on" id="01" href="index.xhtml.htm" tppabs="http://www.guahao.gov.cn/index.xhtml" item="#index" title="首页">首&nbsp;页</a></li>
+            <li><a id="02" href="hospitallist.xhtml.htm" tppabs="http://www.guahao.gov.cn/hospitallist.xhtml" item="#reserve">挂号服务</a></li>
+            <li><a id="03" href="login.xhtml-goto=-usrinfo.xhtml.htm" tppabs="http://www.guahao.gov.cn/usrinfo.xhtml" item="#regmng">预约管理</a></li>
+            <li><a id="06" href="login.xhtml-goto=-payment_mng.xhtml.htm" tppabs="http://www.guahao.gov.cn/payment_mng.xhtml">缴费管理</a></li>
+            <li><a id="04" href="flow_ghbyweb.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml" item="#help">预约指南</a></li>
+            <li><a id="05" href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml" item="#notice">通知及反馈</a></li>
+            <li><a id="07" href="download_client.xhtml.htm" tppabs="http://www.guahao.gov.cn/download_client.xhtml" item="#download">客户端下载</a></li>
+        </ul>
+        <div style="clear:both;display:block;"></div>
+        <ul id="reserve" class="bot" style="display:none;padding-left:84px;">
+            <li><a id="0201" title="预约挂号" href="hospitallist.xhtml.htm" tppabs="http://www.guahao.gov.cn/hospitallist.xhtml"><span>预约挂号</span></a></li>
+            <li><a id="0202" title="当天挂号" href="javascript:if(confirm('http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow  \n\n该文件无法用 Teleport Ultra 下载, 因为 服务器报告发生错误, 阻止了下载。  \n\n你想在服务器上打开它?'))window.location='http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow'" tppabs="http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow"><span>当天挂号</span></a></li>
+        </ul>
+        <ul id="help" class="bot" style="display:none;padding-left:150px;">
+            <li><a id="0402" title="预约挂号须知" href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml"><span>预约挂号须知</span></a></li>
+            <li><a id="0401" title="预约挂号指南" href="flow_ghbyweb.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml"><span>预约挂号指南</span></a></li>
+            <li><a id="0403" title="常见疾病对应科室" href="comdis.xhtml.htm" tppabs="http://www.guahao.gov.cn/comdis.xhtml"><span>常见疾病对应科室</span></a></li>
+            <li><a id="0404" title="常见问题" href="questions1.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions1.xhtml"><span>常见问题</span></a></li>
+        </ul>
+        
+        
+            <ul id="notice" class="bot" style="display:none;padding-left:490px;">
+        
+            
+            <li><a id="0501" title="停诊通知" href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml"><span>停诊通知</span></a></li>
+            
+        </ul>
+        <!-- <div style="clear:both;display:block;"></div> -->
+    </div>
+    <div class="menu menuR"></div>
+</div>
+    
+    <div class="bd">
+      <!---->
+      <div class="page-wrap">
+        <div class="pageLeft">
+          
+          <div class="helpMenu">
+            <p><b class="icon fold"></b><a href="comdis.xhtml.htm" tppabs="http://www.guahao.gov.cn/comdis.xhtml">常见疾病对应科室</a></p>
+            <ul style="display:none;">
+              <li><b class="icon"></b><a href="comdis.xhtml.htm" tppabs="http://www.guahao.gov.cn/comdis.xhtml">常见疾病对应科室</a></li>
+            </ul>
+          </div>
+          <div class="helpMenu">
+            <p><b class="icon unfold"></b><a href="#">常见问题</a></p>
+            <ul>
+              <li><b class="icon"></b><a href="questions1.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions1.xhtml">注册与登录</a></li>
+              <li><b class="icon"></b><a href="questions2.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions2.xhtml">预约</a></li>
+              <li><b class="icon"></b><a href="questions3.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions3.xhtml">取号</a></li>
+              <li><b class="icon"></b><a href="questions4.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions4.xhtml">支付</a></li>
+              <li><b class="icon"></b><a href="questions5.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions5.xhtml">修改密码与手机号</a></li>
+              <li><b class="icon"></b><a href="questions6.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions6.xhtml">退号退费</a></li>
+              <li><b class="icon"></b><a href="questions7.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions7.xhtml">订单管理查询</a></li>
+              <li><b class="icon"></b><a href="questions8.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions8.xhtml">停诊</a></li>
+              <li class="on"><b class="icon arrow_blue"></b><a href="questions9.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions9.xhtml">黑名单、爽约申诉</a></li>
+            </ul>
+          </div>
+          <div class="helpMenu">
+            <p><b class="icon fold"></b><a href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml">通知公告</a></p>
+            <ul style="display:none;">
+              <li><b class="icon"></b><a href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml">停诊通知</a></li>
+              <li><b class="icon"></b><a href="#">网站通知</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="pageRight" id="tingzhenList">
+          <dl class="helpContent">
+            <dt><b class="mr10">&bull;</b><a href="javascript:;">爽约记录怎么消除？被列入黑名单了，怎么办？</a></dt>
+            <dd style="display:none">
+            	&nbsp;①&nbsp;用户累积爽约3次 ，系统将其自动列入黑名单，用户列入黑名单后将不再享用任何途径的预约方式进行预约挂号。 列入黑名单三个月后，系统会释放一次预约权限给用户。<br/>
+            	当用户再次爽约，则再次列入黑名单，系统将会对该用户的预约行为标识添加一次爽约记录。<br/>
+            	用户连续三次按时就诊，可减免一次爽约，即用户脱离黑名单限制，并获得一次预约权限（功能性），可以正常享用预约挂号服务，但用户的预约行为标识系统不会删除。<br/>
+							&nbsp;②&nbsp;如遇医生停诊或系统原因造成的爽约，用户可以拔打12320热线进行爽约申诉处理。<br/>
+							☆如您对被列入黑名单有异议，可拨打电话020-12320进行申诉，并提供相关预约信息，经核实情况后，系统将为您修改黑名单记录。 <br/><br/>
+							<p style="color:red;">☆爽约管理机制举例说明：<br/>
+							&nbsp;&nbsp;&nbsp;1).用户甲，爽约3次，则该用户的预约订单中有3笔订单状态为爽约标识，订单状态即为用户的预约行为标识（预约行为标识包括：取号、取消、爽约、退费）。<br/>
+							&nbsp;&nbsp;&nbsp;2).用户乙，爽约3次，该用户的预约订单中有3笔订单状态为爽约标识，列入黑名单三个月后，系统对该用户释放一预约权限，但用户再次爽约，则爽约订单增加至4笔，即该用户的预约行为标识中有4笔爽约记录。此时用户需要再过三个月后才能获得一次预约权限。<br/>
+							&nbsp;&nbsp;&nbsp;3).用户丙，爽约3次，该用户的预约订单中有3笔订单状态为爽约标识，列入黑名单三个月后，系统对其释放一预约权限，此时用户已脱离黑名单限制，可正常享用预约挂号服务。用户乙连续三次按时就诊，可减免一次爽约限制，即系统中的爽约限制降为2次，当用户乙再连续三次按时就诊（累积连续6次）后，系统将会对其再进行减免一次爽约限制，则此时爽约限制降为1次，但用户预约行为标识系统不会删除。
+							</p></dd>
+						<dt><b class="mr10">&bull;</b><a href="javascript:;">为什么系统提示我受到限制不能挂号了？</a></dt>
+            <dd style="display:none">为加强号源管理，防止号贩行为，预约挂号系统将对用户的预约行为进行以下限制：<br/>
+            	<ul>
+                  <li>① 、黑名单规则：爽约累计不能超过3次。</li>
+                  <li>② 、预约规则限制：</li>
+                  <li style="display:inline">
+                      <ul>
+                          <li>（1）是否为黑名单，黑名单则拒绝预约挂号；</li>
+                          <li>（2）预约每天不能超过2次；</li>
+                          <li>（3）预约每月不能超过6次；</li>
+                          <li>（4）同一个时间段内，每人只能预约一次；；</li>
+                      </ul>
+                  </li>
+                  <li>③ 、同一个月内，一个账号（包括为子女、为本人）预约挂号不能超过6次。</li>
+                  <li>④ 、每日限挂科室个数、每日每科室限挂的次数 、每日限挂医生个数。根据医院的不同，规则个数的要求不同。</li>
+                  <li>当您的预约次数达到以上的条件限制时，系统会自动提醒您。</li>
+              </ul>	
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="clearfix"></div>
+  <div class="bg_gray">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+    <div class="line_bt"></div>
+    <div class="footer-content">
+        <div class="footer-logo"><span></span></div>
+        <span class="ml10">地址：广州市东风西路182号</span>
+        <span class="ml10">技术支持：广州市卫生信息中心</span>
+        <span class="ml10">广州市卫生和计划生育委员会版权所有</span><br>
+        <span class="ml10">粤ICP备12059770号</span>
+        <span class="ml10"><a target="_blank" href="javascript:if(confirm('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394'" tppabs="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394"><img style="vertical-align:middle" src="beian.png" tppabs="http://www.guahao.gov.cn/images/common/beian.png"/>&nbsp;粤公网安备&nbsp;44010402000394号</a></span>&nbsp;
+        <script src="stat.php-id=4589427&web_id=4589427&show=pic1" tppabs="http://s25.cnzz.com/stat.php?id=4589427&web_id=4589427&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+  </div>
+<script type="text/javascript" src="jquery.js-t=201201101201560" tppabs="http://www.guahao.gov.cn/js/common/jquery.js?t=201201101201560" ></script>
+<script type="text/javascript" src="base.js-t=201405220620040" tppabs="http://www.guahao.gov.cn/js/common/base.js?t=201405220620040" ></script>
+
+<script type="text/javascript">
+$(document).ready(function(){navInit();});
+/*
+* highOnclick(pId,curId)
+* curId 二级菜单当前ID名称
+*/
+var curStr="0404";
+if(curStr!="" && curStr!="null"){
+highOnclick(curStr);
+}
+</script>
+<script type="text/javascript">
+$(".helpMenu ul li").hover(function(){
+  $(this).addClass("hover");
+  $(this).find("b").addClass("arrow_gray");
+},function(){
+  $(this).removeClass("hover");
+  $(this).find("b").removeClass("arrow_gray");
+});
+$(".helpMenu p").toggle(function(){
+  $(".helpMenu p").each(function(i){$(this).next().hide();$(this).find("b").removeClass("unfold").addClass("fold");});
+  $(this).next().show();
+  $(this).find("b").removeClass("fold").addClass("unfold");
+  // $(this).next().find("li").eq(0).addClass("on").find("b").addClass("arrow_blue");
+},function(){
+  $(this).next().hide();
+  $(this).find("b").removeClass("unfold").addClass("fold");
+});
+$(function() {
+  $(".helpContent dt").live("click",function(){
+    // $(".helpContent dd").each(function(){$(this).hide()});
+    if($(this).next().is(":visible")){
+      $(this).css("border-bottom","1px dashed #DADADA");
+      $(this).next().hide();
+      $(this).next().css("border-bottom","none");
+    }else{
+      $(this).css("border-bottom","none");
+      $(this).next().css("border-bottom","1px dashed #DADADA");
+      $(this).next().show();
+    }
+    });
+});
+
+</script>
+</body>
+</html>

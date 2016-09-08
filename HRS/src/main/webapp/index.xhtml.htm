@@ -1,0 +1,944 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />  
+<meta name="description" content="广州市统一预约挂号网为广州市卫生和计划生育委员会主办的唯一官方认证预约平台，免费提供广州地区所有大型医院网上挂号、12320电话挂号、手机（关注“广州健康通”微信公众号、支付宝服务窗、下载手机APP）及院内自助终端挂号服务，为您解决挂号难题。" />
+<meta name="keywords" content="预约挂号，广州挂号，网上挂号，12320挂号，挂号，自助终端挂号" />
+<meta name="robots" content="all" />
+<title>广州市统一预约挂号平台_网上挂号 12320挂号 自助终端挂号</title>
+<link rel="stylesheet" type="text/css" href="base.css-t=201305281140250.css" tppabs="http://www.guahao.gov.cn/css/common/base.css?t=201305281140250" />
+<link rel="stylesheet" type="text/css" href="common.css-t=201411240822230.css" tppabs="http://www.guahao.gov.cn/css/common/common.css?t=201411240822230" />
+<link rel="stylesheet" type="text/css" href="mod.css-t=201608171104400.css" tppabs="http://www.guahao.gov.cn/css/mod.css?t=201608171104400" />
+<link rel="stylesheet" type="text/css" href="ui.datepicker.css-t=201211280337360.css" tppabs="http://www.guahao.gov.cn/js/common/cal/css/ui.datepicker.css?t=201211280337360" />
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.20.custom.css-t=201303250411280.css" tppabs="http://www.guahao.gov.cn/js/common/jquery.ui.dialog_js/css/ui-lightness/jquery-ui-1.8.20.custom.css?t=201303250411280" />
+
+
+</head>
+<body>
+<div class="wrap">
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="headerBg clearfix">
+    <div class="header">
+        <p class="header-topTxt mb10">
+            
+            <a href="login.xhtml.htm" tppabs="http://www.guahao.gov.cn/login.xhtml">登录</a>&nbsp;|&nbsp;<a href="login.xhtml-goto=-usrinfo.xhtml.htm#orderList" tppabs="http://www.guahao.gov.cn/usrinfo.xhtml#orderList">我的订单</a>&nbsp;|&nbsp;<a href="register.xhtml.htm" tppabs="http://www.guahao.gov.cn/register.xhtml">注册</a>&nbsp;|&nbsp;<a href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml">预约指南</a>&nbsp;|&nbsp;<span>投诉电话：020-12320</span>
+            
+            
+        </p>
+        <p class="header-logo"><span class="hotPhone">预约热线：<b class="hotPhone-no">020-12320</b></span></p>
+        <form action="quit_login.xhtml.htm" tppabs="http://www.guahao.gov.cn/quit_login.xhtml"  method="post" name="quitLogin"></form>
+    </div>
+</div>
+<div style="width:960px;margin:0 auto;display:none;" id="noticBlock" >
+<div style="float:left;border:1px solid #FECB66;width:938px;padding:10px;background-color:#FEFEE4;color:#FE0000;">
+	<p>尊敬的用户：</p>
+	<p style="text-indent:2em;" id="comNoticeCnt"></p>
+</div>
+</div>
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="menuBar mb15 clearfix">
+    <div class="menu menuL"></div>
+    <div class="menuX menu_nav">
+        <ul class="top">
+            <li><a class="on" id="01" href="index.xhtml.htm" tppabs="http://www.guahao.gov.cn/index.xhtml" item="#index" title="首页">首&nbsp;页</a></li>
+            <li><a id="02" href="hospitallist.xhtml.htm" tppabs="http://www.guahao.gov.cn/hospitallist.xhtml" item="#reserve">挂号服务</a></li>
+            <li><a id="03" href="login.xhtml-goto=-usrinfo.xhtml.htm" tppabs="http://www.guahao.gov.cn/usrinfo.xhtml" item="#regmng">预约管理</a></li>
+            <li><a id="06" href="login.xhtml-goto=-payment_mng.xhtml.htm" tppabs="http://www.guahao.gov.cn/payment_mng.xhtml">缴费管理</a></li>
+            <li><a id="04" href="flow_ghbyweb.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml" item="#help">预约指南</a></li>
+            <li><a id="05" href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml" item="#notice">通知及反馈</a></li>
+            <li><a id="07" href="download_client.xhtml.htm" tppabs="http://www.guahao.gov.cn/download_client.xhtml" item="#download">客户端下载</a></li>
+        </ul>
+        <div style="clear:both;display:block;"></div>
+        <ul id="reserve" class="bot" style="display:none;padding-left:84px;">
+            <li><a id="0201" title="预约挂号" href="hospitallist.xhtml.htm" tppabs="http://www.guahao.gov.cn/hospitallist.xhtml"><span>预约挂号</span></a></li>
+            <li><a id="0202" title="当天挂号" href="javascript:if(confirm('http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow  \n\n该文件无法用 Teleport Ultra 下载, 因为 服务器报告发生错误, 阻止了下载。  \n\n你想在服务器上打开它?'))window.location='http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow'" tppabs="http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow"><span>当天挂号</span></a></li>
+        </ul>
+        <ul id="help" class="bot" style="display:none;padding-left:150px;">
+            <li><a id="0402" title="预约挂号须知" href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml"><span>预约挂号须知</span></a></li>
+            <li><a id="0401" title="预约挂号指南" href="flow_ghbyweb.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml"><span>预约挂号指南</span></a></li>
+            <li><a id="0403" title="常见疾病对应科室" href="comdis.xhtml.htm" tppabs="http://www.guahao.gov.cn/comdis.xhtml"><span>常见疾病对应科室</span></a></li>
+            <li><a id="0404" title="常见问题" href="questions1.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions1.xhtml"><span>常见问题</span></a></li>
+        </ul>
+        
+        
+            <ul id="notice" class="bot" style="display:none;padding-left:490px;">
+        
+            
+            <li><a id="0501" title="停诊通知" href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml"><span>停诊通知</span></a></li>
+            
+        </ul>
+        <!-- <div style="clear:both;display:block;"></div> -->
+    </div>
+    <div class="menu menuR"></div>
+</div>
+  
+  <div class="bd-index clearfix ">
+    <div class="leftSider">
+      
+      
+
+<div class="flashSlider mb10">
+    <ul class="slider">
+        <li>
+            <a>
+            		<img src="flash_140723_2.jpg" tppabs="http://www.guahao.gov.cn/images/index/flash_140723_2.jpg" alt="微信已开通" width="675" height="260" />
+            </a>
+        </li>
+        <li>
+            <a>
+            		<img src="flash_140723_1.jpg" tppabs="http://www.guahao.gov.cn/images/index/flash_140723_1.jpg" alt="手机客户端已开通" width="675" height="260" />
+            </a>
+        </li>
+	    	<li>
+            <a>
+                <img src="flash_140808_2.jpg" tppabs="http://www.guahao.gov.cn/images/index/flash_140808_2.jpg" alt="新医院上线" width="675" height="260" />
+            </a>
+        </li>
+    </ul>
+    <ul class="num">
+        <li class="on">1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div>
+
+
+<div class="mb10"><img src="guahaoStep.jpg" tppabs="http://www.guahao.gov.cn/images/index/guahaoStep.jpg" alt="预约挂号流程" height='60' width="675" usemap="#step" /><map name="step"><area shape="rect" coords="65,0,170,60" href="flow_ghbyweb.xhtml.htm#map1" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml#map1" alt="用户注册登录" title="用户注册登录"><area shape="rect" coords="185,0,320,60" href="flow_ghbyweb.xhtml.htm#map2" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml#map2" alt="选择医生及就诊时间" title="选择医生及就诊时间"><area shape="rect" coords="335,0,440,60" href="flow_ghbyweb.xhtml.htm#map3" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml#map3" alt="确认网上支付" title="确认网上支付"><area shape="rect" coords="455,0,580,60" href="flow_ghbyweb.xhtml.htm#map4" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml#map4" alt="接收预约成功短信" title="接收预约成功短信"><area shape="rect" coords="590,0,675,60" href="flow_ghbyweb.xhtml.htm#map5" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml#map5" alt="取号就诊" title="取号就诊"></map></div>
+
+
+      
+      
+      
+<div class="content-block brdBtNone">
+  <h3 class="block-hd mb10"><b class="txt">按照医院找医生</b><b class="bg"></b></h3>
+  <div class="block-bd">
+    <ul class="content-tab mb10" id="areaList">
+      <li class="on" area="guangzhou">广州市</li>
+      <li area="yuexiu">越秀区</li>
+      <li area="liwan">荔湾区</li>
+      <li area="haizhu">海珠区</li>
+      <li area="huangpu">黄浦区</li>
+      <li area="tianhe">天河区</li>
+      <li area="panyu">番禺区</li>
+    </ul>
+    <div id="hospitalList"></div>
+  </div>
+</div>
+
+      
+      
+<div class="content-block">
+  <h3 class="block-hd mb10"><b class="txt">按照疾病找医生</b><b class="bg"></b><a href="diseases.xhtml.htm" tppabs="http://www.guahao.gov.cn/diseases.xhtml">更多疾病&gt;&gt;</a></h3>
+  <ul class="block-bd content-departmentList" id="deptList"></ul>
+</div>
+
+    </div>
+    <div class="rightSider">
+      
+      
+
+<div class="loginBox mb10">
+  <h3 class="block-hd mb10"><b>用户登录</b></h3>
+  <form action="" method="post" name="login_form">
+    <ul class="loginBox-content">
+      <li><label class="loginBox-label" id="loginWay">账号：</label></li>
+      <li><div class="btn inputLgBg"><input type="text" name="CARD_NO" value='用户名/健康卡/证件号/市民卡' id="cardNo" class="inputTxt c_gray9" maxlength="20"/></div></li>
+      <li><label class="loginBox-label">密&nbsp;&nbsp;码：</label></li>
+      <li><div class="btn inputLgBg"><input type="password" class="inputTxt" id="PWD"/></div></li>
+      <li><input name="checkbox" type="checkbox" id="autologin">&nbsp;7天内自动登录</li>
+      <li style="min-height:30px;height:auto;line-height:20px;"><span class="c_red" id="errortip" style="display:none"></span></li>
+      <li><input type="button" value='登  录' class="btn btn_login" onclick="submitLogForm()" /><a href="findbackpwd.xhtml.htm" tppabs="http://www.guahao.gov.cn/findbackpwd.xhtml" class="findPwd">忘记密码？</a></li>
+    </ul>
+    <input type="hidden" name="CARD_TYP" id="cardTyp" value="1">
+  	<input type="hidden" name="PWD" id="PWD_MD5">
+  </form>
+  <div class="loginBox-registerBtn"><a class="btn btn_register" href="register.xhtml.htm" tppabs="http://www.guahao.gov.cn/register.xhtml">立即注册</a><!-- <input type="button" value='立即注册' class="btn btn_register"/> --></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="usrInfoDiv" style="display:none">
+  <form action="" name="usrInfoForm" method="post">
+  <div class="formList mt10">
+    <label class="leftAlign" for="USR_ACT"><em class="c_red">*</em>用户名：</label>
+    <div class="formList-block">
+      <div class="formList-block" id="usrActInput" style="display:none">
+        <input type="text" class="inputStyle" id="USR_ACT" name="USR_ACT" note="用户名须以字母开头，以字母，数字和下划线组成，长度为6到18位之间！" onfocus="showNoteInfo(this)" onblur="ajx_chk_usrAct(this.id);" onmousemove="this.style.borderColor='#ff7800';" onmouseout="this.style.borderColor='#ccc';" maxlength="18"/>
+        <span id="USR_ACTInfoDiv" class="show_rule" ></span>
+      </div>
+      <div class="formList-block" id="usrAct" style="display:none"></div>
+    </div>
+  </div>
+  <div class="formList mt10">
+    <label class="leftAlign" for="USR_NM"><em class="c_red">*</em>真实姓名：</label>
+    <div class="formList-block">
+      <div class="formList-block" id="usrNmNotReal" style="display:none">
+        <input type="text" class="inputStyle" value="" id="USR_NM" name="USR_NM" note="用户姓名须是2－6个汉字录入或英文字母4－12个" onfocus="showNoteInfo(this)" onblur="chk_usrNm(this.id);" onmousemove="this.style.borderColor='#ff7800';" onmouseout="this.style.borderColor='#ccc';" maxlength="12"/>
+        <span id="USR_NMInfoDiv" class="show_rule" ></span>
+      </div>
+      <div class="formList-block" id="usrNmIsReal" style="display:none"></div>
+    </div>
+  </div>
+  <div class="formList mt10">
+    <label class="leftAlign" for="CER_NO"><em class="c_red">*</em>身份证号码：</label>
+    <div class="formList-block">
+      <div class="formList-block" id="CER_NO"></div><input type="hidden" name="CER_NO" id="cerNo">
+    </div>
+  </div>
+  <div class="formList mt10">
+    <label class="leftAlign"><em class="c_red">*</em>用户性别：</label>
+    <div class="formList-block" id="sex">
+      
+      
+    </div>
+  </div>
+  <div class="formList mt10">
+    <label class="leftAlign" for="mblNo"><em class="c_red">*</em>预约手机：</label>
+    <div class="formList-block">
+        <input type="text" class="round inputStyle"  id="mblNo" name="MBL_NO" onblur="chk_mblNo(this.id);" onmousemove="this.style.borderColor='#ff7800';" onmouseout="this.style.borderColor='#ccc';"/>
+        <span id="mblNoInfoDiv" class="show_rule"></span>
+    </div>
+  </div>
+  <div class="formList mt10">
+    <label class="leftAlign"><em class="c_red">*</em>短信验证码：</label>
+    <div class="formList-block">
+        <input type="text" class="round inputStyle w100" id="verCdMsg" name="VER_CD_MSG" onblur="chk_verCdMsg(this.id)" maxlength="6" onmousemove="this.style.borderColor='#ff7800';" onmouseout="this.style.borderColor='#ccc';"/>
+        &nbsp;&nbsp;<input type="button" class="btn btn04" onclick="sendMsg()" id="sendMsgcd" value="获取验证码"/>
+        <span id="verCdMsgInfoDiv" class="show_rule"></span>
+    </div>
+  </div>
+  <div class="formList" id="msgCdTip">
+    <label class="leftAlign">&nbsp;</label>
+    <div class="formList-block">
+        <span class="show_rule"><em class="c_red">*</em>若没收到短信，请点击重新获取验证码。</span>
+    </div>
+  </div>
+  <div class="userInfoForm">
+    <div class="formList mt30">
+        <label class="leftAlign">&nbsp;</label>
+        <div class="formList-block">
+            <input type="button" value="提交" class="btn btn_login" onclick="sumbitUsrForm();"/>
+        </div>
+    </div>
+  </div>
+  </form>
+</div>
+<script type="text/javascript">
+function sendMsg(){
+  var MBL_NO = $("#mblNo").val();
+    var CER_NO = $("#cerNo").val();
+    if(!chk_idCard("cerNo") || !chk_mblNo("mblNo")){
+      return false;
+    }
+    $.ajax({
+      type: "POST",
+      url:"/sendMsg.xhtml?MBL_NO="+MBL_NO+"&CER_NO="+CER_NO+"&BUS_TYP=3&&r="+Math.random(),
+      data: "",
+      dataType: "json",
+      success: function(data){
+        if(data.GWA.MSG_CD == "PTS00000"){
+          showTipInfo("verCdMsg",'验证码已发送至您的手机，请查看。','show_rule');
+          ddpack.sendMSCD('sendMsgcd','60');
+        }else{
+          showTipInfo("verCdMsg",data.GWA.MSG_DAT);
+        }
+      }
+    });
+}
+/*====发短息按钮倒计时效果====*/
+// var ddpack = ddpack||{};
+// ddpack.param = {speed:1000,wait:0,kj_isinerval:null};
+// ddpack.wait = function(obj){
+//   var _id = obj;
+//   if(ddpack.param.wait == 0){
+//     $(obj).val("获取验证码");
+//     $(obj).attr("class","btn btn04");
+//     $(obj).removeAttr("disabled")
+//     clearInterval(ddpack.param.isinerval); 
+//   }else{
+//     $(obj).attr("class","btn btn_msg_len");
+//     $(obj).attr("disabled","disabled")
+//     $(obj).val("("+((ddpack.param.wait<10)?'0'+ddpack.param.wait:ddpack.param.wait)+")秒后重新获取验证码");
+//     ddpack.param.wait = (ddpack.param.wait -1);
+//     ddpack.param.isinerval=window.setTimeout("ddpack.wait('"+obj+"')",ddpack.param.speed);
+//   }
+// }
+// ddpack.sendMSCD = function(id,s){
+//   ddpack.param.wait = s;
+//   ddpack.wait("#"+id);
+// };
+</script>
+
+      
+      
+      
+<div class="content-block brdBtNone pb20">
+   <h3 class="block-hd mb10"><b>快速检索</b></h3>
+   <div class="block-bd">
+       <form method="get" action="http://www.guahao.gov.cn/quicksearch.xhtml" id="searchForm" name="searchForm">
+          <div class="btn inputSSBg">
+            <input type="text" value='输入医院名称/科室名称/医生名称'  id="KEY_WORD" name="KEY_WORD"  autocomplete="off" class="inputTxt c_gray9" /><input type="text" style="display:none;"><a href="javascript:;" class="btn icon_search" onclick="submitSearchForm();return false;" ></a>
+          </div>
+        </form>
+    </div>
+</div>
+
+      
+      
+      
+<div class="content-block brdBtNone">
+  <h3 class="block-hd mb10"><b>医生出诊查询</b></h3>
+  <div class="block-bd">
+    <form action="http://www.guahao.gov.cn/doctorslist.xhtml" method="get" name="searchDocForm">
+    <ul class="searchDoctorBox">
+      <li>
+        <span>就医地区：</span>
+        <select class="round" id="areaId" name="ARE_ID" onchange="loadHosp()">
+            <option value="">全部</option>
+        </select>
+      </li>
+      <li>
+        <span>就医医院：</span>
+        <select class="round" id="hospitalId" name="HIS_CD" onchange="loadPDept()">
+          <option value="">-- 请选择 --</option>
+        </select>
+      </li>
+      <li>
+        <span>一级科室：</span>
+        <select class="round" name="PAR_DEP_ID" id="pDeptId" onchange="loadDept()">
+          <option value=''>-- 请选择 --</option>
+        </select>
+      </li>
+      <li>
+        <span>二级科室：</span>
+        <select class="round" name="DEP_ID" id="deptId">
+          <option value=''>-- 请选择 --</option>
+        </select>
+      </li>
+      <li>
+        <span>出诊日期：</span>
+        <!-- <input type="text" class="round searchDate hasDatepicker" id="sta_dat" name="STA_DAT" readonly="readonly" value="" /> -->
+        <input type="text" class="round searchDate" id="sta_dat" name="STA_DAT" readonly="readonly"/>
+      </li>
+      <li class="searchBtn">
+        <span>&nbsp;</span><input type="button" value='查  询' class="btn btn03" onclick="submitForm()"/>
+      </li>
+    </ul>
+    </form>
+  </div>
+</div>
+
+      
+      
+      
+<div class="content-block"><a href="javascript:if(confirm('http://health.gzmed.gov.cn/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://health.gzmed.gov.cn/'" tppabs="http://health.gzmed.gov.cn/" title="广州市健康门户" target="_blank"><img src="ad_01.jpg" tppabs="http://www.guahao.gov.cn/images/index/ad_01.jpg" alt="广州市健康门户"></a></div>
+<div class="content-block">
+    <h3 class="block-hd mb10"><b>常见问题</b></h3>
+    <div class="block-bd"> 
+        <ul id="hotQuestions" class="hotQuestions">
+            <li><b class="mr10">&bull;</b><a href="questions2.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions2.xhtml" title="如何进行预约？">如何进行预约？</a></li>
+            <li><b class="mr10">&bull;</b><a href="questions1.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions1.xhtml" title="网站注册时一定要填写真实的身份证信息吗？">网站注册时一定要填写真实的身份...</a></li>
+            <li><b class="mr10">&bull;</b><a href="questions1.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions1.xhtml" title="注册时，为什么要求我输入手机号码？">注册时，为什么要求我输入手机...</a></li>
+            <li><b class="mr10">&bull;</b><a href="questions2.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions2.xhtml" title="首次预约挂号可以使用哪些证件？">首次预约挂号可以使用哪些证件？</a></li>
+            <li><b class="mr10">&bull;</b><a href="questions3.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions3.xhtml" title="预约成功后，怎么取号？">预约成功后，怎么取号？</a></li>
+            <li><b class="mr10">&bull;</b><a href="questions2.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions2.xhtml" title="使用自助终端机时，为什么提示我刷身份证？">使用自助终端机时，为什么提示我刷...</a></li>
+            <li><b class="mr10">&bull;</b><a href="questions7.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions7.xhtml" title="如何支付挂号费呢？">如何支付挂号费呢？</a></li>
+            <li><b class="mr10">&bull;</b><a href="questions4.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions4.xhtml" title="我预约成功了，但收到短信告诉我停诊了，这种情况下怎么处理？">我预约成功了，但收到短信告诉我...</a></li>
+            <li><b class="mr10">&bull;</b><a href="questions6.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions6.xhtml" title="如果我没有取消预约，又没有就诊，会有什么影响？">如果我没有取消预约，又没有就诊...</a></li>
+            <li><b class="mr10">&bull;</b><a href="questions5.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions5.xhtml" title="为什么系统提示我受到限制不能挂号了？">为什么系统提示我受到限制不能挂号...</a></li>
+            <li><b class="mr10">&bull;</b><a href="questions5.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions5.xhtml" title="加入黑名单后，怎么申诉并取消黑民单呢？">加入黑名单后，怎么申诉并取消黑...</a></li>
+        </ul>
+    </div>
+</div>
+
+      
+    </div>
+  </div> 
+  
+  
+<div class="friendLink mt10">
+  <h3 class="block-hd"><b>友情链接</b></h3>
+  <div class="friendLink-list clearfix" id="friendLink"></div>
+</div>
+
+</div>
+
+<div class="bg_gray">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+    <div class="line_bt"></div>
+    <div class="footer-content">
+        <div class="footer-logo"><span></span></div>
+        <span class="ml10">地址：广州市东风西路182号</span>
+        <span class="ml10">技术支持：广州市卫生信息中心</span>
+        <span class="ml10">广州市卫生和计划生育委员会版权所有</span><br>
+        <span class="ml10">粤ICP备12059770号</span>
+        <span class="ml10"><a target="_blank" href="javascript:if(confirm('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394'" tppabs="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394"><img style="vertical-align:middle" src="beian.png" tppabs="http://www.guahao.gov.cn/images/common/beian.png"/>&nbsp;粤公网安备&nbsp;44010402000394号</a></span>&nbsp;
+        <script src="stat.php-id=4589427&web_id=4589427&show=pic1" tppabs="http://s25.cnzz.com/stat.php?id=4589427&web_id=4589427&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="jquery.js-t=201201101201560" tppabs="http://www.guahao.gov.cn/js/common/jquery.js?t=201201101201560" ></script>
+<script type="text/javascript" src="base.js-t=201405220620040" tppabs="http://www.guahao.gov.cn/js/common/base.js?t=201405220620040" ></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+navInit();//初始化菜单
+sso_check_login();//单点登录检测
+});
+/*
+* highOnclick(pId,curId)
+* curId 二级菜单当前ID名称
+*/
+var curStr="0101";
+if(curStr!="" && curStr!="null"){
+highOnclick(curStr);
+}
+
+</script>
+<script type="text/javascript" src="jquery.ui.datepicker.js-t=201207060901350" tppabs="http://www.guahao.gov.cn/js/common/cal/jquery.ui.datepicker.js?t=201207060901350"></script>
+<script type="text/javascript" src="index.js-t=201311260254080" tppabs="http://www.guahao.gov.cn/js/index.js?t=201311260254080" ></script>
+
+<script src="sso-client.js-t=201303150508060" tppabs="http://www.guahao.gov.cn/js/urm/sso-client.js?t=201303150508060" type="text/javascript"></script>
+<script type="text/javascript">
+function loginOut(){
+    sso_logout();
+    noLoginCookie();//取消自动登陆
+    $("form[name=quitLogin]").submit();
+}
+$(function(){
+	$.ajax({
+    url: "/notice.xhtml?r="+Math.random(),
+    type: 'post',
+    dataType: 'json',
+    data: '',
+    success: function(data) {
+      if(data.GWA.MSG_CD == 'PTS00000'){
+      	if(data.NOT_STS == "0"){
+      		$("#noticBlock").hide();
+      	}else if(data.NOT_STS == "1"){
+      		$("#noticBlock").show();
+      		$("#comNoticeCnt").html(data.NOT_RM+"&nbsp;&nbsp;---广州市卫生和计划生育委员会");
+      	}
+      }
+    }
+  });	
+});
+</script>
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    loadArea();//加载地区
+    loadHosp();//加载所有医院
+});
+</script>
+
+<script type="text/javascript">
+$(function() {
+    $.get("/disList.xhtml?channel=CH1",function(data){
+        $("#deptList").html(data);
+    });
+});
+
+</script>
+
+<script type="text/javascript">
+$(function(){
+  $.ajax({
+    url:"/friend_link_typ.xhtml?r="+Math.random(),
+    type:'get',
+    data:"",
+    dataType:'json',
+    success: function(data) {
+      var htmlContent="";
+      if(data.REC == "" || data.REC == null){
+        return false;
+      }
+      for( var i = 0; i < data.REC.length; i++ ) {
+      htmlContent = htmlContent + "<div class='bg-select hosp-list'><span class='hosp-typ'>"+data.REC[i].LINK_TYP+"</span><ul class='hosp-link-list' style='display:none;'></div>";
+      }
+      $("#friendLink").html(htmlContent).show();
+    }
+  });
+});
+  $(".hosp-list .hosp-typ").live("click",function(){
+    var _this = $(this);
+    if(_this.next().html()!=""){
+      if(_this.next().is(":visible")){
+        $(".hosp-list span").each(function(){
+          $(this).parent().removeClass("bg-select-zindex").css("*z-index","1");
+          $(this).next().hide();
+        });
+      }else{
+        $(".hosp-list span").each(function(){
+          $(this).parent().removeClass("bg-select-zindex").css("*z-index","1");
+          $(this).next().hide();
+        });
+        _this.parent().addClass("bg-select-zindex").css("*z-index","2");
+        _this.next().show();
+      }
+      return false;
+    }
+    var QRY_TYP = $(this).text();
+    $.ajax({
+      url:"/friend_link.xhtml?QRY_TYP="+QRY_TYP+"&r="+Math.random(),
+      type:'get',
+      data:"",
+      dataType:'json',
+      success: function(data) {
+        var htmlContent="";
+        if(data.REC == "" || data.REC == null){
+          return false;
+        }
+        for( var i = 0; i < data.REC.length; i++ ) {
+        htmlContent = htmlContent + "<li><a target='_blank' href='"+data.REC[i].LINK+"'>"+data.REC[i].LINK_HIS_NM+"</a></li>";
+        }
+        $(".hosp-list span").each(function(){
+          $(this).parent().removeClass("bg-select-zindex").css("*z-index","1");
+          $(this).next().hide();
+        });
+        _this.parent().addClass("bg-select-zindex").css("*z-index","2");
+        _this.next().html(htmlContent).show();
+      }
+    });
+    
+  });
+
+  $("body").click(function(e){
+    if(e.target.className!='hosp-typ'){  
+        $(".hosp-list .hosp-typ").next().hide();
+    }
+  }); 
+</script>
+
+<script type="text/javascript">
+$(function() {
+  readTrans();//加载医院列表信息
+  getHisArea();//加载区域列表信息
+});
+function getHisArea(){
+  $.ajax({
+    url:"/ajxarea.xhtml?r="+Math.random(), 
+    type: 'get',
+    dataType: 'json',
+    data:"",
+    success: function(data) {
+      var htmlContent="<li class='on' area=''>广州市</li>";
+      if(data.REC == "" || data.REC == null){
+        return false;
+      }
+      for( var i = 0; i < data.REC.length; i++ ) {
+        htmlContent = htmlContent + "<li area='"+data.REC[i].ARE_ID+"'>"+data.REC[i].HIS_ARE+"</li>";
+      }
+      $("#areaList").html(htmlContent);
+    }
+  });
+} 
+$("ul.content-tab > li").live("click",function(){
+  $("ul.content-tab > li").removeClass();
+  $(this).removeClass("on");
+  $(this).addClass("on");
+  var area = $(this).attr("area");
+  readTrans(area);
+});
+function readTrans(HIS_ARE){
+  var HIS_ARE = (HIS_ARE==undefined)?"":HIS_ARE;
+  $("#hospitalList").html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");
+  $.ajax({
+      type:"get",
+      url:"/hospitals.xhtml?ARE_ID="+HIS_ARE,
+      data:{},
+      success:function(data){
+      $("#hospitalList").html("");
+      $("#hospitalList").html(data);
+     }
+  });
+}
+  
+</script>
+ 
+<script type="text/javascript" src="jquery-ui-1.8.20.custom.min.js-t=201208070830560" tppabs="http://www.guahao.gov.cn/js/common/jquery.ui.dialog_js/js/jquery-ui-1.8.20.custom.min.js?t=201208070830560"></script>
+<script type="text/javascript" src="md5.js-t=201310091125570" tppabs="http://www.guahao.gov.cn/js/common/md5.js?t=201310091125570"></script>
+<script type="text/javascript" src="jquery.cookie.js-t=201608171132100" tppabs="http://www.guahao.gov.cn/js/urm/jquery.cookie.js?t=201608171132100"></script>
+<script type="text/javascript" src="formValidator.js-t=201608170420060" tppabs="http://www.guahao.gov.cn/js/urm/formValidator.js?t=201608170420060" charset="UTF-8"></script>
+<script type="text/javascript">
+
+	//获取Cookie值
+  var usr_nm = getCookie("usr_nm");
+  var usr_pwd = getCookie("usr_pd");
+  if(usr_nm&&usr_pwd){
+  	$("#cardNo").val(usr_nm);
+  	$("#PWD").val(usr_pwd);
+  	submitLogForm();
+  	}
+  
+//回车事件提交登录
+document.onkeydown = function(){
+  var evt=document.all?window.event:arguments[0];
+  if(evt.keyCode==13){
+  $('form[name=login_form]').each(function() {
+    submitLogForm();
+  });
+  }
+}
+/*初始化完善用户信息弹出框*/
+$("#usrInfoDiv").dialog({
+    autoOpen:false,
+    width:700,
+    height:350,
+    modal:true,
+    draggable:true,
+    resizable:false,
+    title:'完善用户信息'    
+});
+</script>
+
+<script type="text/javascript" src="jquery.autocomplete.js-t=201401160552420" tppabs="http://www.guahao.gov.cn/js/common/jquery.autocomplete.js?t=201401160552420"></script>    
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    //关键字搜索
+    $("#KEY_WORD").autocomplete("/keysearch.xhtml",{
+        width: 230,
+        selectFirst: false,
+        dataType:'json',
+        parse:parseFn,
+        formatItem: function(row,i,max){
+            return row;
+        }
+    });
+});
+
+//获取查询结果
+function parseFn(data) {   
+var wordList=data.REC;
+var rows = [];   
+if(wordList != null && wordList != ""){
+    for(var i=0; i < wordList.length; i++){      
+        rows[rows.length] = {       
+        data:wordList[i].HISANDDEPANDDOC_NM,           
+        value:wordList[i].HISANDDEPANDDOC_NM,       
+        result:wordList[i].HISANDDEPANDDOC_NM   
+      };       
+    }
+}
+return rows;      
+} 
+/*js=======key search*/
+$("#KEY_WORD").blur(function () {
+    if($(this).val() == ''){
+        $(this).val("输入医院名称/科室名称/医生名称");
+        $(this).addClass("c_gray9");
+    }
+});
+$("#KEY_WORD").focus( function () {if($(this).val() == '输入医院名称/科室名称/医生名称'){$(this).val("");$(this).removeClass("c_gray9");}} );
+
+function submitSearchForm(){
+    $("#errTip").hide();
+    var inputVal = $("#KEY_WORD").val();
+    if(inputVal =="" || inputVal ==null || inputVal =="输入医院名称/科室名称/医生名称"){
+        return false;
+    }else{
+        document.getElementById("searchForm").submit();
+    }
+}
+</script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,79 @@
+/*===button===*/
+.btn{background: url("button.png")
+.icon{background: url("icon.png") no-repeat;}
+.warmTip{background-position:0px -136px;display: inline-block;height:22px;vertical-align:middle;width: 22px; }
+.suc01{background-position:0px -92px;display: inline-block;height:20px;vertical-align:middle;width: 20px; }
+.fold{background-position: 0px -158px;display: inline-block;height:14px;width: 15px;vertical-align: middle;}
+.unfold{background-position: -14px -158px;display: inline-block;height:14px;width: 15px;vertical-align: middle;}
+.arrow_gray{background-position: 0px -173px;display: inline-block;height:9px;width: 5px;vertical-align: middle;overflow: hidden;}
+.arrow_blue{background-position: -6px -173px;display: inline-block;height:9px;width: 5px;vertical-align: middle;overflow: hidden;}
+.icon_del{background-position: 0px -183px;cursor:pointer;display: inline-block;height: 11px;width: 11px;vertical-align: middle;}
+.show_err{font-size:12px;background:url("tips.png") no-repeat;margin-left:10px;display:inline-block;padding-left:27px;color:red}
+.show_err{background-position:0 -26px;line-height:22px;}
+.show_succ{background-position:0 0;line-height:22px;}
+.show_rule{height:auto;font-size:12px;color:#666;margin-left:10px;display:inline-block}
+.CAP{background: url("CAP.jpg")
+.bg_kk{background: url("bg_kk.png")
+.headerBg{background: url("bg_head.jpg") repeat-x;height: 125px;width: 100%;}
+.header{background: url("bg_head2.jpg") no-repeat;height: 125px;}
+.header2{background: url("bg_head3.jpg") no-repeat;height: 125px;width: 960px;margin:0 auto;}
+.header-topTxt{text-align: right;padding-top: 5px;color: #666;}
+.header-topTxt a{color:#009AFF;}
+.hotPhone{float:right;font-size: 18px;color:#FF8D3F;font-weight: bold;margin-top: 50px}
+.hotPhone-no{font-size: 20px;color:#FF8E40;}
+.header-line{background:url("bg_menu.jpg")
+.menuBar{width: 962px;margin: 0 auto 10px;position: relative;}
+.menu{background: url("menu.jpg") no-repeat;}
+.menuX{background: url("menuX.jpg") repeat-x;}
+.menuBar .menuL{background-position: 0px 0px;height:75px;width: 5px;float:left;}
+.menuBar .menuR{background-position: -5px 0px;height:75px;width: 5px;float:left;}
+.menu_nav{background-position: 0px 0px;height:75px;width: 952px;float:left;position: relative;margin:0 auto;z-index:1}
+.menu_nav ul.top{width: 100%;float: left;}
+.menu_nav ul.top li{display:inline;float:left;height:38px;line-height:38px;margin:0px 5px;text-align:center;width: 90px;}
+.menu_nav ul.top li a.on,.menu_nav ul.top li a:hover{background:url("bg_menu_on.jpg") no-repeat;height:35px;line-height:35px;width: 88px;color: #009AFF;margin-top: 4px;}
+.menu_nav ul.top li a{color:#fff;font-size: 14px;display:block;font-weight: bold;text-decoration: none;}
+.menu_nav .bot{margin:5px 0 0 25px;font-size:12px;_margin-top:1px;}
+.menu_nav .bot li{display:inline;line-height:26px;height:26px;zoom:1;}
+.menu_nav .bot li a{float:left;background:url("bg_menu2_01.jpg") no-repeat left top;text-decoration:none;padding-left:11px;cursor:pointer;}
+.menu_nav .bot li a span{float:left;display:block;background:url("bg_menu2_02.jpg")
+.bg_gray{background: #F6F6F6;}
+.footer{width: 960px;margin: 0 auto;color: #666;}
+.line_bt{background:url("line_bt.jpg") no-repeat;height:10px;width: 100%; }
+.logo_bt{text-align: center;padding-top: 20px;background-color:#F8F8F8;}
+.footer-logo{width: 100%;padding-top: 20px;}
+.footer-logo span{background:url("logo_bt.jpg") no-repeat;display:inline-block;height: 30px;width: 223px;text-align: center;}
+.footer-content{background:url("bg_footer.jpg")    
+.pp-tipsWrap,.pp-in,.pp-close{display:inline-block;}
+.pp-tipsWrap{font-size:12px;line-height:1.5em;padding:3px 15px 3px 23px;border:1px solid #2192D3;position:absolute;text-align:left;background:#FFF;}
+.pp-in{position:absolute;zoom:1;border:10px dashed transparent;width:0px;height:0px;}
+.pp-in span{zoom:1;width:0px;height:0px;overflow:hidden;}
+.pp-close{position:absolute; text-decoration:none;color:#000;font-size:14px; height:9px; width:9px; overflow:hidden;line-height:0.5em; right:0; top:0;}
+.pp-close:hover{color:#39F;}
+.pp-info{position:absolute; text-decoration:none;color:#000;height:15px; width:15px; overflow:hidden;line-height:0.5em; left:4px; top:5px;background: url("info.gif")/*tpa=https://cmpay.10086.cn/images/common/info.gif*/ no-repeat;}
+.pp-top{border-top:10px solid #2192D3;bottom:-20px; left:3px;}
+.pp-top span{border-top:10px solid #F4FBFF;margin:-11px 0 0 -10px;}
+.pp-right{border-right:10px solid #2192D3;left:-20px; top:3px;}
+.pp-right span{border-right:10px solid #F4FBFF;margin:-10px 0 0 -9px;}
+.pp-bottom{border-bottom:10px solid #2192D3;top:-20px; left:3px;}
+.pp-bottom span{border-bottom:10px solid #F4FBFF;margin:-9px 0 0 -10px;}
+.pp-left{border-left:10px solid #2192D3;right:-20px; top:3px; }
+.pp-left span{border-left:10px solid #F4FBFF;margin:-10px 0 0 -11px;}
+.pp-left ~ .pp-close{left:0;}
+/*css 3*/
+.pp-tipsWrap{-webkit-border-radius:3px;-moz-border-radius:3px;-webkit-box-shadow:2px 2px 3px #eee;-moz-box-shadow:2px 2px 3px #eee;}
+/*pp tip-end*/
+
+/* tipsy */
+.tipsy{padding:5px;font-size:13px;line-height:22px;background:url("tipsy.gif")
+.pageBar{clear: both;width: 100%;}
+.page_bar{text-align:center;color:#666;height:30px;line-height:30px}
+.page_bar a{border:1px solid #CCC;text-decoration:none;padding:0px 6px}
+.page_bar a:hover{border:1px solid #FD6D01;color:#FD6D01;text-decoration:none}
+.page_bar .pb_pre,.page_bar .pb_pre_off,.page_bar .pb_next,.page_bar .pb_next_off{background:url("tips.png")
+.tip-content{padding:40px 40px;}
+.tip-content .tip-img{float:left;width: 460px;}
+.tip-img-404{background: url("img_404.jpg") no-repeat;float: right;height:332px;width: 460px;}
+.tip-img-noResult{background: url("img_noResult.jpg") no-repeat;float: right;height:185px;margin-top:40px;width: 240px;}
+.tip-img-500{background: url("img_500.jpg") no-repeat;display:inline;float: right;height:397px;margin-right:45px;width: 299px;}
+.tip-img-fal{background: url("img_fal.jpg") no-repeat;display:inline;float: right;height:110px;margin-right:45px;width: 110px;}
+.tip-img-suc{background: url("img_suc.jpg")

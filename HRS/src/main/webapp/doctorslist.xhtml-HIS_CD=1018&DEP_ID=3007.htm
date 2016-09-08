@@ -1,0 +1,652 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />  
+
+<meta name="description" content="医生列表，科室的简介，科室内每个医生一个星期内的号源情况" />
+<meta name="keywords" content="医生列表，号源，预约挂号，广州挂号，12320挂号，网上挂号，挂号"/>
+<title>医生号源_医生列表_广州市统一预约挂号平台</title>
+
+<link rel="stylesheet" type="text/css" href="base.css-t=201305281140250.css" tppabs="http://www.guahao.gov.cn/css/common/base.css?t=201305281140250" />
+<link rel="stylesheet" type="text/css" href="common.css-t=201411240822230.css" tppabs="http://www.guahao.gov.cn/css/common/common.css?t=201411240822230" />
+<link rel="stylesheet" type="text/css" href="mod.css-t=201608171104400.css" tppabs="http://www.guahao.gov.cn/css/mod.css?t=201608171104400" />
+<script type="text/javascript" src="jquery.js-t=201201101201560" tppabs="http://www.guahao.gov.cn/js/common/jquery.js?t=201201101201560" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.20.custom.css-t=201303250411280.css" tppabs="http://www.guahao.gov.cn/js/common/jquery.ui.dialog_js/css/ui-lightness/jquery-ui-1.8.20.custom.css?t=201303250411280" />
+
+</head>
+<body>
+<div class="wrap">
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="headerBg clearfix">
+    <div class="header">
+        <p class="header-topTxt mb10">
+            
+            <a href="login.xhtml.htm" tppabs="http://www.guahao.gov.cn/login.xhtml">登录</a>&nbsp;|&nbsp;<a href="login.xhtml-goto=-usrinfo.xhtml.htm#orderList" tppabs="http://www.guahao.gov.cn/usrinfo.xhtml#orderList">我的订单</a>&nbsp;|&nbsp;<a href="register.xhtml.htm" tppabs="http://www.guahao.gov.cn/register.xhtml">注册</a>&nbsp;|&nbsp;<a href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml">预约指南</a>&nbsp;|&nbsp;<span>投诉电话：020-12320</span>
+            
+            
+        </p>
+        <p class="header-logo"><span class="hotPhone">预约热线：<b class="hotPhone-no">020-12320</b></span></p>
+        <form action="quit_login.xhtml.htm" tppabs="http://www.guahao.gov.cn/quit_login.xhtml"  method="post" name="quitLogin"></form>
+    </div>
+</div>
+<div style="width:960px;margin:0 auto;display:none;" id="noticBlock" >
+<div style="float:left;border:1px solid #FECB66;width:938px;padding:10px;background-color:#FEFEE4;color:#FE0000;">
+	<p>尊敬的用户：</p>
+	<p style="text-indent:2em;" id="comNoticeCnt"></p>
+</div>
+</div>
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="menuBar mb15 clearfix">
+    <div class="menu menuL"></div>
+    <div class="menuX menu_nav">
+        <ul class="top">
+            <li><a class="on" id="01" href="index.xhtml.htm" tppabs="http://www.guahao.gov.cn/index.xhtml" item="#index" title="首页">首&nbsp;页</a></li>
+            <li><a id="02" href="hospitallist.xhtml.htm" tppabs="http://www.guahao.gov.cn/hospitallist.xhtml" item="#reserve">挂号服务</a></li>
+            <li><a id="03" href="login.xhtml-goto=-usrinfo.xhtml.htm" tppabs="http://www.guahao.gov.cn/usrinfo.xhtml" item="#regmng">预约管理</a></li>
+            <li><a id="06" href="login.xhtml-goto=-payment_mng.xhtml.htm" tppabs="http://www.guahao.gov.cn/payment_mng.xhtml">缴费管理</a></li>
+            <li><a id="04" href="flow_ghbyweb.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml" item="#help">预约指南</a></li>
+            <li><a id="05" href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml" item="#notice">通知及反馈</a></li>
+            <li><a id="07" href="download_client.xhtml.htm" tppabs="http://www.guahao.gov.cn/download_client.xhtml" item="#download">客户端下载</a></li>
+        </ul>
+        <div style="clear:both;display:block;"></div>
+        <ul id="reserve" class="bot" style="display:none;padding-left:84px;">
+            <li><a id="0201" title="预约挂号" href="hospitallist.xhtml.htm" tppabs="http://www.guahao.gov.cn/hospitallist.xhtml"><span>预约挂号</span></a></li>
+            <li><a id="0202" title="当天挂号" href="javascript:if(confirm('http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow  \n\n该文件无法用 Teleport Ultra 下载, 因为 服务器报告发生错误, 阻止了下载。  \n\n你想在服务器上打开它?'))window.location='http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow'" tppabs="http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow"><span>当天挂号</span></a></li>
+        </ul>
+        <ul id="help" class="bot" style="display:none;padding-left:150px;">
+            <li><a id="0402" title="预约挂号须知" href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml"><span>预约挂号须知</span></a></li>
+            <li><a id="0401" title="预约挂号指南" href="flow_ghbyweb.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml"><span>预约挂号指南</span></a></li>
+            <li><a id="0403" title="常见疾病对应科室" href="comdis.xhtml.htm" tppabs="http://www.guahao.gov.cn/comdis.xhtml"><span>常见疾病对应科室</span></a></li>
+            <li><a id="0404" title="常见问题" href="questions1.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions1.xhtml"><span>常见问题</span></a></li>
+        </ul>
+        
+        
+            <ul id="notice" class="bot" style="display:none;padding-left:490px;">
+        
+            
+            <li><a id="0501" title="停诊通知" href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml"><span>停诊通知</span></a></li>
+            
+        </ul>
+        <!-- <div style="clear:both;display:block;"></div> -->
+    </div>
+    <div class="menu menuR"></div>
+</div>
+  
+  <div class="bd">
+    <!--hospital-detail && department-detail-->
+    <div class="page-wrap">
+      <div class="pageLeft">
+        
+<div class="pageLeft-hisInfo" id="hisInfoDetail"></div>
+ 
+      </div>
+      <div class="pageRight">
+        
+<div class="pageRight-deptInfo" id="doctorList">
+  <h3 class="content-hd mb20"><b>内科门诊&nbsp;|&nbsp;神经内科专家&nbsp;
+	
+  </b>
+  <a href="javascript:if(confirm('http://www.guahao.gov.cn/deplist.xhtml?HIS_CD=1018  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个与它的启始地址很远的链接。如果你增大启始地址域内深度设置, 该文件将被加入下载队列。  \n\n你想在服务器上打开它?'))window.location='http://www.guahao.gov.cn/deplist.xhtml?HIS_CD=1018'" tppabs="http://www.guahao.gov.cn/deplist.xhtml?HIS_CD=1018">&lt;&lt;选择其他科室</a></h3>
+  
+  <div class="docInfo-block mb20">
+    <a href="doc_detail.xhtml-HIS_CD=1018&DEP_ID=3007&DOC_ID=0323.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=0323" title="李丽娟" class="A_img"><img alt="李丽娟" src="1018_0323_20140210113310.jpg" tppabs="http://www.guahao.gov.cn/hospital/photo/docImg/1018/1018_0323_20140210113310.jpg" height="106"  width="86" /></a>
+    <div class="docInfo docInfo-w-h">
+      <p><a class="c_orange" href="doc_detail.xhtml-HIS_CD=1018&DEP_ID=3007&DOC_ID=0323.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=0323">李丽娟</a></p>
+      <p>主任医师</p>
+      <p></p>
+      <p>简介：擅长神经内科常见病多发病的诊治。尤其是脑血管病、癫痫、脑炎、运动障碍疾病、多发性...</p>
+    </div>
+    <div class="docInfo-btn" docId="0323" ><a href="javascript:;" class="btn btnA_01">查看排班表</a></div>
+    <div class="doc-schedule-block mb10" style="display:none"></div>
+  </div>
+  
+  <div class="docInfo-block mb20">
+    <a href="javascript:if(confirm('http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=0745  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个与它的启始地址很远的链接。如果你增大启始地址域内深度设置, 该文件将被加入下载队列。  \n\n你想在服务器上打开它?'))window.location='http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=0745'" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=0745" title="龙振钊" class="A_img"><img alt="龙振钊" src="1018_0745_20140206120114.jpg" tppabs="http://www.guahao.gov.cn/hospital/photo/docImg/1018/1018_0745_20140206120114.jpg" height="106"  width="86" /></a>
+    <div class="docInfo docInfo-w-h">
+      <p><a class="c_orange" href="javascript:if(confirm('http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=0745  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个与它的启始地址很远的链接。如果你增大启始地址域内深度设置, 该文件将被加入下载队列。  \n\n你想在服务器上打开它?'))window.location='http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=0745'" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=0745">龙振钊</a></p>
+      <p>副主任医师</p>
+      <p></p>
+      <p>简介：熟悉脑中风、周围神经病、各种头晕头痛、抑郁症、焦虑症、精神分裂症的诊治。</p>
+    </div>
+    <div class="docInfo-btn" docId="0745" ><a href="javascript:;" class="btn btnA_01">查看排班表</a></div>
+    <div class="doc-schedule-block mb10" style="display:none"></div>
+  </div>
+  
+  <div class="docInfo-block mb20">
+    <a href="doc_detail.xhtml-HIS_CD=1018&DEP_ID=3007&DOC_ID=0863.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=0863" title="李少梅" class="A_img"><img alt="李少梅" src="1018_0863_20140210113414.jpg" tppabs="http://www.guahao.gov.cn/hospital/photo/docImg/1018/1018_0863_20140210113414.jpg" height="106"  width="86" /></a>
+    <div class="docInfo docInfo-w-h">
+      <p><a class="c_orange" href="doc_detail.xhtml-HIS_CD=1018&DEP_ID=3007&DOC_ID=0863.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=0863">李少梅</a></p>
+      <p>副主任医师</p>
+      <p></p>
+      <p>简介：擅长急性脑血管病、癫痫、脑炎等疾病的救治，脑血管病后遗症、帕金森氏病的长期用药治...</p>
+    </div>
+    <div class="docInfo-btn" docId="0863" ><a href="javascript:;" class="btn btnA_01">查看排班表</a></div>
+    <div class="doc-schedule-block mb10" style="display:none"></div>
+  </div>
+  
+  <div class="docInfo-block mb20">
+    <a href="doc_detail.xhtml-HIS_CD=1018&DEP_ID=3007&DOC_ID=0953.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=0953" title="林耀波" class="A_img"><img alt="林耀波" src="1018_0953_20140210113523.jpg" tppabs="http://www.guahao.gov.cn/hospital/photo/docImg/1018/1018_0953_20140210113523.jpg" height="106"  width="86" /></a>
+    <div class="docInfo docInfo-w-h">
+      <p><a class="c_orange" href="doc_detail.xhtml-HIS_CD=1018&DEP_ID=3007&DOC_ID=0953.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=0953">林耀波</a></p>
+      <p>主任医师</p>
+      <p></p>
+      <p>简介：擅长神经系统疾病，尤其是脑血管病、脑血管病介入治疗、中枢神经系统感染、运动障碍疾...</p>
+    </div>
+    <div class="docInfo-btn" docId="0953" ><a href="javascript:;" class="btn btnA_01">查看排班表</a></div>
+    <div class="doc-schedule-block mb10" style="display:none"></div>
+  </div>
+  
+  <div class="docInfo-block mb20">
+    <a href="doc_detail.xhtml-HIS_CD=1018&DEP_ID=3007&DOC_ID=1567.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=1567" title="李巧薇" class="A_img"><img alt="李巧薇" src="1018_1567_20140210113729.jpg" tppabs="http://www.guahao.gov.cn/hospital/photo/docImg/1018/1018_1567_20140210113729.jpg" height="106"  width="86" /></a>
+    <div class="docInfo docInfo-w-h">
+      <p><a class="c_orange" href="doc_detail.xhtml-HIS_CD=1018&DEP_ID=3007&DOC_ID=1567.htm" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=1567">李巧薇</a></p>
+      <p>副主任医师</p>
+      <p></p>
+      <p>简介：对内科和神经内科常见病和多发病，尤其是脑中风、各类头痛、头晕症、帕金森病、癫痫、...</p>
+    </div>
+    <div class="docInfo-btn" docId="1567" ><a href="javascript:;" class="btn btnA_01">查看排班表</a></div>
+    <div class="doc-schedule-block mb10" style="display:none"></div>
+  </div>
+  
+  <div class="docInfo-block mb20">
+    <a href="javascript:if(confirm('http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=1688  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个与它的启始地址很远的链接。如果你增大启始地址域内深度设置, 该文件将被加入下载队列。  \n\n你想在服务器上打开它?'))window.location='http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=1688'" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=1688" title="谭少华" class="A_img"><img alt="谭少华" src="1018_1688_20140218144346.jpg" tppabs="http://www.guahao.gov.cn/hospital/photo/docImg/1018/1018_1688_20140218144346.jpg" height="106"  width="86" /></a>
+    <div class="docInfo docInfo-w-h">
+      <p><a class="c_orange" href="javascript:if(confirm('http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=1688  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个与它的启始地址很远的链接。如果你增大启始地址域内深度设置, 该文件将被加入下载队列。  \n\n你想在服务器上打开它?'))window.location='http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=1688'" tppabs="http://www.guahao.gov.cn/doc_detail.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID=1688">谭少华</a></p>
+      <p>副主任医师</p>
+      <p></p>
+      <p>简介：擅长：脑血管病、帕金森病、周围神经疾病等神经内科疾病诊治。</p>
+    </div>
+    <div class="docInfo-btn" docId="1688" ><a href="javascript:;" class="btn btnA_01">查看排班表</a></div>
+    <div class="doc-schedule-block mb10" style="display:none"></div>
+  </div>
+  
+  
+  <div class="pageBar">
+<!-- %@ include file="/common/taglibs.jsp"%-->
+<script type="text/javascript">
+	
+	function prePage(){
+		var	subForm = "pageTagForm";
+		var f = document.getElementById(subForm);
+		f.PAG_NO.value=parseInt(f.PAG_NO.value)-1;
+		var loadbox = f.getAttribute("loadbox"); //pagination var
+		var callbackfunc = f.getAttribute("callback"); // callback function
+		var action =  f.getAttribute("action");  //url
+		var imgstyle =  f.getAttribute("imgstyle");  //css or img style		 
+		var req_param = jQuery("#"+subForm).serialize(); //form argments
+		req_param = decodeURIComponent(req_param,true);
+		//req_param = decodeURIComponent(decodeURIComponent (req_param));
+		if(imgstyle==''){
+			jQuery("#"+loadbox).html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");
+		} else{
+			jQuery("#"+loadbox).html("<ul><li style=' "+imgstyle+"'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></li><ul>");
+		}
+		if(callbackfunc!=''){				
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*",eval(callbackfunc));
+		} else {
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*");		
+		}	
+	}
+	function nextPage(){
+		var	subForm = "pageTagForm";
+		var f = document.getElementById(subForm);
+		f.PAG_NO.value=parseInt(f.PAG_NO.value)+1;
+		var loadbox = f.getAttribute("loadbox");
+		var action =  f.getAttribute("action");
+		var callbackfunc = f.getAttribute("callback");
+		var imgstyle =  f.getAttribute("imgstyle");				
+		var req_param = jQuery("#"+subForm).serialize(); //form argments
+		req_param = decodeURIComponent(req_param,true);
+		// alert(req_param);
+		// if(imgstyle==''){
+		// 	jQuery("#"+loadbox).html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");
+		// } else{
+		// 	jQuery("#"+loadbox).html("<ul><li style=' "+imgstyle+"'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></li><ul>");
+		// }
+		jQuery("#"+loadbox).html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");		
+		if(callbackfunc!=''){				
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*",eval(callbackfunc));
+		} else {
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*");
+					
+		}
+
+	}
+	function jumpPage(obj){
+		var	subForm = "pageTagForm";
+		var f = document.getElementById(subForm);
+		f.PAG_NO.value=parseInt(obj.getAttribute("pagval"));
+		var loadbox = f.getAttribute("loadbox");
+		var action =  f.getAttribute("action");	
+		var callbackfunc = f.getAttribute("callback");	
+		var imgstyle =  f.getAttribute("imgstyle");					
+		var req_param = jQuery("#"+subForm).serialize(); //form argments
+		req_param = decodeURIComponent(req_param,true);
+		// if(imgstyle==''){
+		// 	jQuery("#"+loadbox).html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");
+		// } else{
+		// 	jQuery("#"+loadbox).html("<ul><li style=' "+imgstyle+"'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></li><ul>");
+		// }
+		jQuery("#"+loadbox).html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");
+		if(callbackfunc!=''){				
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*",eval(callbackfunc));
+		} else {
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*");	
+		}	
+	}
+	function lastPage(obj){
+		var	subForm = "pageTagForm";
+		var f = document.getElementById(subForm);
+		f.PAG_NO.value=parseInt(obj.getAttribute("pagval"));
+		var loadbox = f.getAttribute("loadbox");
+		var action =  f.getAttribute("action");	
+		var callbackfunc = f.getAttribute("callback");	
+		var imgstyle =  f.getAttribute("imgstyle");					
+		var req_param = jQuery("#"+subForm).serialize(); //form argments
+		req_param = decodeURIComponent(req_param,true);
+		if(imgstyle==''){
+			jQuery("#"+loadbox).html("<ul><li style=' text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></li><ul>");
+		} else{
+			jQuery("#"+loadbox).html("<ul><li style=' "+imgstyle+"'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></li><ul>");
+		}
+		if(callbackfunc!=''){				
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*",eval(callbackfunc));
+		} else {
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*");	
+		}	
+	}
+</script>
+<div class="dg_page pwm_record_page_w">
+	<div class="page_bar mt20 r">
+		
+			
+				<a href="javascript:;" onclick="jumpPage(this);return false;" pagval="1">首页</a>
+				
+					
+						<a href="javascript:void(0)" class="pb_pre_off" disabled="true">&nbsp;</a>
+					
+					
+				
+				
+					
+						
+						<a href="javascript:void(0)" class="pb_on" onclick="jumpPage(this);"
+							pagval="1">1</a>
+					
+					
+				
+				
+				
+					
+					
+						<!-- a href="javascript:void(0)" class="pb_next_off" disabled="true">下一页&nbsp;&nbsp;&nbsp;</a -->
+						<a href="javascript:void(0)" class="pb_next_off">&nbsp;</a>
+					
+				
+				<a href="javascript:void(0)" onclick="lastPage(this);return false;" pagval="1">尾页&nbsp;&nbsp;</a>&nbsp;共1页&nbsp;&nbsp;6条记录	
+			
+            
+		
+	</div>
+</div></div>
+  <form name="pageTagForm" id="pageTagForm" action="javascript:if(confirm('http://www.guahao.gov.cn/doctorslist.xhtml?PAG_NO=1&PAG_CNT=1&TOT_REC_NUM=6&HIS_CD=1018&DEP_ID=3007  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个与它的启始地址很远的链接。如果你增大启始地址域内深度设置, 该文件将被加入下载队列。  \n\n你想在服务器上打开它?'))window.location='http://www.guahao.gov.cn/doctorslist.xhtml?PAG_NO=1&PAG_CNT=1&TOT_REC_NUM=6&HIS_CD=1018&DEP_ID=3007'" tppabs="http://www.guahao.gov.cn/doctorslist.xhtml?PAG_NO=1&PAG_CNT=1&TOT_REC_NUM=6&HIS_CD=1018&DEP_ID=3007" method="get" loadbox="doctorList">
+    <input type="hidden" name="PAG_NO" value="1" />
+    <input type="hidden" name="PAG_CNT" value="1" /> 
+    <input type="hidden" name="TOT_REC_NUM" value="6">
+    <input type="hidden" name="HIS_CD" value="1018">
+    <input type="hidden" name="DEP_ID" value="3007">
+  </form>
+  <form action="login.xhtml-goto=-reg_confirm.xhtml-HIS_CD=&DEP_ID=&DOC_ID=&DOC_NM=&REG_DAT=&TM_FLG=&REG_FEE=&TRE_FEE=&STA_TM=&END_TM=.htm" tppabs="http://www.guahao.gov.cn/reg_confirm.xhtml?HIS_CD=&DEP_ID=&DOC_ID=&DOC_NM=&REG_DAT=&TM_FLG=&REG_FEE=&TRE_FEE=&STA_TM=&END_TM=" method="get" name="regForm" >
+    <input type="hidden" value="" id="HIS_CD" name="HIS_CD">
+    <input type="hidden" value="" id="DEP_ID" name="DEP_ID">
+    <input type="hidden" value="" id="DOC_ID" name="DOC_ID">
+    <input type="hidden" value="" id="DOC_NM" name="DOC_NM">
+    <input type="hidden" value="" id="REG_DAT" name="REG_DAT">
+    <input type="hidden" value="" id="TM_FLG" name="TM_FLG">
+    <input type="hidden" value="" id="REG_FEE" name="REG_FEE">
+    <input type="hidden" value="" id="TRE_FEE" name="TRE_FEE">
+    <input type="hidden" value="" id="STA_TIM" name="STA_TM">
+    <input type="hidden" value="" id="END_TIM" name="END_TM">
+    <input type="hidden" value="" id="USR_NO" >
+  </form>
+</div>
+<div id="sideBar"><a href="hospitallist.xhtml.htm" tppabs="http://www.guahao.gov.cn/hospitallist.xhtml" class="selectOtherHis" title="选择其他医院2"></a></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+
+<div class="bg_gray">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+    <div class="line_bt"></div>
+    <div class="footer-content">
+        <div class="footer-logo"><span></span></div>
+        <span class="ml10">地址：广州市东风西路182号</span>
+        <span class="ml10">技术支持：广州市卫生信息中心</span>
+        <span class="ml10">广州市卫生和计划生育委员会版权所有</span><br>
+        <span class="ml10">粤ICP备12059770号</span>
+        <span class="ml10"><a target="_blank" href="javascript:if(confirm('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394'" tppabs="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394"><img style="vertical-align:middle" src="beian.png" tppabs="http://www.guahao.gov.cn/images/common/beian.png"/>&nbsp;粤公网安备&nbsp;44010402000394号</a></span>&nbsp;
+        <script src="stat.php-id=4589427&web_id=4589427&show=pic1" tppabs="http://s25.cnzz.com/stat.php?id=4589427&web_id=4589427&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="base.js-t=201405220620040" tppabs="http://www.guahao.gov.cn/js/common/base.js?t=201405220620040" ></script>
+
+<script type="text/javascript">
+$(document).ready(function(){navInit();});
+/*
+* highOnclick(pId,curId)
+* curId 二级菜单当前ID名称
+*/
+var curStr="0201";
+if(curStr!="" && curStr!="null"){
+highOnclick(curStr);
+}
+/*当屏幕分辩率有变化时，选择其他医院图片定位发生改变*/
+$(function(){
+  window.initCss();
+})
+$(window).bind("resize", function() {
+    this.initCss();
+});
+var a = $("#sideBar a");
+this.initCss = function() {
+  var b, c = 1210;
+  if (window.screen.width >= 1210) {
+    var c = 1210;
+    if ($.browser.msie) {
+      b = {
+          right: (document.documentElement.clientWidth - c) / 2 +85 + "px"
+      }
+      if ($.browser.msie && $.browser.version <= 6)  {
+        b = {
+          right: "-82px"
+        }
+      }
+    }else{
+      b = {
+          right: (document.documentElement.clientWidth - c) / 2 +100 + "px"
+      }
+    }
+  }else if(window.screen.width <= 1210){
+    var right = (document.documentElement.clientWidth - 1210) / 2 +85;
+    if(right<=0)right=0;
+    b = {
+      right: right + "px"
+    }
+  }
+    a.css(b);
+};
+</script>
+
+<script src="sso-client.js-t=201303150508060" tppabs="http://www.guahao.gov.cn/js/urm/sso-client.js?t=201303150508060" type="text/javascript"></script>
+<script type="text/javascript">
+function loginOut(){
+    sso_logout();
+    noLoginCookie();//取消自动登陆
+    $("form[name=quitLogin]").submit();
+}
+$(function(){
+	$.ajax({
+    url: "/notice.xhtml?r="+Math.random(),
+    type: 'post',
+    dataType: 'json',
+    data: '',
+    success: function(data) {
+      if(data.GWA.MSG_CD == 'PTS00000'){
+      	if(data.NOT_STS == "0"){
+      		$("#noticBlock").hide();
+      	}else if(data.NOT_STS == "1"){
+      		$("#noticBlock").show();
+      		$("#comNoticeCnt").html(data.NOT_RM+"&nbsp;&nbsp;---广州市卫生和计划生育委员会");
+      	}
+      }
+    }
+  });	
+});
+</script>
+
+<script type="text/javascript" src="jquery-ui-1.8.20.custom.min.js-t=201208070830560" tppabs="http://www.guahao.gov.cn/js/common/jquery.ui.dialog_js/js/jquery-ui-1.8.20.custom.min.js?t=201208070830560"></script>
+<script type="text/javascript" src="jquery.cookie.js-t=201608171132100" tppabs="http://www.guahao.gov.cn/js/urm/jquery.cookie.js?t=201608171132100"></script>
+<script type="text/javascript" src="formValidator.js-t=201608170420060" tppabs="http://www.guahao.gov.cn/js/urm/formValidator.js?t=201608170420060" charset="UTF-8"></script>
+<script type="text/javascript">
+/*检查单点登录*/
+jQuery(document).ready(function($) {
+  var tmpUrl = window.location.href.split( "/" );  
+  gotoUrl = "/"+tmpUrl[ tmpUrl.length-1 ];
+  sso_check_login(gotoUrl);//检测从万达跳过来的单点登录
+});
+
+$(function() {
+  $(".docInfo-block .docInfo-btn a").live("click",function(){
+    var btnAClass = $(this).attr("class");
+    if(btnAClass == 'btn btnA_01'){
+      $(".docInfo-block .docInfo-btn a").attr("class","btn btnA_01").text("查看排班表").parent().parent().find(".doc-schedule-block").hide();
+      $(this).attr("class","btn btnA_02");
+      $(this).text("收 起");
+      var scheduleObj = $(this).parent().parent().find(".doc-schedule-block");
+      var docId = $(this).parent().attr("docId");
+      var loading = "<div class='doc-schedule mb10' style='height:145px;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>"
+      //scheduleObj.html(loading);
+      if(scheduleObj.html().length == 0){
+        scheduleObj.html(loading);
+        scheduleObj.show();
+        $.ajax({
+          url: "/ajx_docSrc.xhtml?HIS_CD=1018&DEP_ID=3007&DOC_ID="+docId,
+          type: 'get',
+          data: '',
+          async: false,
+          success: function(data) {
+            if(data != ''){
+              scheduleObj.html(data);
+            }
+          }
+        });
+      }
+      var prev = scheduleObj.find(".turn_left");
+      var next = scheduleObj.find(".turn_right");
+      scheduleObj.show();
+      DY_scroll('.doc-schedule',prev,next,scheduleObj);
+    }else if(btnAClass == 'btn btnA_02'){
+      $(this).attr("class","btn btnA_01");
+      $(this).text("查看排班表");
+      $(this).parent().parent().find(".doc-schedule-block").hide();
+    }
+  });
+});
+function DY_scroll(wraper,prev,next,obj){ 
+  var wraper = $(wraper);
+  // var prev = $(prev);
+  // var next = $(next);
+  prev.hide();
+  next.hide();
+  var ulObj=obj.find("ul.right");
+  var first = ulObj.find("li").eq(0).attr("num");
+  var last = ulObj.find('li:last').attr("num");
+  var count = last-7;
+  if(last>7){
+  prev.hide();
+  next.show();
+  next.attr('onclick', '').unbind('click').click(function(){
+      ulObj.animate({'margin-left':0},function(){
+        ulObj.find('li').eq(0).appendTo(ulObj);
+        ulObj.css({'margin-left':0});
+        if(ulObj.find('li:last').attr("num")<=count){
+          prev.show();
+        }
+        if(count == ulObj.find('li:last').attr("num")){
+          next.hide();
+        }
+      });
+
+  });
+  prev.attr('onclick', '').unbind('click').click(function(){
+    ulObj.find('li:last').prependTo(ulObj);
+    ulObj.css({'margin-left':0});
+    ulObj.animate({'margin-left':0});
+    if(first <= ulObj.find("li").eq(0).attr("num")){
+        next.show();
+    }
+    if(first == ulObj.find("li").eq(0).attr("num")){
+        prev.hide();
+    }
+  });
+}
+}
+</script>
+ 
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    $("#hisInfoDetail").html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");
+    $.ajax({
+    url: "/hospdetail.xhtml?HIS_CD=1018",
+    type: 'get',
+    data: '',
+    async: false,
+    success: function(data) {
+    if(data != ''){
+     $("#hisInfoDetail").html(data);
+     // introWordLimit("hospitalIntro",500);
+    }
+    }
+    });
+});
+
+</script>
+
+</body>
+</html>
+

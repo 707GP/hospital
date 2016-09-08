@@ -1,0 +1,714 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+
+<meta name="description" content="医院列表，按医院预约_预约挂号，通过选择医院进行预约挂号。" />
+<meta name="keywords" content="医院列表，按医院预约，预约挂号，挂号，广州挂号，网上挂号，12320挂号，自助终端挂号"/>
+<title>医院列表_按医院预约_广州市统一预约挂号平台</title>
+
+<link rel="stylesheet" type="text/css" href="base.css-t=201305281140250.css" tppabs="http://www.guahao.gov.cn/css/common/base.css?t=201305281140250" />
+<link rel="stylesheet" type="text/css" href="common.css-t=201411240822230.css" tppabs="http://www.guahao.gov.cn/css/common/common.css?t=201411240822230" />
+<link rel="stylesheet" type="text/css" href="mod.css-t=201608171104400.css" tppabs="http://www.guahao.gov.cn/css/mod.css?t=201608171104400" />
+<script type="text/javascript" src="jquery.js-t=201201101201560" tppabs="http://www.guahao.gov.cn/js/common/jquery.js?t=201201101201560" ></script>
+
+
+</head>
+<body>
+<div class="wrap">
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="headerBg clearfix">
+    <div class="header">
+        <p class="header-topTxt mb10">
+            
+            <a href="login.xhtml.htm" tppabs="http://www.guahao.gov.cn/login.xhtml">登录</a>&nbsp;|&nbsp;<a href="login.xhtml-goto=-usrinfo.xhtml.htm#orderList" tppabs="http://www.guahao.gov.cn/usrinfo.xhtml#orderList">我的订单</a>&nbsp;|&nbsp;<a href="register.xhtml.htm" tppabs="http://www.guahao.gov.cn/register.xhtml">注册</a>&nbsp;|&nbsp;<a href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml">预约指南</a>&nbsp;|&nbsp;<span>投诉电话：020-12320</span>
+            
+            
+        </p>
+        <p class="header-logo"><span class="hotPhone">预约热线：<b class="hotPhone-no">020-12320</b></span></p>
+        <form action="quit_login.xhtml.htm" tppabs="http://www.guahao.gov.cn/quit_login.xhtml"  method="post" name="quitLogin"></form>
+    </div>
+</div>
+<div style="width:960px;margin:0 auto;display:none;" id="noticBlock" >
+<div style="float:left;border:1px solid #FECB66;width:938px;padding:10px;background-color:#FEFEE4;color:#FE0000;">
+	<p>尊敬的用户：</p>
+	<p style="text-indent:2em;" id="comNoticeCnt"></p>
+</div>
+</div>
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="menuBar mb15 clearfix">
+    <div class="menu menuL"></div>
+    <div class="menuX menu_nav">
+        <ul class="top">
+            <li><a class="on" id="01" href="index.xhtml.htm" tppabs="http://www.guahao.gov.cn/index.xhtml" item="#index" title="首页">首&nbsp;页</a></li>
+            <li><a id="02" href="hospitallist.xhtml.htm" tppabs="http://www.guahao.gov.cn/hospitallist.xhtml" item="#reserve">挂号服务</a></li>
+            <li><a id="03" href="login.xhtml-goto=-usrinfo.xhtml.htm" tppabs="http://www.guahao.gov.cn/usrinfo.xhtml" item="#regmng">预约管理</a></li>
+            <li><a id="06" href="login.xhtml-goto=-payment_mng.xhtml.htm" tppabs="http://www.guahao.gov.cn/payment_mng.xhtml">缴费管理</a></li>
+            <li><a id="04" href="flow_ghbyweb.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml" item="#help">预约指南</a></li>
+            <li><a id="05" href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml" item="#notice">通知及反馈</a></li>
+            <li><a id="07" href="download_client.xhtml.htm" tppabs="http://www.guahao.gov.cn/download_client.xhtml" item="#download">客户端下载</a></li>
+        </ul>
+        <div style="clear:both;display:block;"></div>
+        <ul id="reserve" class="bot" style="display:none;padding-left:84px;">
+            <li><a id="0201" title="预约挂号" href="hospitallist.xhtml.htm" tppabs="http://www.guahao.gov.cn/hospitallist.xhtml"><span>预约挂号</span></a></li>
+            <li><a id="0202" title="当天挂号" href="javascript:if(confirm('http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow  \n\n该文件无法用 Teleport Ultra 下载, 因为 服务器报告发生错误, 阻止了下载。  \n\n你想在服务器上打开它?'))window.location='http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow'" tppabs="http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow"><span>当天挂号</span></a></li>
+        </ul>
+        <ul id="help" class="bot" style="display:none;padding-left:150px;">
+            <li><a id="0402" title="预约挂号须知" href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml"><span>预约挂号须知</span></a></li>
+            <li><a id="0401" title="预约挂号指南" href="flow_ghbyweb.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml"><span>预约挂号指南</span></a></li>
+            <li><a id="0403" title="常见疾病对应科室" href="comdis.xhtml.htm" tppabs="http://www.guahao.gov.cn/comdis.xhtml"><span>常见疾病对应科室</span></a></li>
+            <li><a id="0404" title="常见问题" href="questions1.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions1.xhtml"><span>常见问题</span></a></li>
+        </ul>
+        
+        
+            <ul id="notice" class="bot" style="display:none;padding-left:490px;">
+        
+            
+            <li><a id="0501" title="停诊通知" href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml"><span>停诊通知</span></a></li>
+            
+        </ul>
+        <!-- <div style="clear:both;display:block;"></div> -->
+    </div>
+    <div class="menu menuR"></div>
+</div>
+  
+  <div class="bd">
+    <div class="clearfix brdD7">
+      
+<!--登录后模块-->
+
+
+      
+<div style="width:900px"><div class="tabWidget mb20">
+  <ul class="tabWidget-item" id="tabWidget">
+    <li item="his"><a class="on" href="hospitallist.xhtml.htm" tppabs="http://www.guahao.gov.cn/hospitallist.xhtml">按医院预约</a></li><li item="dis"><a href="disList.xhtml.htm" tppabs="http://www.guahao.gov.cn/disList.xhtml">按疾病预约</a></li>
+  </ul>
+</div></div>
+<div id="hospitals">
+  <form action="" name="searchHisForm" method="get">
+    <div class="searchBar mb20"><span><input type="text" class="searchBar-input c_gray9" id="KEY_WORD_HIS" autocomplete="off" value="输入您想找的医院名称 例如：广州市第一人民医院" /></span><a href="javascript:;" class="btn icon_search" onclick="searchKeyWordHis();return false" ><input type="text" style="display:none;"></a></div>
+  </form>
+  <div class="search-content">
+    <ul class="content-tab mb10" id="areaList">
+      <li class="on" area="guangzhou">广州市</li>
+      <li area="yuexiu">越秀区</li>
+      <li area="liwan">荔湾区</li>
+      <li area="haizhu">海珠区</li>
+      <li area="huangpu">黄埔区</li>
+      <li area="tianhe">天河区</li>
+      <li area="panyu">番禺区</li>
+    </ul>
+    <div class="hospitalList clearfix mb20" id="hospitalList">
+      
+        <div class="bg_kk hospitalInfo" attr="1002" attr_hisTyp="0">
+          <img alt="广州市妇女儿童医疗中心" src="广州市妇女儿童医疗中心.jpg" tppabs="http://www.guahao.gov.cn/hospital/images/hisInfo/1002/广州市妇女儿童医疗中心.jpg" height="105" width="190" />
+          <p class="hisNm" title="广州市妇女儿童医疗中心">广州市妇女儿童医疗中心</p>
+          <p>等级：三级医院</p>
+          <p title="广州市">地址：广州市</p>
+          <div class="bg_kk enlargeDiv" style="display:none"></div>
+        </div>
+      
+        <div class="bg_kk hospitalInfo" attr="1018" attr_hisTyp="1">
+          <img alt="番禺区中心医院" src="20091123165708277.jpg" tppabs="http://www.guahao.gov.cn/hospital/photo/hospImg/1018/20091123165708277.jpg" height="105" width="190" />
+          <p class="hisNm" title="番禺区中心医院">番禺区中心医院</p>
+          <p>等级：三级医院</p>
+          <p title="广州市番禺区">地址：广州市番禺区</p>
+          <div class="bg_kk enlargeDiv" style="display:none"></div>
+        </div>
+      
+        <div class="bg_kk hospitalInfo" attr="1004" attr_hisTyp="1">
+          <img alt="广州医科大学附属第一医院" src="广州医学院第一附属医院.jpg" tppabs="http://www.guahao.gov.cn/hospital/images/hisInfo/1004/广州医学院第一附属医院.jpg" height="105" width="190" />
+          <p class="hisNm" title="广州医科大学附属第一医院">广州医科大学附属第一医院</p>
+          <p>等级：三级医院</p>
+          <p title="广州市沿江路151号（原省总工会对面）">地址：广州市沿江路151号（原省总工会对面）</p>
+          <div class="bg_kk enlargeDiv" style="display:none"></div>
+        </div>
+      
+        <div class="bg_kk hospitalInfo" attr="1012" attr_hisTyp="1">
+          <img alt="广州市皮肤病防治所" src="广州市皮肤病防治所.jpg" tppabs="http://www.guahao.gov.cn/hospital/images/hisInfo/1012/广州市皮肤病防治所.jpg" height="105" width="190" />
+          <p class="hisNm" title="广州市皮肤病防治所">广州市皮肤病防治所</p>
+          <p>等级：三级医院</p>
+          <p title="广州市恒福路56号">地址：广州市恒福路56号</p>
+          <div class="bg_kk enlargeDiv" style="display:none"></div>
+        </div>
+      
+        <div class="bg_kk hospitalInfo" attr="1020" attr_hisTyp="1">
+          <img alt="番禺区何贤纪念医院" src="医院全景（加字）改.JPG" tppabs="http://www.guahao.gov.cn/hospital/photo/hospImg/1020/医院全景（加字）改.JPG" height="105" width="190" />
+          <p class="hisNm" title="番禺区何贤纪念医院">番禺区何贤纪念医院</p>
+          <p>等级：三级医院</p>
+          <p title="广州市番禺区清河东路2号">地址：广州市番禺区清河东路2号</p>
+          <div class="bg_kk enlargeDiv" style="display:none"></div>
+        </div>
+      
+        <div class="bg_kk hospitalInfo" attr="1010" attr_hisTyp="1">
+          <img alt="广州市中医医院" src="广州市中医医院.jpg" tppabs="http://www.guahao.gov.cn/hospital/images/hisInfo/1010/广州市中医医院.jpg" height="105" width="190" />
+          <p class="hisNm" title="广州市中医医院">广州市中医医院</p>
+          <p>等级：三级医院</p>
+          <p title="荔湾区珠玑路16号">地址：荔湾区珠玑路16号</p>
+          <div class="bg_kk enlargeDiv" style="display:none"></div>
+        </div>
+      
+        <div class="bg_kk hospitalInfo" attr="1041" attr_hisTyp="1">
+          <img alt="中山大学孙逸仙纪念医院" src="1041_20131111114457.gif" tppabs="http://www.guahao.gov.cn/hospital/photo/hospImg/1041/1041_20131111114457.gif" height="105" width="190" />
+          <p class="hisNm" title="中山大学孙逸仙纪念医院">中山大学孙逸仙纪念医院</p>
+          <p>等级：三级医院</p>
+          <p title="广州市沿江西路107号">地址：广州市沿江西路107号</p>
+          <div class="bg_kk enlargeDiv" style="display:none"></div>
+        </div>
+      
+        <div class="bg_kk hospitalInfo" attr="1001" attr_hisTyp="1">
+          <img alt="广州市第一人民医院" src="1001_20130620101338.png" tppabs="http://www.guahao.gov.cn/hospital/photo/hospImg/1001/1001_20130620101338.png" height="105" width="190" />
+          <p class="hisNm" title="广州市第一人民医院">广州市第一人民医院</p>
+          <p>等级：三级医院</p>
+          <p title="广州市越秀区盘福路1号">地址：广州市越秀区盘福路1号</p>
+          <div class="bg_kk enlargeDiv" style="display:none"></div>
+        </div>
+      
+        <div class="bg_kk hospitalInfo" attr="1013" attr_hisTyp="1">
+          <img alt="广州医科大学附属第三医院" src="1013_20130827081107.jpg" tppabs="http://www.guahao.gov.cn/hospital/photo/hospImg/1013/1013_20130827081107.jpg" height="105" width="190" />
+          <p class="hisNm" title="广州医科大学附属第三医院">广州医科大学附属第三医院</p>
+          <p>等级：三级医院</p>
+          <p title="广州市荔湾区多宝路63号">地址：广州市荔湾区多宝路63号</p>
+          <div class="bg_kk enlargeDiv" style="display:none"></div>
+        </div>
+      
+        <div class="bg_kk hospitalInfo" attr="1034" attr_hisTyp="1">
+          <img alt="广东省中医院" src="1034_20140220173552.png" tppabs="http://www.guahao.gov.cn/hospital/photo/hospImg/1034/1034_20140220173552.png" height="105" width="190" />
+          <p class="hisNm" title="广东省中医院">广东省中医院</p>
+          <p>等级：三级医院</p>
+          <p title="广州市大德路111号">地址：广州市大德路111号</p>
+          <div class="bg_kk enlargeDiv" style="display:none"></div>
+        </div>
+      
+        <div class="bg_kk hospitalInfo" attr="1047" attr_hisTyp="1">
+          <img alt="中山大学附属第六医院" src="1047_20141017111750.jpg" tppabs="http://www.guahao.gov.cn/hospital/photo/hospImg/1047/1047_20141017111750.jpg" height="105" width="190" />
+          <p class="hisNm" title="中山大学附属第六医院">中山大学附属第六医院</p>
+          <p>等级：三级医院</p>
+          <p title="广州市天河区员村二横路26号">地址：广州市天河区员村二横路26号</p>
+          <div class="bg_kk enlargeDiv" style="display:none"></div>
+        </div>
+      
+        <div class="bg_kk hospitalInfo" attr="1011" attr_hisTyp="1">
+          <img alt="广州市惠爱医院（广州市精神病医院）" src="广州市精神病（脑科）医院.jpg" tppabs="http://www.guahao.gov.cn/hospital/images/hisInfo/1011/广州市精神病（脑科）医院.jpg" height="105" width="190" />
+          <p class="hisNm" title="广州市惠爱医院（广州市精神病医院）">广州市惠爱医院（广州市精...</p>
+          <p>等级：三级医院</p>
+          <p title="广州市荔湾区明心路36号">地址：广州市荔湾区明心路36号</p>
+          <div class="bg_kk enlargeDiv" style="display:none"></div>
+        </div>
+      
+        <div class="bg_kk hospitalInfo" attr="1036" attr_hisTyp="1">
+          <img alt="广东省妇幼保健院" src="1036_20140329112009.JPG" tppabs="http://www.guahao.gov.cn/hospital/photo/hospImg/1036/1036_20140329112009.JPG" height="105" width="190" />
+          <p class="hisNm" title="广东省妇幼保健院">广东省妇幼保健院</p>
+          <p>等级：三级医院</p>
+          <p title="越秀院区：越秀区广园西路13号/番禺院区：番禺区兴南大道521、523号/海珠院区：海珠区新港西路114号">地址：越秀院区：越秀区广园西路13号/番禺院区...</p>
+          <div class="bg_kk enlargeDiv" style="display:none"></div>
+        </div>
+      
+        <div class="bg_kk hospitalInfo" attr="1039" attr_hisTyp="1">
+          <img alt="中山大学附属口腔医院" src="1039_20131107105815.jpg" tppabs="http://www.guahao.gov.cn/hospital/photo/hospImg/1039/1039_20131107105815.jpg" height="105" width="190" />
+          <p class="hisNm" title="中山大学附属口腔医院">中山大学附属口腔医院</p>
+          <p>等级：三级医院</p>
+          <p title="广州市越秀区陵园西路56号">地址：广州市越秀区陵园西路56号</p>
+          <div class="bg_kk enlargeDiv" style="display:none"></div>
+        </div>
+      
+        <div class="bg_kk hospitalInfo" attr="1008" attr_hisTyp="1">
+          <img alt="广州医科大学附属第二医院" src="广州医学院第二附属医院.jpg" tppabs="http://www.guahao.gov.cn/hospital/images/hisInfo/1008/广州医学院第二附属医院.jpg" height="105" width="190" />
+          <p class="hisNm" title="广州医科大学附属第二医院">广州医科大学附属第二医院</p>
+          <p>等级：三级医院</p>
+          <p title="广州市海珠区昌岗东路250号">地址：广州市海珠区昌岗东路250号</p>
+          <div class="bg_kk enlargeDiv" style="display:none"></div>
+        </div>
+      
+        <div class="bg_kk hospitalInfo" attr="1017" attr_hisTyp="1">
+          <img alt="广州华侨医院" src="1017_20130529150940.jpg" tppabs="http://www.guahao.gov.cn/hospital/photo/hospImg/1017/1017_20130529150940.jpg" height="105" width="190" />
+          <p class="hisNm" title="广州华侨医院">广州华侨医院</p>
+          <p>等级：三级医院</p>
+          <p title="广州市天河区黄埔大道西613号">地址：广州市天河区黄埔大道西613号</p>
+          <div class="bg_kk enlargeDiv" style="display:none"></div>
+        </div>
+      
+      <div class="pageBar">
+<!-- %@ include file="/common/taglibs.jsp"%-->
+<script type="text/javascript">
+	
+	function prePage(){
+		var	subForm = "pageTagForm";
+		var f = document.getElementById(subForm);
+		f.PAG_NO.value=parseInt(f.PAG_NO.value)-1;
+		var loadbox = f.getAttribute("loadbox"); //pagination var
+		var callbackfunc = f.getAttribute("callback"); // callback function
+		var action =  f.getAttribute("action");  //url
+		var imgstyle =  f.getAttribute("imgstyle");  //css or img style		 
+		var req_param = jQuery("#"+subForm).serialize(); //form argments
+		req_param = decodeURIComponent(req_param,true);
+		//req_param = decodeURIComponent(decodeURIComponent (req_param));
+		if(imgstyle==''){
+			jQuery("#"+loadbox).html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");
+		} else{
+			jQuery("#"+loadbox).html("<ul><li style=' "+imgstyle+"'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></li><ul>");
+		}
+		if(callbackfunc!=''){				
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*",eval(callbackfunc));
+		} else {
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*");		
+		}	
+	}
+	function nextPage(){
+		var	subForm = "pageTagForm";
+		var f = document.getElementById(subForm);
+		f.PAG_NO.value=parseInt(f.PAG_NO.value)+1;
+		var loadbox = f.getAttribute("loadbox");
+		var action =  f.getAttribute("action");
+		var callbackfunc = f.getAttribute("callback");
+		var imgstyle =  f.getAttribute("imgstyle");				
+		var req_param = jQuery("#"+subForm).serialize(); //form argments
+		req_param = decodeURIComponent(req_param,true);
+		// alert(req_param);
+		// if(imgstyle==''){
+		// 	jQuery("#"+loadbox).html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");
+		// } else{
+		// 	jQuery("#"+loadbox).html("<ul><li style=' "+imgstyle+"'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></li><ul>");
+		// }
+		jQuery("#"+loadbox).html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");		
+		if(callbackfunc!=''){				
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*",eval(callbackfunc));
+		} else {
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*");
+					
+		}
+
+	}
+	function jumpPage(obj){
+		var	subForm = "pageTagForm";
+		var f = document.getElementById(subForm);
+		f.PAG_NO.value=parseInt(obj.getAttribute("pagval"));
+		var loadbox = f.getAttribute("loadbox");
+		var action =  f.getAttribute("action");	
+		var callbackfunc = f.getAttribute("callback");	
+		var imgstyle =  f.getAttribute("imgstyle");					
+		var req_param = jQuery("#"+subForm).serialize(); //form argments
+		req_param = decodeURIComponent(req_param,true);
+		// if(imgstyle==''){
+		// 	jQuery("#"+loadbox).html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");
+		// } else{
+		// 	jQuery("#"+loadbox).html("<ul><li style=' "+imgstyle+"'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></li><ul>");
+		// }
+		jQuery("#"+loadbox).html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");
+		if(callbackfunc!=''){				
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*",eval(callbackfunc));
+		} else {
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*");	
+		}	
+	}
+	function lastPage(obj){
+		var	subForm = "pageTagForm";
+		var f = document.getElementById(subForm);
+		f.PAG_NO.value=parseInt(obj.getAttribute("pagval"));
+		var loadbox = f.getAttribute("loadbox");
+		var action =  f.getAttribute("action");	
+		var callbackfunc = f.getAttribute("callback");	
+		var imgstyle =  f.getAttribute("imgstyle");					
+		var req_param = jQuery("#"+subForm).serialize(); //form argments
+		req_param = decodeURIComponent(req_param,true);
+		if(imgstyle==''){
+			jQuery("#"+loadbox).html("<ul><li style=' text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></li><ul>");
+		} else{
+			jQuery("#"+loadbox).html("<ul><li style=' "+imgstyle+"'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></li><ul>");
+		}
+		if(callbackfunc!=''){				
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*",eval(callbackfunc));
+		} else {
+			$("#"+loadbox).load(
+				action+"?"+req_param+"&t="
+					+ new Date().getTime() + " #"+loadbox+">*");	
+		}	
+	}
+</script>
+<div class="dg_page pwm_record_page_w">
+	<div class="page_bar mt20 r">
+		
+			
+				<a href="javascript:;" onclick="jumpPage(this);return false;" pagval="1">首页</a>
+				
+					
+						<a href="javascript:void(0)" class="pb_pre_off" disabled="true">&nbsp;</a>
+					
+					
+				
+				
+					
+						
+						<a href="javascript:void(0)" class="pb_on" onclick="jumpPage(this);"
+							pagval="1">1</a>
+					
+					
+				
+				
+					
+						
+						
+							
+								<a href="javascript:void(0)" onclick="jumpPage(this);"
+									pagval="2">2</a>
+							
+								<a href="javascript:void(0)" onclick="jumpPage(this);"
+									pagval="3">3</a>
+							
+								<a href="javascript:void(0)" onclick="jumpPage(this);"
+									pagval="4">4</a>
+							
+						
+					
+				
+				
+					
+						<a href="javascript:void(0)" class="pb_next" onclick="nextPage();return false;">下一页&nbsp;&nbsp;&nbsp;</a>
+					
+					
+				
+				<a href="javascript:void(0)" onclick="lastPage(this);return false;" pagval="4">尾页&nbsp;&nbsp;</a>&nbsp;共4页&nbsp;&nbsp;56条记录	
+			
+            
+		
+	</div>
+</div></div>
+      <form name="pageTagForm" id="pageTagForm" action="hospitallist.xhtml-ARE_ID=&PAG_NO=1&PAG_CNT=4&TOT_REC_NUM=56.htm" tppabs="http://www.guahao.gov.cn/hospitallist.xhtml?ARE_ID=&PAG_NO=1&PAG_CNT=4&TOT_REC_NUM=56" method="get" loadbox="hospitalList">
+        <input type="hidden" name="ARE_ID" value="" />
+        <input type="hidden" name="PAG_NO" value="1" />
+        <input type="hidden" name="PAG_CNT" value="4" /> 
+        <input type="hidden" name="TOT_REC_NUM" value="56">
+      </form>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+
+<div class="bg_gray">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+    <div class="line_bt"></div>
+    <div class="footer-content">
+        <div class="footer-logo"><span></span></div>
+        <span class="ml10">地址：广州市东风西路182号</span>
+        <span class="ml10">技术支持：广州市卫生信息中心</span>
+        <span class="ml10">广州市卫生和计划生育委员会版权所有</span><br>
+        <span class="ml10">粤ICP备12059770号</span>
+        <span class="ml10"><a target="_blank" href="javascript:if(confirm('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394'" tppabs="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394"><img style="vertical-align:middle" src="beian.png" tppabs="http://www.guahao.gov.cn/images/common/beian.png"/>&nbsp;粤公网安备&nbsp;44010402000394号</a></span>&nbsp;
+        <script src="stat.php-id=4589427&web_id=4589427&show=pic1" tppabs="http://s25.cnzz.com/stat.php?id=4589427&web_id=4589427&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="base.js-t=201405220620040" tppabs="http://www.guahao.gov.cn/js/common/base.js?t=201405220620040" ></script>
+
+<script type="text/javascript">
+$(document).ready(function(){navInit();});
+/*
+* highOnclick(pId,curId)
+* curId 二级菜单当前ID名称
+*/
+var curStr="0201";
+if(curStr!="" && curStr!="null"){
+highOnclick(curStr);
+}
+</script>
+
+<script src="sso-client.js-t=201303150508060" tppabs="http://www.guahao.gov.cn/js/urm/sso-client.js?t=201303150508060" type="text/javascript"></script>
+<script type="text/javascript">
+function loginOut(){
+    sso_logout();
+    noLoginCookie();//取消自动登陆
+    $("form[name=quitLogin]").submit();
+}
+$(function(){
+	$.ajax({
+    url: "/notice.xhtml?r="+Math.random(),
+    type: 'post',
+    dataType: 'json',
+    data: '',
+    success: function(data) {
+      if(data.GWA.MSG_CD == 'PTS00000'){
+      	if(data.NOT_STS == "0"){
+      		$("#noticBlock").hide();
+      	}else if(data.NOT_STS == "1"){
+      		$("#noticBlock").show();
+      		$("#comNoticeCnt").html(data.NOT_RM+"&nbsp;&nbsp;---广州市卫生和计划生育委员会");
+      	}
+      }
+    }
+  });	
+});
+</script>
+
+<script type="text/javascript" src="jquery.autocomplete.js-t=201401160552420" tppabs="http://www.guahao.gov.cn/js/common/jquery.autocomplete.js?t=201401160552420"></script>  
+<script type="text/javascript">
+$(function() {getHisArea();/*load area*/});
+/*key-enter*/
+document.onkeydown = function(){
+  var evt=document.all?window.event:arguments[0];
+  if(evt.keyCode==13){
+    searchKeyWordHis();
+  }
+}
+/*hospital area*/
+function getHisArea(){
+  $.ajax({
+    url:"/ajxarea.xhtml?r="+Math.random(), 
+    type: 'get',
+    dataType: 'json',
+    data:"",
+    success: function(data) {
+      var htmlContent="<li class='on' area=''>广州市</li>";
+      if(data.REC == "" || data.REC == null){
+        return false;
+      }
+      for( var i = 0; i < data.REC.length; i++ ) {
+        htmlContent = htmlContent + "<li area='"+data.REC[i].ARE_ID+"'>"+data.REC[i].HIS_ARE+"</li>";
+      }
+      $("#areaList").html(htmlContent);
+    }
+  });
+}
+/*search hospital*/
+function searchKeyWordHis(){
+  var KEY_WORD_HIS = $("#KEY_WORD_HIS").val();
+  if(KEY_WORD_HIS == "" || KEY_WORD_HIS == "输入您想找的医院名称 例如：广州市第一人民医院"){
+    return false;
+  }
+  KEY_WORD_HIS = decodeURIComponent(KEY_WORD_HIS,true);
+    $.ajax({
+      url: "/hospitallist.xhtml?channel=CH1&KEY_WORD="+KEY_WORD_HIS,
+      type: 'get',
+      data: '',
+      async: false,
+      success: function(data) {
+        if(data != '' && data != undefined){
+          $("#hospitalList").html("");
+          $("#hospitalList").html(data);
+        }else{
+          $("#hospitalList").html("<div style='text-align:center;border:1px solid #FED1AF;background-color: #FEFFCA;color: #FF6701;float:left;line-height:22px;padding:5px 15px;width: 470px;'>没有找到与<b>“"+KEY_WORD_HIS+"”</b>相关的医院，建议更改关键词再试试。</div>");
+        }
+      }
+    });
+}
+$(".hospitalList .hospitalInfo").live('mouseenter',
+  function(e){
+    $(".enlargeDiv").each(function(i){$(this).hide();});
+    var xx = e.clientX;
+    var yy = e.clientY;
+    var ntop = "0px"; 
+    var nleft = "0px";
+    var param = $(this).attr("attr");
+    var _this = $(this);
+    if(_this.find(".enlargeDiv").html().length == 0){
+      $.ajax({
+        url: "/hospdetail.xhtml?channel=CH1&HIS_CD="+param,
+        type: 'get',
+        data: '',
+        async: false,
+        success: function(data) {
+          if(data != ''){
+            _this.find(".enlargeDiv").html(data);
+          }
+        }
+      });
+    }
+    if(xx >= 834){
+      var nleft = "-212px";
+      $(this).find(".enlargeDiv .hospitalInfo-basic").css("float","right");
+      $(this).prev().css("z-index","-1");
+    }else{
+      nleft = "0px";
+      $(this).find(".enlargeDiv .hospitalInfo-basic").css("float","left");
+      $(this).next().css("z-index","-1");
+    }
+    $(this).find(".enlargeDiv").css({left:nleft,top:ntop});
+    $(this).find(".enlargeDiv").css("z-index","999");
+    $(this).find(".enlargeDiv").show(); 
+}).live('mouseleave',function(){
+  $(this).prev().css("z-index","0");
+  $(this).next().css("z-index","0");
+  $(this).find(".enlargeDiv").css("z-index","0");
+  $(this).find(".enlargeDiv").hide();
+});
+/*select a hospital*/
+$(".hospitalList .hospitalInfo").live("click",function(){
+  var hisCd = $(this).attr("attr");
+  var hisTyp = $(this).attr("attr_hisTyp");
+  if(hisCd == '1042'){
+  	alert("中山大学附属眼科医院因系统接口升级，该医院暂停预约，恢复预约时间暂定为2016年9月份，给您带来的不便，敬请谅解。");
+  	return;	
+  }else if(hisCd == '1029'){
+  	alert("由于医院新门诊系统上线，该院暂停预约2016年8月30号（包括当天）以后的挂号功能，具体恢复时间另行通知。给您造成的不便，敬请原谅！");
+  	return;		
+  }
+  if(hisTyp==0){
+  	window.location.href="hospital_branch.xhtml-HIS_CD=.htm"/*tpa=http://www.guahao.gov.cn/hospital_branch.xhtml?HIS_CD=*/+hisCd;
+  }else if(hisTyp==1){
+  	window.location.href="deplist.xhtml-HIS_CD=.htm"/*tpa=http://www.guahao.gov.cn/deplist.xhtml?HIS_CD=*/+hisCd;
+  }
+  
+});
+
+/*hospital area tab*/
+$("ul.content-tab > li").live("click",function(){
+  $("ul.content-tab > li").removeClass();
+  $(this).removeClass("on");
+  $(this).addClass("on");
+  var area = $(this).attr("area");
+  readTrans(area);
+});
+function readTrans(HIS_ARE){
+    HIS_ARE = (HIS_ARE==undefined)?"":HIS_ARE;
+    $("#hospitalList").html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");
+    jQuery.ajax({
+        type:"get",
+        url:"/hospitallist.xhtml?channel=CH1&ARE_ID="+HIS_ARE,
+        data:{},
+        success:function(data){
+          $("#hospitalList").html("");
+          $("#hospitalList").html(data);
+       }
+    });
+}
+/*搜索栏样式*/
+$(".searchBar-input").blur(function () {if($(this).val() == ''){$(this).val("输入您想找的医院名称 例如：广州市第一人民医院");$(this).addClass("c_gray9");}});
+$(".searchBar-input").focus(function () {if($(this).val() == '输入您想找的医院名称 例如：广州市第一人民医院'){$(this).removeClass("c_gray9");$(this).val("");}});
+</script>
+
+</body>
+</html>
+

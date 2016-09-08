@@ -1,0 +1,316 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />  
+
+<meta name="description" content="广州市统一预约挂号网为广州市卫生和计划生育委员会主办的唯一官方认证预约平台，免费提供广州地区所有大型医院网上挂号、12320电话挂号、手机（关注“广州健康通”微信公众号、支付宝服务窗、下载手机APP）及院内自助终端挂号服务，为您解决挂号难题。" />
+<meta name="keywords" content="登录_预约挂号，预约挂号，广州挂号，12320挂号，网上挂号，挂号"/>
+<title>登录_广州市统一预约挂号平台_网上挂号</title>
+
+<link rel="stylesheet" type="text/css" href="base.css-t=201305281140250.css" tppabs="http://www.guahao.gov.cn/css/common/base.css?t=201305281140250" />
+<link rel="stylesheet" type="text/css" href="common.css-t=201411240822230.css" tppabs="http://www.guahao.gov.cn/css/common/common.css?t=201411240822230" />
+<link rel="stylesheet" type="text/css" href="mod.css-t=201608171104400.css" tppabs="http://www.guahao.gov.cn/css/mod.css?t=201608171104400" />
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.20.custom.css-t=201303250411280.css" tppabs="http://www.guahao.gov.cn/js/common/jquery.ui.dialog_js/css/ui-lightness/jquery-ui-1.8.20.custom.css?t=201303250411280" />
+
+
+</head>
+<body>
+  <div class="bg_gray">
+    <div class="headerBg clearfix">
+      <div class="header2">
+        <p class="header-topTxt mb10">
+          <a href="index.xhtml.htm" tppabs="http://www.guahao.gov.cn/index.xhtml">首页</a>&nbsp;|&nbsp;<a href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml">预约指南</a>&nbsp;|&nbsp;<span>投诉电话：020-12320</span>
+        </p>
+        
+<p class="clearfix"><span class="logoTxt">登录</span><span class="hotPhone">预约热线：<b class="hotPhone-no">12320</b></span></p>
+
+      </div>
+    </div>
+    <div class="header-line mb15"></div>
+    
+<div class="bd-index">
+<div class="login-wrap clearfix">
+<div class="login-img"><img src="login_img.jpg" tppabs="http://www.guahao.gov.cn/images/guahao/login_img.jpg" alt="轻松挂号，智慧医疗" height="404" width="505"/></div>
+<form action="" name="login_form">
+  <div class="loginBoxP">
+    <h3 class="loginBoxP-tab mb10 tc">用户登录</h3>
+    <ul class="form-content">
+      <li class="pb30"><label class="form-label" id="loginWay">账号：</label><div class="btn inputLgBg fl"><input type="text" class="inputTxt c_gray9" id="cardNo" maxlength="20" name="CARD_NO" value='用户名/健康卡/证件号/市民卡'/></div></li>
+      <li class="pb30"><label class="form-label">登录密码：</label><div class="btn inputLgBg fl"><input type="password" class="inputTxt" id="PWD"/></div></li>
+      <li class="pb10"><label class="form-label">验证码：</label><div class="btn input_msg4 fl"><input class="inputTxt" maxlength="4" type="text" id="VER_CD" name="VER_CD" onfocus="this.parentNode.className='btn input_msg4_on fl'" onblur="this.parentNode.className='btn input_msg4 fl'"></div><img class="ver_img ml10" id="divCode" src="codeImage.jsp.jpg" tppabs="http://www.guahao.gov.cn/pmodule/include/codeImage.jsp" width="70" height="30"/><a href="javascript:;" onclick="updateCode();return false" class="aStyle">换一张</a></li>
+      <li class="pb10"><label class="form-label">&nbsp;</label><span class="c_red errtip" id="errortip" style="display:none">请输入账号！</span></li>
+      <li><label class="form-label">&nbsp;</label><input type="button" value='登  录' class="btn btn_login fl" onclick="submitLogForm() "/><a href="register.xhtml.htm" tppabs="http://www.guahao.gov.cn/register.xhtml" class="aStyle">立即注册</a>&nbsp;<a href="findbackpwd.xhtml.htm" tppabs="http://www.guahao.gov.cn/findbackpwd.xhtml" class="aStyle">忘记密码？</a></li>
+    </ul>
+    <input type="hidden" name="CARD_TYP" id="cardTyp" value="1">
+    <input type="hidden" name="PWD" id="PWD_MD5">
+  </div>
+  <input type="hidden" name="goto" id="goto" value="">
+</form>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="usrInfoDiv" style="display:none">
+  <form action="" name="usrInfoForm" method="post">
+  <div class="formList mt10">
+    <label class="leftAlign" for="USR_ACT"><em class="c_red">*</em>用户名：</label>
+    <div class="formList-block">
+      <div class="formList-block" id="usrActInput" style="display:none">
+        <input type="text" class="inputStyle" id="USR_ACT" name="USR_ACT" note="用户名须以字母开头，以字母，数字和下划线组成，长度为6到18位之间！" onfocus="showNoteInfo(this)" onblur="ajx_chk_usrAct(this.id);" onmousemove="this.style.borderColor='#ff7800';" onmouseout="this.style.borderColor='#ccc';" maxlength="18"/>
+        <span id="USR_ACTInfoDiv" class="show_rule" ></span>
+      </div>
+      <div class="formList-block" id="usrAct" style="display:none"></div>
+    </div>
+  </div>
+  <div class="formList mt10">
+    <label class="leftAlign" for="USR_NM"><em class="c_red">*</em>真实姓名：</label>
+    <div class="formList-block">
+      <div class="formList-block" id="usrNmNotReal" style="display:none">
+        <input type="text" class="inputStyle" value="" id="USR_NM" name="USR_NM" note="用户姓名须是2－6个汉字录入或英文字母4－12个" onfocus="showNoteInfo(this)" onblur="chk_usrNm(this.id);" onmousemove="this.style.borderColor='#ff7800';" onmouseout="this.style.borderColor='#ccc';" maxlength="12"/>
+        <span id="USR_NMInfoDiv" class="show_rule" ></span>
+      </div>
+      <div class="formList-block" id="usrNmIsReal" style="display:none"></div>
+    </div>
+  </div>
+  <div class="formList mt10">
+    <label class="leftAlign" for="CER_NO"><em class="c_red">*</em>身份证号码：</label>
+    <div class="formList-block">
+      <div class="formList-block" id="CER_NO"></div><input type="hidden" name="CER_NO" id="cerNo">
+    </div>
+  </div>
+  <div class="formList mt10">
+    <label class="leftAlign"><em class="c_red">*</em>用户性别：</label>
+    <div class="formList-block" id="sex">
+      
+      
+    </div>
+  </div>
+  <div class="formList mt10">
+    <label class="leftAlign" for="mblNo"><em class="c_red">*</em>预约手机：</label>
+    <div class="formList-block">
+        <input type="text" class="round inputStyle"  id="mblNo" name="MBL_NO" onblur="chk_mblNo(this.id);" onmousemove="this.style.borderColor='#ff7800';" onmouseout="this.style.borderColor='#ccc';"/>
+        <span id="mblNoInfoDiv" class="show_rule"></span>
+    </div>
+  </div>
+  <div class="formList mt10">
+    <label class="leftAlign"><em class="c_red">*</em>短信验证码：</label>
+    <div class="formList-block">
+        <input type="text" class="round inputStyle w100" id="verCdMsg" name="VER_CD_MSG" onblur="chk_verCdMsg(this.id)" maxlength="6" onmousemove="this.style.borderColor='#ff7800';" onmouseout="this.style.borderColor='#ccc';"/>
+        &nbsp;&nbsp;<input type="button" class="btn btn04" onclick="sendMsg()" id="sendMsgcd" value="获取验证码"/>
+        <span id="verCdMsgInfoDiv" class="show_rule"></span>
+    </div>
+  </div>
+  <div class="formList" id="msgCdTip">
+    <label class="leftAlign">&nbsp;</label>
+    <div class="formList-block">
+        <span class="show_rule"><em class="c_red">*</em>若没收到短信，请点击重新获取验证码。</span>
+    </div>
+  </div>
+  <div class="userInfoForm">
+    <div class="formList mt30">
+        <label class="leftAlign">&nbsp;</label>
+        <div class="formList-block">
+            <input type="button" value="提交" class="btn btn_login" onclick="sumbitUsrForm();"/>
+        </div>
+    </div>
+  </div>
+  </form>
+</div>
+<script type="text/javascript">
+function sendMsg(){
+  var MBL_NO = $("#mblNo").val();
+    var CER_NO = $("#cerNo").val();
+    if(!chk_idCard("cerNo") || !chk_mblNo("mblNo")){
+      return false;
+    }
+    $.ajax({
+      type: "POST",
+      url:"/sendMsg.xhtml?MBL_NO="+MBL_NO+"&CER_NO="+CER_NO+"&BUS_TYP=3&&r="+Math.random(),
+      data: "",
+      dataType: "json",
+      success: function(data){
+        if(data.GWA.MSG_CD == "PTS00000"){
+          showTipInfo("verCdMsg",'验证码已发送至您的手机，请查看。','show_rule');
+          ddpack.sendMSCD('sendMsgcd','60');
+        }else{
+          showTipInfo("verCdMsg",data.GWA.MSG_DAT);
+        }
+      }
+    });
+}
+/*====发短息按钮倒计时效果====*/
+// var ddpack = ddpack||{};
+// ddpack.param = {speed:1000,wait:0,kj_isinerval:null};
+// ddpack.wait = function(obj){
+//   var _id = obj;
+//   if(ddpack.param.wait == 0){
+//     $(obj).val("获取验证码");
+//     $(obj).attr("class","btn btn04");
+//     $(obj).removeAttr("disabled")
+//     clearInterval(ddpack.param.isinerval); 
+//   }else{
+//     $(obj).attr("class","btn btn_msg_len");
+//     $(obj).attr("disabled","disabled")
+//     $(obj).val("("+((ddpack.param.wait<10)?'0'+ddpack.param.wait:ddpack.param.wait)+")秒后重新获取验证码");
+//     ddpack.param.wait = (ddpack.param.wait -1);
+//     ddpack.param.isinerval=window.setTimeout("ddpack.wait('"+obj+"')",ddpack.param.speed);
+//   }
+// }
+// ddpack.sendMSCD = function(id,s){
+//   ddpack.param.wait = s;
+//   ddpack.wait("#"+id);
+// };
+</script>
+
+    <div class="clearfix"></div>
+  </div>
+
+<div class="bg_gray">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+    <div class="line_bt"></div>
+    <div class="footer-content">
+        <div class="footer-logo"><span></span></div>
+        <span class="ml10">地址：广州市东风西路182号</span>
+        <span class="ml10">技术支持：广州市卫生信息中心</span>
+        <span class="ml10">广州市卫生和计划生育委员会版权所有</span><br>
+        <span class="ml10">粤ICP备12059770号</span>
+        <span class="ml10"><a target="_blank" href="javascript:if(confirm('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394'" tppabs="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394"><img style="vertical-align:middle" src="beian.png" tppabs="http://www.guahao.gov.cn/images/common/beian.png"/>&nbsp;粤公网安备&nbsp;44010402000394号</a></span>&nbsp;
+        <script src="stat.php-id=4589427&web_id=4589427&show=pic1" tppabs="http://s25.cnzz.com/stat.php?id=4589427&web_id=4589427&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="jquery.js-t=201201101201560" tppabs="http://www.guahao.gov.cn/js/common/jquery.js?t=201201101201560" ></script>
+<script type="text/javascript" src="jquery-ui-1.8.20.custom.min.js-t=201208070830560" tppabs="http://www.guahao.gov.cn/js/common/jquery.ui.dialog_js/js/jquery-ui-1.8.20.custom.min.js?t=201208070830560"></script>
+<script type="text/javascript" src="base.js-t=201405220620040" tppabs="http://www.guahao.gov.cn/js/common/base.js?t=201405220620040" ></script>
+
+<script type="text/javascript">
+$(document).ready(function(){navInit();});
+/*
+* highOnclick(pId,curId)
+* curId 二级菜单当前ID名称
+*/
+var curStr="";
+if(curStr!="" && curStr!="null"){
+highOnclick(curStr);
+}
+function loginOut(){
+  $("form[name=quitLogin]").submit();
+}
+</script>
+<script type="text/javascript" src="formValidator.js-t=201608170420060" tppabs="http://www.guahao.gov.cn/js/urm/formValidator.js?t=201608170420060" charset="UTF-8"></script>
+
+<script src="sso-client.js-t=201303150508060" tppabs="http://www.guahao.gov.cn/js/urm/sso-client.js?t=201303150508060" type="text/javascript"></script>
+<script type="text/javascript" src="md5.js-t=201310091125570" tppabs="http://www.guahao.gov.cn/js/common/md5.js?t=201310091125570"></script>
+<script type="text/javascript" src="jquery.cookie.js-t=201608171132100" tppabs="http://www.guahao.gov.cn/js/urm/jquery.cookie.js?t=201608171132100"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+  sso_check_login($("#goto").val());//单点登录
+});
+
+//回车事件提交登录
+document.onkeydown = function(){
+  var evt=document.all?window.event:arguments[0];
+  if(evt.keyCode==13){
+  $('form[name=login_form]').each(function() {
+    submitLogForm();
+  });
+  }
+}
+/*初始化完善用户信息弹出框*/
+$("#usrInfoDiv").dialog({
+    autoOpen:false,
+    width:700,
+    height:350,
+    modal:true,
+    draggable:true,
+    resizable:false,
+    title:'完善用户信息'    
+});
+/*刷新验证码*/
+function updateCode(){
+  var verify=document.getElementById('divCode');
+  var radom=Math.random();
+  verify.setAttribute('src','/pmodule/include/codeImage.jsp?'+radom);
+}
+</script>
+
+</body>
+</html>
+

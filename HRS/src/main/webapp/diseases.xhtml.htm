@@ -1,0 +1,440 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />  
+
+<meta name="description" content="疾病对应科室_按疾病预约_预约挂号，通过选择疾病进行预约挂号。" />
+<meta name="keywords" content="疾病对应科室_按疾病预约，预约挂号，挂号，广州挂号，网上挂号，12320挂号，自助终端挂号"/>
+<title>疾病对应科室_按疾病预约_广州市统一预约挂号平台</title>
+
+<link rel="stylesheet" type="text/css" href="base.css-t=201305281140250.css" tppabs="http://www.guahao.gov.cn/css/common/base.css?t=201305281140250" />
+<link rel="stylesheet" type="text/css" href="common.css-t=201411240822230.css" tppabs="http://www.guahao.gov.cn/css/common/common.css?t=201411240822230" />
+<link rel="stylesheet" type="text/css" href="mod.css-t=201608171104400.css" tppabs="http://www.guahao.gov.cn/css/mod.css?t=201608171104400" />
+<script type="text/javascript" src="jquery.js-t=201201101201560" tppabs="http://www.guahao.gov.cn/js/common/jquery.js?t=201201101201560" ></script>
+
+
+</head>
+<body>
+<div class="wrap">
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="headerBg clearfix">
+    <div class="header">
+        <p class="header-topTxt mb10">
+            
+            <a href="login.xhtml.htm" tppabs="http://www.guahao.gov.cn/login.xhtml">登录</a>&nbsp;|&nbsp;<a href="login.xhtml-goto=-usrinfo.xhtml.htm#orderList" tppabs="http://www.guahao.gov.cn/usrinfo.xhtml#orderList">我的订单</a>&nbsp;|&nbsp;<a href="register.xhtml.htm" tppabs="http://www.guahao.gov.cn/register.xhtml">注册</a>&nbsp;|&nbsp;<a href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml">预约指南</a>&nbsp;|&nbsp;<span>投诉电话：020-12320</span>
+            
+            
+        </p>
+        <p class="header-logo"><span class="hotPhone">预约热线：<b class="hotPhone-no">020-12320</b></span></p>
+        <form action="quit_login.xhtml.htm" tppabs="http://www.guahao.gov.cn/quit_login.xhtml"  method="post" name="quitLogin"></form>
+    </div>
+</div>
+<div style="width:960px;margin:0 auto;display:none;" id="noticBlock" >
+<div style="float:left;border:1px solid #FECB66;width:938px;padding:10px;background-color:#FEFEE4;color:#FE0000;">
+	<p>尊敬的用户：</p>
+	<p style="text-indent:2em;" id="comNoticeCnt"></p>
+</div>
+</div>
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="menuBar mb15 clearfix">
+    <div class="menu menuL"></div>
+    <div class="menuX menu_nav">
+        <ul class="top">
+            <li><a class="on" id="01" href="index.xhtml.htm" tppabs="http://www.guahao.gov.cn/index.xhtml" item="#index" title="首页">首&nbsp;页</a></li>
+            <li><a id="02" href="hospitallist.xhtml.htm" tppabs="http://www.guahao.gov.cn/hospitallist.xhtml" item="#reserve">挂号服务</a></li>
+            <li><a id="03" href="login.xhtml-goto=-usrinfo.xhtml.htm" tppabs="http://www.guahao.gov.cn/usrinfo.xhtml" item="#regmng">预约管理</a></li>
+            <li><a id="06" href="login.xhtml-goto=-payment_mng.xhtml.htm" tppabs="http://www.guahao.gov.cn/payment_mng.xhtml">缴费管理</a></li>
+            <li><a id="04" href="flow_ghbyweb.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml" item="#help">预约指南</a></li>
+            <li><a id="05" href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml" item="#notice">通知及反馈</a></li>
+            <li><a id="07" href="download_client.xhtml.htm" tppabs="http://www.guahao.gov.cn/download_client.xhtml" item="#download">客户端下载</a></li>
+        </ul>
+        <div style="clear:both;display:block;"></div>
+        <ul id="reserve" class="bot" style="display:none;padding-left:84px;">
+            <li><a id="0201" title="预约挂号" href="hospitallist.xhtml.htm" tppabs="http://www.guahao.gov.cn/hospitallist.xhtml"><span>预约挂号</span></a></li>
+            <li><a id="0202" title="当天挂号" href="javascript:if(confirm('http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow  \n\n该文件无法用 Teleport Ultra 下载, 因为 服务器报告发生错误, 阻止了下载。  \n\n你想在服务器上打开它?'))window.location='http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow'" tppabs="http://www.guahao.gov.cn/OPTSPUB1/PTS130135.dow"><span>当天挂号</span></a></li>
+        </ul>
+        <ul id="help" class="bot" style="display:none;padding-left:150px;">
+            <li><a id="0402" title="预约挂号须知" href="help_gh.xhtml.htm" tppabs="http://www.guahao.gov.cn/help_gh.xhtml"><span>预约挂号须知</span></a></li>
+            <li><a id="0401" title="预约挂号指南" href="flow_ghbyweb.xhtml.htm" tppabs="http://www.guahao.gov.cn/flow_ghbyweb.xhtml"><span>预约挂号指南</span></a></li>
+            <li><a id="0403" title="常见疾病对应科室" href="comdis.xhtml.htm" tppabs="http://www.guahao.gov.cn/comdis.xhtml"><span>常见疾病对应科室</span></a></li>
+            <li><a id="0404" title="常见问题" href="questions1.xhtml.htm" tppabs="http://www.guahao.gov.cn/questions1.xhtml"><span>常见问题</span></a></li>
+        </ul>
+        
+        
+            <ul id="notice" class="bot" style="display:none;padding-left:490px;">
+        
+            
+            <li><a id="0501" title="停诊通知" href="tingzhens.xhtml.htm" tppabs="http://www.guahao.gov.cn/tingzhens.xhtml"><span>停诊通知</span></a></li>
+            
+        </ul>
+        <!-- <div style="clear:both;display:block;"></div> -->
+    </div>
+    <div class="menu menuR"></div>
+</div>
+  
+  <div class="bd">
+    <!--hospital-detail && department-detail-->
+    <div class="page-wrap">
+      <div class="pageLeft">
+        
+<div id="deptList"></div>
+ 
+      </div>
+      <div class="pageRight">
+        
+<h3 class="content-hd mb20"><b id="DIS_NM">神经内科</b></h3>
+<table class="disTable">
+  <tbody>
+    
+    <tr>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010502.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010502">癫痫</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010543.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010543">失语</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010501.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010501">脑梗塞</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010504.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010504">帕金森</a></td>
+        
+    </tr>
+    
+    <tr>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010505.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010505">脑出血</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010506.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010506">头晕</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010507.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010507">重症肌无力</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010508.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010508">抑郁症</a></td>
+        
+    </tr>
+    
+    <tr>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010509.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010509">失眠</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010510.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010510">脑供血不足</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010511.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010511">脑炎</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010512.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010512">多发性硬化</a></td>
+        
+    </tr>
+    
+    <tr>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010513.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010513">运动神经元病</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010514.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010514">痴呆</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010515.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010515">肌病</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010516.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010516">脑血栓</a></td>
+        
+    </tr>
+    
+    <tr>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010517.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010517">脑血管病</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010518.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010518">焦虑症</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010519.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010519">面瘫</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010520.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010520">神经衰弱</a></td>
+        
+    </tr>
+    
+    <tr>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010521.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010521">周围神经病损</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010522.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010522">神经官能症</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010523.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010523">面肌痉挛</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010524.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010524">急性脊髓炎</a></td>
+        
+    </tr>
+    
+    <tr>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010525.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010525">神经炎</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010526.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010526">遗传代谢病</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010527.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010527">植物神经紊乱</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010528.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010528">脑膜炎</a></td>
+        
+    </tr>
+    
+    <tr>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010529.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010529">脑萎缩</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010530.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010530">抽动症</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010531.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010531">共济失调</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010532.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010532">结核性脑膜炎</a></td>
+        
+    </tr>
+    
+    <tr>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010533.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010533">偏瘫</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010534.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010534">脊髓损伤</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010535.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010535">三叉神经痛</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010536.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010536">脑寄生虫病</a></td>
+        
+    </tr>
+    
+    <tr>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010537.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010537">腓骨肌萎缩症</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010538.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010538">周围神经损伤</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010539.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010539">植物人</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010540.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010540">智力障碍</a></td>
+        
+    </tr>
+    
+    <tr>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010541.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010541">斜颈</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010542.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010542">脑疝</a></td>
+        
+            <td><a href="docSrc_bydis.xhtml-DIS_ID=010503.htm" tppabs="http://www.guahao.gov.cn/docSrc_bydis.xhtml?DIS_ID=010503">头痛</a></td>
+        
+    </tr>
+    
+  </tbody>
+</table>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+
+<div class="bg_gray">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+    <div class="line_bt"></div>
+    <div class="footer-content">
+        <div class="footer-logo"><span></span></div>
+        <span class="ml10">地址：广州市东风西路182号</span>
+        <span class="ml10">技术支持：广州市卫生信息中心</span>
+        <span class="ml10">广州市卫生和计划生育委员会版权所有</span><br>
+        <span class="ml10">粤ICP备12059770号</span>
+        <span class="ml10"><a target="_blank" href="javascript:if(confirm('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394'" tppabs="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402000394"><img style="vertical-align:middle" src="beian.png" tppabs="http://www.guahao.gov.cn/images/common/beian.png"/>&nbsp;粤公网安备&nbsp;44010402000394号</a></span>&nbsp;
+        <script src="stat.php-id=4589427&web_id=4589427&show=pic1" tppabs="http://s25.cnzz.com/stat.php?id=4589427&web_id=4589427&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="base.js-t=201405220620040" tppabs="http://www.guahao.gov.cn/js/common/base.js?t=201405220620040" ></script>
+
+<script type="text/javascript">
+$(document).ready(function(){navInit();});
+/*
+* highOnclick(pId,curId)
+* curId 二级菜单当前ID名称
+*/
+var curStr="0202";
+if(curStr!="" && curStr!="null"){
+highOnclick(curStr);
+}
+/*当屏幕分辩率有变化时，选择其他医院图片定位发生改变*/
+$(function(){
+  window.initCss();
+})
+$(window).bind("resize", function() {
+    this.initCss();
+});
+var a = $("#sideBar a");
+this.initCss = function() {
+  var b, c = 1210;
+  if (window.screen.width >= 1210) {
+    var c = 1210;
+    if ($.browser.msie) {
+      b = {
+          right: (document.documentElement.clientWidth - c) / 2 +85 + "px"
+      }
+      if ($.browser.msie && $.browser.version <= 6)  {
+        b = {
+          right: "-82px"
+        }
+      }
+    }else{
+      b = {
+          right: (document.documentElement.clientWidth - c) / 2 +100 + "px"
+      }
+    }
+  }else if(window.screen.width <= 1210){
+    var right = (document.documentElement.clientWidth - 1210) / 2 +85;
+    if(right<=0)right=0;
+    b = {
+      right: right + "px"
+    }
+  }
+    a.css(b);
+};
+</script>
+
+<script src="sso-client.js-t=201303150508060" tppabs="http://www.guahao.gov.cn/js/urm/sso-client.js?t=201303150508060" type="text/javascript"></script>
+<script type="text/javascript">
+function loginOut(){
+    sso_logout();
+    noLoginCookie();//取消自动登陆
+    $("form[name=quitLogin]").submit();
+}
+$(function(){
+	$.ajax({
+    url: "/notice.xhtml?r="+Math.random(),
+    type: 'post',
+    dataType: 'json',
+    data: '',
+    success: function(data) {
+      if(data.GWA.MSG_CD == 'PTS00000'){
+      	if(data.NOT_STS == "0"){
+      		$("#noticBlock").hide();
+      	}else if(data.NOT_STS == "1"){
+      		$("#noticBlock").show();
+      		$("#comNoticeCnt").html(data.NOT_RM+"&nbsp;&nbsp;---广州市卫生和计划生育委员会");
+      	}
+      }
+    }
+  });	
+});
+</script>
+
+<script type="text/javascript">
+$(function(){
+  $("#deptList").html("<div style='width:100%;margin:0 auto;text-align:center;'><img src='loading_img.gif-t=201207170546270.gif'/*tpa=http://www.guahao.gov.cn/images/common/loading_img.gif?t=201207170546270*/ width='32' height='32'/></div>");
+  $.get("/deptList.xhtml",function(data){$("#deptList").html(data);});
+});
+
+</script>
+
+</body>
+</html>
+

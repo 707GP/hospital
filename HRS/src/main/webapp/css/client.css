@@ -1,0 +1,31 @@
+.wrap{width: 960px;margin:20px auto;}
+.download_info{width:960px;height: 451px;background:url("img_android.jpg") no-repeat; }
+.download_info .info{width: 460px;float: right;margin:70px 20px 0px 0px;display: inline; }
+.download_info .info h2{color:#0085B2;font-size:36px;}
+.download_info .info p{line-height: 22px;margin-top: 20px;}
+.download_info .info .btns{margin-top: 30px;}
+.download_info .info .btns .fl{width: 210px;}
+
+.fs24{font-size: 24px;}
+.tab_download{width: 958px;border: 1px solid #D7D7D7;border-top:none;height: 79px;}
+.tab_download li{float: left;}
+.android_on{background:url("tab_Andriod_on.jpg") no-repeat;width: 319px;height: 79px;display: inline-block;}
+.iphone{background:url("tab_iPhone.jpg") no-repeat;width: 320px;height: 79px;display: inline-block;}
+.ipad{background:url("tab_iPad.jpg") no-repeat;width: 319px;height: 79px;display: inline-block;}
+.block1,.block2,.block3{width: 960px;}
+.block1{height:512px;background:url("img_gh.jpg") no-repeat;}
+.block2{height:472px;background:url("img_jf.jpg") no-repeat;}
+.block3{height:385px;background:url("img_jkda.jpg") no-repeat;}
+.block4{margin-bottom: 40px;border: 1px solid #D7D7D7;border-top: none;padding: 40px 0px;}
+.block4_txt{font-size: 24px;color: #999;margin-bottom:40px;}
+.btn_dl_01{background:url("btn_dl_01.jpg") no-repeat;width: 200px;height: 55px;display: inline-block;}
+.btn_dl_01:hover{background:url("btn_dl_01_on.jpg") no-repeat;width: 200px;height: 55px;display: inline-block;}
+.btn_dl_02{background:url("btn_dl_02.jpg") no-repeat;width: 200px;height: 55px;display: inline-block;}
+.btn_dl_02:hover{background:url("btn_dl_02_on.jpg") no-repeat;}
+.btn_dl_03{background:url("btn_dl_03.jpg") no-repeat;width: 210px;height: 55px;display: inline-block;margin-top: 20px;}
+.btn_dl_03:hover{background:url("btn_dl_03_on.jpg") no-repeat;}
+.btn_dl_04{background:url("btn_dl_04.jpg") no-repeat;width: 210px;height: 55px;display: inline-block;margin-top: 20px;}
+.btn_dl_04:hover{background:url("btn_dl_04_on.jpg") no-repeat;}
+.erweima{width: 164px;height: 164px;background: #FFF;float:left;text-align: center;}
+.img_erweima{background:url("QRCode2.png") no-repeat;width: 200px;height: 200px;float:left;}
+.txt_erweima{background: #ECECFB;float:left;width: 100%;height: 25px;line-height: 25px;color: #666;}
